@@ -11,20 +11,9 @@
     justify-content: center;
 }
 
-.brand-logo-name{
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 1rem;
-    justify-content: start;
-    align-items: center;
-}
-
-.brand-logo {
-    border: 1px solid black;
-    background: blue;
-    width: 80px;
-    height: 35px;
-    border-radius: 5px;
+.brand-logo>div img {
+    width: 10px;
+    height: 20px
 }
 
 .social-media-brand-logos {
@@ -34,15 +23,15 @@
     justify-content: left;
 }
 
-.social-media-brand-logos>div {
+.social-media-brand-logos>div img {
     background: blue;
     border: 1px solid black;
-    width: 50px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .quick-links {
-    line-height: 2.5;
+    line-height: 2;
 }
 
 .quick-links a {
