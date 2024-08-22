@@ -1,0 +1,64 @@
+#footer {
+    min-height: 5cqmax;
+    background: #ffff;
+    line-height: 1.5;
+}
+
+.footer-content-wrap {
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 5%;
+    justify-content: center;
+}
+
+.brand-logo-name{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1rem;
+    justify-content: start;
+    align-items: center;
+}
+
+.brand-logo {
+    border: 1px solid black;
+    background: blue;
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.social-media-brand-logos {
+    display: grid;
+    grid-template-columns:  auto auto auto;
+    column-gap: 1rem;
+    justify-content: left;
+}
+
+.social-media-brand-logos>div {
+    background: blue;
+    border: 1px solid black;
+    width: 50px;
+    height: 30px;
+}
+
+.quick-links {
+    line-height: 2.5;
+}
+
+.quick-links a {
+    text-decoration: none;
+}
+
+.copyright-tag {
+    text-align: center;
+    width: 100%;
+    background: rgb(196, 204, 212);
+    min-height: 10vh;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+}
+
+.copyright-tag a {
+    text-decoration: none;
+}

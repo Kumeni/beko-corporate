@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/homepage-landing.css" />
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/landing.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/footer.css" />
     <title>Beko Corporate</title>
 </head>
 <body>
@@ -54,7 +55,53 @@
             </div>
     </section>
 
+    <section>
+        <p>Dummy content 3</p>
+    </section>
+    <footer id="footer">
+        <div class="footer-content-wrap">
+            <div class="brands">
+                <div class="brand-logo-name">
+                    <div class="brand-logo"></div>
+                    <p>Logo</p>
+                </div><br />
+                <div>
+                    <p>Lorem ipsum dolor sit amet con-<br/>sectetur,adipisicing elit. Necessitatibus <br>sunt maiores velit corporis, ut sed eaque dolores<br /> neque, accusantium  amet accusamus! Debitis <br>aut dolorem nemo expedita accusantium <br /> ipsum dolore iure.</p>
+                </div><br />
+                <div class="social-media-brand-logos">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a><br />
+                <a href="#About">About</a><br />
+                <a href="#Shop">Shop</a><br />
+                <a href="#Contact">Contact</a>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3><br />
+                <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit. Dolorum repellat nihil <br> voluptatem rerum et, atque porro id fuga <br> voluptas numquam laboriosam similique. <br>Pariatur itaque neque autem impedit quasi <br /> numquam earum?</p>
+            </div>
+            <div class="news-letter">
+                <h3>Subscribe to our Email</h3><br/>
+                <h3>For Latest News and Updates</h3><br />
+                <div class="form-fields">
+                    <form id="form">
+                        <input type="email" id="email" name="email" placeholder="youremail.example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  required="" />
+                        <button type="button" id="subscribe" onclick="handleonclick()">Subscribe</button> 
+                    </form>
+                </div>
+            </div>
+        </div><br /><br />
+        <div class="copyright-tag">
+            <p>Copyright &copy; <span id="year"></span> | Beko Enterprises | Maintained by <span><a href="https://www.yosambranding.art">Yosam Branding</a></span></p>
+        </div>
+    </footer>
     <script src = "./scripts/swiper/swiper-bundle.min.js"></script>
     <script src="./scripts/swiper/initialize-swiper.js"></script>
+    <script src="./scripts/current-year.js"></script>
 </body>
 </html>
