@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 footer>div {
     min-height: 20vh;
     background: #ffff;
@@ -31,7 +35,7 @@ footer>div {
 .social-media-brand-logos>div img{
     height: 32px; 
     width: auto;  
-    margin: 0 10px; /* For spacing in between the brand icons*/
+    margin: 0 10px; 
 }
 
 .quick-links a {
@@ -113,7 +117,7 @@ input[type="submit"] {
 
     .footer-content-wrap {
         display:grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         grid-template-rows: auto auto;
         column-gap: 2%;
         row-gap: 2rem;
