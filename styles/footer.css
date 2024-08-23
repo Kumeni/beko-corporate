@@ -1,18 +1,23 @@
-#footer {
-    min-height: 5cqmax;
+footer {
+    min-height: 20vh;
     background: #ffff;
     line-height: 1.5;
+    width: 100%;
+    font-size: 16px;
 }
 
 .footer-content-wrap {
     display:grid;
     grid-template-columns: auto auto auto auto;
-    column-gap: 5%;
+    column-gap: 4%;
     justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
 }
 
 .brand-logo img {
-    height: 50px; /* or any height between 100px and 150px */
+    height: 50px;
     width: auto;
     cursor: pointer;
 }
@@ -24,16 +29,10 @@
     justify-content: left;
 }
 
-.social-media-brand-logos>div img {
-    background: blue;
-    border: 1px solid black;
+.social-media-brand-logos>div img{
     height: 32px; 
-    width: 32px;  
+    width: auto;  
     margin: 0 10px; /* For spacing in between the brand icons*/
-}
-
-.quick-links {
-    line-height: 2;
 }
 
 .quick-links a {
@@ -45,9 +44,30 @@
     color: blue;
 }
 
+.form-container form {
+    width: 100%;
+}
+
 input[type="email"] {
-    width: 150px;
-    height: 35px;
+    width: 300px;
+    height: 45px;
+    border-radius: 50px;
+    text-align: center;
+    background: #d3d3d3;
+    border: none;
+    font-size: 16px;
+
+}
+
+input[type="submit"] {
+    width: 120px;
+    height: 45px;
+    border-radius: 50px;
+    background: rgb(46, 177, 46);
+    color: white;
+    margin-left: -30px;
+    border: none;
+    cursor: pointer;
 }
 
 .copyright-tag {
@@ -62,4 +82,5 @@ input[type="email"] {
 
 .copyright-tag a {
     text-decoration: none;
+    color: blue;
 }
