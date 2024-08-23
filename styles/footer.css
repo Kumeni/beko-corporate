@@ -11,9 +11,10 @@
     justify-content: center;
 }
 
-.brand-logo>div img {
-    width: 10px;
-    height: 20px
+.brand-logo img {
+    height: 50px; /* or any height between 100px and 150px */
+    width: auto;
+    cursor: pointer;
 }
 
 .social-media-brand-logos {
@@ -26,8 +27,9 @@
 .social-media-brand-logos>div img {
     background: blue;
     border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    height: 32px; 
+    width: 32px;  
+    margin: 0 10px; /* For spacing in between the brand icons*/
 }
 
 .quick-links {
@@ -36,6 +38,16 @@
 
 .quick-links a {
     text-decoration: none;
+    color:black;
+}
+
+.quick-links a:hover{
+    color: blue;
+}
+
+input[type="email"] {
+    width: 150px;
+    height: 35px;
 }
 
 .copyright-tag {
