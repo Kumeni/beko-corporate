@@ -1,5 +1,8 @@
 *{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 footer>div {
@@ -7,7 +10,6 @@ footer>div {
     background: #ffff;
     line-height: 1.5;
     width: 100%;
-    font-size: 16px;
 }
 
 .footer-content-wrap {
@@ -47,9 +49,6 @@ footer>div {
     color: blue;
 }
 
-.form-container form {
-    width: 100%;
-}
 
 input[type="email"] {
     width: 300px;
@@ -58,7 +57,6 @@ input[type="email"] {
     text-align: center;
     background: #d3d3d3;
     border: none;
-    font-size: 16px;
 
 }
 
@@ -98,10 +96,29 @@ input[type="submit"] {
         line-height: 1;
     }
 
+    .footer-content-wrap {
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 1%;
+        row-gap: 2rem;
+        justify-content: center;
+        padding: 1rem;
+        width: 100%;
+        line-height: 0.95em;
+    }
+
+    input[type="email"] {
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        padding: 0.5em;
+    
+    }
+
     input[type="submit"] {
         width: 100px;
-        margin-left: 200px;
-        margin-top: 5px;
+        position: absolute;
     }
 
     .form-container form {
@@ -124,17 +141,21 @@ input[type="submit"] {
         justify-content: space-between;
         padding: 1rem;
         width: 100%;
+        line-height: 2;
+        text-align: center;
     }
 
     input[type="submit"] {
-        width: 120px;
-        margin-left: 30px;
+        width: 110px;
+        margin-left: -60px;
     }
 
     input[type="email"] {
-        width: 200px;
+        width: 250px;
         height: 45px;
-        text-align: center;
+        text-align: left;
+        padding-left: 0.5rem;
+        margin-left: -50px;
     
     }
 
