@@ -6,7 +6,7 @@
 }
 
 footer>div {
-    min-height: 20vh;
+    min-height: 30vh;
     background: #ffff;
     line-height: 1.5;
     width: 100%;
@@ -59,6 +59,8 @@ footer>div {
 
 .news-letter {
     text-align: left;
+    margin: 0.5rem;
+    padding: 0;
 }
 
 
@@ -100,6 +102,21 @@ input[type="submit"]:hover {
 .copyright-tag a {
     text-decoration: none;
     color: blue;
+}
+
+@media (max-width: 1091px) {
+    input[type="email"] {
+        width: 250px;
+        height: 45px;
+        text-align: left;
+        padding-left: 2rem;
+        margin-left: -10px;
+    }
+
+    input[type="submit"] {
+        width: 110px;
+        margin-left: -70px;
+    }
 }
 
 @media (max-width: 1024px){
