@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./scripts/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./scripts/swiper/swiper-bundle.min.css" type="text/css"/>
 
-    <link rel="stylesheet" href="./styles/homepage-landing.css" />
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/landing.css" />
+    <link rel="stylesheet" href="./styles/homepage-landing.css" type="text/css"/>
+    <link rel="stylesheet" href="./styles/global.css" type="text/css"/>
+    <link rel="stylesheet" href="./styles/landing.css" type="text/css"/>
     <title>Beko Corporate</title>
 </head>
 <body>
     <section class="homepage-landing">
+        <div class="navigation-buttons">
+            <button class="left-arrow" onclick="prevLandingSlide()"><img src="./assets/icons/left arrow.png" alt="left arrow" /></button>
+            <button class="right-arrow" onclick="nextLandingSlide()"><img src="./assets/icons/right arrow.png" alt="right arrow" /></button>
+        </div>
         <div class="swiper-wrapper">
                 <!-- Slides -->
                 <!-- <div class="swiper-slide small landing_logo">
@@ -21,49 +25,81 @@
                 <div class="swiper-slide">
                     <section class="landing">
                         <div class="landing-image">
-                            <img src="./assets/homepage-images/landing-images/fully furnished kitchen by beko corporate.png" alt="fully furnished kitchen by beko corporate" />
-                        </div>
-                        <div class="blue-rectangle"></div>
-                    </section>
-                </div>
-                <div class="swiper-slide">
-                    <section class="landing">
-                        <div class="landing-image">
                             <img src="./assets/homepage-images/landing-images/office layout by beko corporate.png" alt="office layout by beko corporate" />
                         </div>
-                        <div class="blue-rectangle"></div>
+                        <div class="blue-rectangle-container">
+                            <div class="blue-rectangle fly-in-from-right"></div>
+                        </div>
+                        <div class="beko-logo-container">
+                            <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                        </div>
+                        <div class="slide-title">
+                            <h1 class="index fly-in-from-right">01</h1>
+                            <h1 class="title fly-in-from-right">Commited to<br /> Sustainability</h1>
+                        </div>
+                        <div class="more-info-container">
+                            <div class="more-info fly-in-from-right">
+                                <p class="fly-in-from-right">We are dedicated to supporting your sustainability goals. Our energy-efficient appliances not only reduce operational costs but also contribute to a greener planet.</p>
+                            </div>
+                        </div>
                     </section>
                 </div>
-                <div class="swiper-slide">  
+                <div class="swiper-slide slide-2">
+                    <section class="landing">
+                        <div class="landing-image">
+                            <img src="./assets/homepage-images/landing-images/fully furnished kitchen by beko corporate.png" alt="fully furnished kitchen by beko corporate" />
+                        </div>
+                        <div class="blue-rectangle-container">
+                            <div class="blue-rectangle fly-in-from-right"></div>
+                        </div>
+                        <div class="beko-logo-container">
+                            <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                        </div>
+                        <div class="slide-title">
+                            <h1 class="index fly-in-from-right">02</h1>
+                            <h1 class="title fly-in-from-right">Tailored Solutions for<br />Every Industry</h1>
+                        </div>
+                        <div class="more-info-container">
+                            <div class="more-info fly-in-from-right">
+                                <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="swiper-slide slide-3">
                     <section class="landing">
                         <div class="landing-image">
                             <img src="./assets/homepage-images/landing-images/office with huge windows by beko corporate.png" alt="office with huge windows by beko corporate" />
                         </div>
-                        <div class="blue-rectangle"></div>
-                        <h1 class="index">01</h1>
-                        <h1 class="title">Commited to Sustainability</h1>
-                        <div class="more-info">
-                            <p>
-                                We are dedicated to supporting your sustainability goals. Our
-                                energy-effcient appliances not only reduce operational costs
-                                but also contribute to a greener planet.
-                            </p>
+                        <div class="blue-rectangle-container">
+                            <div class="blue-rectangle fly-in-from-right"></div>
                         </div>
+                        <div class="beko-logo-container">
+                            <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                        </div>
+                        <div class="slide-title ">
+                            <h1 class="index fly-in-from-right">03</h1>
+                            <h1 class="title fly-in-from-right">Innovative Technology,<br />Unmatched Quality</h1>
+                        </div>
+                        <div class="more-info-container">
+                            <div class="more-info fly-in-from-right">
+                                <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                            </div>
+                        </div>
+                        
                     </section>
                 </div>
             </div>
     </section>
-<<<<<<< HEAD
+    
+    
 
-    <section>
-        <p>Dummy content 3</p>
-    </section>
-=======
     <footer class="footer">
         <div></div>
     </footer>
->>>>>>> 5adae4c3a1653ab1d9d2ce06d43670655d2577b1
+
     <script src = "./scripts/swiper/swiper-bundle.min.js"></script>
     <script src="./scripts/swiper/initialize-swiper.js"></script>
+    <script src = "./scripts/landing-animation.js"></script>
 </body>
 </html>
