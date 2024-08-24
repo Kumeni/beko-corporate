@@ -16,7 +16,7 @@ let swiperLanding = new Swiper('.homepage-landing', {
   },
 
   autoplay:{
-    delay:100,
+    delay:4000,
     disableOnInteraction:false,
   },
 
