@@ -278,6 +278,20 @@ input[type="submit"]:hover {
         margin-left: -20px;
     
     }
+
+    .contact h3{
+        text-align: center;
+    }
+
+    .form-container {
+        display: grid;
+        justify-content: center;
+    }
+
+    .news-letter h3,
+    h4 {
+        text-align: center;
+    }
 }
 
 @media (max-width: 320px) {
@@ -296,6 +310,15 @@ input[type="submit"]:hover {
         width: 100%;
         line-break: auto;
         line-height: 1.5;
+    }
+
+    .contact h3{
+        text-align: center;
+    }
+
+    .news-letter h3,
+    h4 {
+        text-align: center;
     }
 
     input[type="submit"] {
