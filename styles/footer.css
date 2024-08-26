@@ -6,7 +6,7 @@
 }
 
 footer>div {
-    min-height: 30vh;
+    min-height: 40vh;
     background: #ffff;
     line-height: 1.5;
     width: 100%;
@@ -39,9 +39,15 @@ footer>div {
 }
 
 .social-media-brand-logos>div img{
-    height: 32px; 
+    height: 35px; 
     width: auto;  
     margin: 0 10px; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-media-brand-logos>div img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.5);
 }
 
 .quick-links a {
