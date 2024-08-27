@@ -11,6 +11,8 @@
 .homepage-landing{
     min-height: 100vh;
     position: relative;
+    width:100vw;
+    max-width: 1440px;
 }
 
 .homepage-landing .navigation-buttons{
@@ -49,10 +51,15 @@
     right:10px;
 }
 
+@media (max-width: 1212px){
+    .landing .more-info-container{
+        display: none;
+    }
+}
 .landing .more-info{
     background-color: white;
     padding:2rem;
-    max-width: 700px;
+    max-width: 600px;
     border-radius: 5px;
     font-size: 1.1rem;
     position:relative;
@@ -72,7 +79,7 @@
     height: 100%;
     max-width: 300px;
     background-color: #273273e8;
-    box-shadow: 15vw 1px 40px #27327391;
+    box-shadow: 15vw 1px 60px #27327391;
     position:relative;
     left:0;
 }
@@ -133,6 +140,7 @@
     border: none;
     position: relative;
     top:-50%;
+    border: 2px solid transparent;
 }
 
 .navigation-buttons button:hover{
@@ -140,6 +148,7 @@
     background-color: #273273;
     transform: scale(120%);
     transform-origin: left center;
+    border-color: white;
 }
 
 .navigation-buttons button:first-of-type{
@@ -149,6 +158,120 @@
 .navigation-buttons button:last-of-type{
     transform-origin:right center;
 }
+
 .navigation-buttons button img{
     height: 70px;
+}
+@media (max-width:1024px) and (min-width: 820px){
+    .homepage-landing{
+        min-height: unset;
+        max-height: 628px;
+        overflow: hidden;
+    }
+    .swiper-slide{
+        max-height: 628px;
+    }
+    .landing-image{
+        max-height: 628px;
+    }
+    .slide-title .index{
+        font-size: 6rem;
+    }
+    .slide-title .title{
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+@media (max-width: 820px) and (min-width: 768px){
+    .blue-rectangle-container{
+        left: 2vw;
+        bottom: 0;
+        width: 50vw;
+    }
+    .beko-logo-container{
+        top:10vw;
+        left:10%;
+    }
+    .slide-title{
+        bottom: 10%;
+        left: 5vw;
+        width: 90vw;
+    }
+    .slide-title .index{
+        font-size: 7rem;
+    }
+    .slide-title .title{
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+@media (max-width: 768px){
+    .blue-rectangle-container{
+        left: 2vw;
+        bottom: 0;
+        width: 50vw;
+    }
+    .beko-logo-container{
+        top:10vw;
+        left:10%;
+    }
+    .slide-title{
+        bottom: 10%;
+        left: 5vw;
+        width: 90vw;
+    }
+    .slide-title .index{
+        font-size: 12rem;
+    }
+    .slide-title .index{
+        font-size: 8rem;
+    }
+    .slide-title .title{
+        font-size: 6rem;
+        line-height: 6rem;
+    }
+}
+@media (max-width: 450px){
+    .blue-rectangle-container{
+        left: 2vw;
+        bottom: 0;
+        width: 50vw;
+        display: none;
+    }
+    .beko-logo-container{
+        top:5vw;
+        left:10%;
+    }
+    .beko-logo-landing{
+        width: 90px;
+    }
+    .slide-title{
+        bottom: 10%;
+        left: 5vw;
+        width: 90vw;
+    }
+    .slide-title .index{
+        font-size: 8rem;
+    }
+    .slide-title .title{
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    .slide-1 .title{
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+}
+@media (max-width: 375px){
+    .slide-title .index{
+        font-size: 8rem;
+    }
+    .slide-title .title{
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+    .slide-1 .title{
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
 }

@@ -10,6 +10,8 @@ footer>div {
     background: #ffff;
     line-height: 1.5;
     width: 100%;
+    font-size: 16px;
+    display: none;
 }
 
 .footer-content-wrap {
