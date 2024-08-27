@@ -89,6 +89,8 @@ input[type="submit"] {
     margin-left: -30px;
     border: none;
     cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
 }
 
 input[type="submit"]:hover {
