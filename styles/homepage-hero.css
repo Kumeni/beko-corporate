@@ -29,8 +29,8 @@
 }
 
 .hero-image-container>div {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 200px;
     background: green;
     border-radius: 50%;
 }
