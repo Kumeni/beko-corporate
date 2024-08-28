@@ -11,6 +11,8 @@ footer>div {
     line-height: 1.5;
     width: 100%;
     font-size: 16px;
+    position: relative;
+    top: 0;
     /* display: none; */
 }
 
@@ -159,12 +161,12 @@ input[type="submit"]:hover {
 @media (max-width: 875px) {
     .footer-content-wrap {
         display:grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
         grid-template-rows: auto auto;
         column-gap: 5%;
         row-gap: 2rem;
         justify-content: space-between;
-        padding: 1rem;
+        padding: 1.5rem;
         width: 100%;
         line-break: auto;
         line-height: 1.5;
