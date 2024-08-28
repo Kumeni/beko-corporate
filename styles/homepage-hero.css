@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.homepage-hero {
+    background: #ffff;
+    line-height: 1.5;
+    width: 100%;
+    font-size: 16px;
+    position: relative;
+}
+
+.hero-container-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    padding: 2rem 4rem;
+    width: 100vw;
+    max-width: 1440px;
+    position: relative;
+    top: 0;
+}
+
+.hero-image-container>div {
+    width: 400px;
+    height: 400px;
+    background: green;
+    border-radius: 50%;
+}
+
+.hero-text-container>div {
+    width: 175px;
+    height: 2.5px;
+    background: gold;
+    line-break: auto;
+}
