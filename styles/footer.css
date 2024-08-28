@@ -12,7 +12,7 @@ footer>div {
     width: 100%;
     font-size: 16px;
     position: relative;
-    top: 0;
+    /* top: 0; */
     /* display: none; */
 }
 
