@@ -39,7 +39,7 @@
 .partener-text-container>div {
     width: 175px;
     height: 2.5px;
-    background: gold;
+    background: #FFC831;
     line-break: auto;
 }
 
@@ -72,11 +72,11 @@
 .my-heading>div {
     width: 130px;
     height: 2.5px;
-    background: gold;
+    background: #FFC831;
 }
 
 .header {
-    border-left: 2px solid gold;
+    border-left: 2px solid #FFC831;
 }
 
 .header h3 {
@@ -107,6 +107,10 @@
     grid-template-rows: auto auto auto;
     row-gap: 1.5rem;
     padding: 0;
+}
+
+.beko-production-network {
+    background: #122145;
 }
 
 .beko-in-numbers {
@@ -167,12 +171,21 @@
         width: 300px;
     }
 
-    .content-wrapper {
+    /* .content-wrapper {
         grid-template-columns: auto auto;
         column-gap: 1rem;
         line-height: 1;
         margin: 0;
         padding: 0.25rem;
+    } */
+
+    .content-wrapper {
+        grid-template-columns: auto auto;
+        column-gap: 1rem;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0.25rem;
+        width: 100%;
     }
 }
 
