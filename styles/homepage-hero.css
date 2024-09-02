@@ -9,11 +9,25 @@
     background: #ffff;
     line-height: 1.5;
     width: 100%;
-    font-size: 16px;
     position: relative;
 }
 
 .hero-container-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto max-content;
+    row-gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    padding: 2rem 4rem;
+    width: 100vw;
+    max-width: 1440px;
+    position: relative;
+    top: 10px;
+}
+
+.at-beko {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 2%;
@@ -25,19 +39,137 @@
     width: 100vw;
     max-width: 1440px;
     position: relative;
-    top: 0;
+    top: 10px;
 }
 
-.hero-image-container>div {
-    width: 450px;
-    height: 200px;
-    background: green;
-    border-radius: 50%;
+.at-beko .hero-text-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    row-gap: 2rem;
 }
 
 .hero-text-container>div {
     width: 175px;
     height: 2.5px;
-    background: gold;
+    background: #FFC831;
     line-break: auto;
+}
+
+.welcome-to-beko {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    padding: 2rem 4rem;
+    width: 100vw;
+    max-width: 1440px;
+    position: relative;
+    top: 10px;
+}
+
+.welcome-to-beko .hero-text-container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .at-beko {
+        column-gap: 1%;
+        margin: 0 auto;
+        padding: 1rem;
+        padding: 1rem 3rem;
+        width: 95vw;
+        max-width: 1024px;
+    }
+
+    .welcome-to-beko {
+        column-gap: 1%;
+        margin: 0 auto;
+        padding: 1rem;
+        padding: 1rem 3rem;
+        width: 95vw;
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 768px) {
+    .at-beko {
+        grid-template-columns: auto;
+    }
+
+    .at-beko .hero-text-container {
+        row-gap: 1.25rem;
+    }
+
+    .welcome-to-beko {
+        grid-template-columns: auto;
+    }
+
+    .welcome-to-beko .hero-text-container{
+        position: relative;
+        top: 425px;
+        row-gap: 1.5rem;
+    }
+
+    .welcome-to-beko .hero-image-container{
+        position: relative;
+        bottom: 220px;
+    }
+}
+
+@media (max-width: 425px) {
+    .welcome-to-beko .hero-text-container {
+        position:relative;
+        top: 210px;
+    }
+
+    .welcome-to-beko .hero-image-container {
+        position: relative;
+        bottom: 300px;
+    }
+
+    .at-beko {
+        margin: 0 auto;
+        padding: 2rem;
+        padding: 2rem 4rem;
+        width: 100vw;
+        max-width: 1440px;
+    }
+
+    .hero-container-wrapper {
+        grid-template-columns: auto;
+        grid-template-rows: auto max-content;
+        row-gap: 2rem;
+        margin: 0 auto;
+        padding: 1rem;
+        padding: 2rem 4rem;
+        width: 100vw;
+        max-width: 1440px;
+    }
+}
+
+@media (max-width: 320px) {
+    .at-beko {
+        grid-template-columns: auto;
+    }
+
+    .welcome-to-beko {
+        grid-template-columns: auto;
+    }
+
+    .welcome-to-beko .hero-text-container {
+        position:relative;
+        top: 100px;
+    }
+
+    .welcome-to-beko .hero-image-container {
+        position: relative;
+        bottom: 500px;
+    }
 }

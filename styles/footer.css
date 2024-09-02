@@ -5,12 +5,10 @@
     width: 100%;
 }
 footer{
-    background: #ffff;
+    background: #EDEDED;
     line-height: 1.5;
     width: 100%;
-    font-size: 16px;
     position: relative;
-    /* top: 0; */
     /* display: none; */
 }
 
@@ -92,8 +90,8 @@ input[type="email"] {
     height: 45px;
     border-radius: 50px;
     text-align: center;
-    background: #d3d3d3;
-    border: none;
+    background: #EDEDED;
+    border: 1px solid grey;
 
 }
 
@@ -101,7 +99,7 @@ input[type="submit"] {
     width: 120px;
     height: 45px;
     border-radius: 50px;
-    background: rgb(46, 177, 46);
+    background: #54BB6C;
     color: white;
     margin-left: -30px;
     border: none;
@@ -126,7 +124,7 @@ input[type="submit"]:hover {
 
 .copyright-tag a {
     text-decoration: none;
-    color: blue;
+    color: #29A9E1;
 }
 
 @media (max-width: 1091px) {
@@ -147,9 +145,9 @@ input[type="submit"]:hover {
 @media (max-width: 1024px){
     .footer-content-wrap {
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto;
         grid-template-rows: auto auto;
-        column-gap: 5%;
+        column-gap: 2.5%;
         row-gap: 2rem;
         justify-content: space-between;
         padding: 1rem;
