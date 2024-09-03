@@ -1,0 +1,115 @@
+.offers, .offer{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+.what-we-offer{
+    padding-top: 1rem;
+    text-align: center;
+}
+.what-we-offer .underline{
+    margin: 1rem auto;
+}
+.offers{
+    margin: 3rem auto;
+    grid-template-columns: repeat(2, 40%);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-content: center;;
+}
+.offer{
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgb(210, 210, 210);
+    position: relative;
+    height: 370px;
+    grid-template-rows: repeat(2, max-content);
+    align-content: center;
+    row-gap: 2rem;
+    text-align: left;
+    padding:1rem 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.offer img{
+    transition: all 1s ease-in-out;
+}
+.offer:hover{
+    cursor: pointer;
+}
+.offer:hover img{
+    transform: scale(110%);
+}
+.offer-image-container{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right:0;
+    left:0;
+}
+.offer-image-container img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+.offer h3, .offer a{
+    z-index: 2;
+}
+.offer a{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .5s;
+}
+.home-appliances a{
+    background-color: #ee313a;
+    color: white;
+}
+.solar-panel-products{
+    background-color: #273273;
+    color: white;
+}
+.solar-panel-products a{
+    background-color: #273273;
+    color: white;
+}
+.ac-solutions a, .kitchen-cabinets a{
+    background-color: #fec730;
+    color: white;
+}
+.hotel-concepts a, .wardrobes{
+    background-color: #53bbbc;
+    color: white;
+}
+.doors a, .corporate-scenting-solutions a, .ev-chargers{
+    background-color: #dcdcdc;
+}
+.offer h3{
+    font-size: 1.9rem;
+    color: #273273;
+}
+.browse-button{
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 6px rgb(45, 45, 45);
+    width: max-content;
+    text-decoration: none;
+}
+.offer a:hover{
+    color: gold;
+}
+.home-appliances h3{
+    color: white;
+}
+.solar-panel-products h3{
+    color: white;
+}
+.ev-chargers h3{
+    color: white;
+}
+.corporate-scenting-solutions h3{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+}

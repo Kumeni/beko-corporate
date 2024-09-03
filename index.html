@@ -6,14 +6,18 @@
 
     <link rel="stylesheet" href="./scripts/swiper/swiper-bundle.min.css" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" href="./styles/homepage-landing.css" />
     <link rel="stylesheet" type="text/css" href="./styles/global.css" />
     <link rel="stylesheet" type="text/css" href="./styles/footer.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/header.css" />
     <link rel="stylesheet" type="text/css" href="./styles/homepage-hero.css" />
     <link rel="stylesheet" type="text/css" href="./styles/homepage-main.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/homepage-landing.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/what-we-offer.css" />
+
     <title>Beko Corporate</title>
 </head>
 <body>
+    <section class="homepage-landing-container">
     <section class="homepage-landing">
         <div class="navigation-buttons">
             <button class="left-arrow" onclick="prevLandingSlide()"><img src="./assets/icons/left arrow.png" alt="left arrow" /></button>
@@ -93,49 +97,198 @@
                 </div>
             </div>
     </section>
-
-    <section class="homepage-hero">
-        <div class="hero-container-wrapper">
-            <div class="at-beko">
-                <div class="hero-image-container">
-                    <img src="./assets/homepage-images/kitchen appliances 3 by beko.png" />
-                </div>
-                <div class="hero-text-container">
-                    <h2>At Beko</h2>
+    </section>
+    <header class="navigation">
+        <div class="menu">
+            <div class="logo">
+                <div 
+                    class="menu-bars large-screen-menu-bars" 
+                    id="navigation-bars" 
+                    onclick="toggleNavigation(true)" >
                     <div></div>
-                    <p>We embrace sustainability as our business model and aim to inspire sustainable lives throughout our value chain.</p>
+                    <div></div>
+                    <div></div>
+                </div>
+                <a href="./"><img class="beko-logo" src="./assets/icons/white beko logo.png" alt="Beko logo white" /></a>
+            </div>
+            <div class="our-services">
+                <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
+                <div>
+                    <ul>
+                        <a href="#">Product 1</a>
+                        <a href="#">Product 2</a>
+                        <a href="#">Product 3</a>
+                        <a href="#">Product 4</a>
+                    </ul>
                 </div>
             </div>
-            <div class="welcome-to-beko">
-                <div class="hero-text-container">
-                    <h2>Welcome to Beko Corporate Solutions</h2>
-                    <div></div>
-                    <p>At Beko Corporate Solutions, we understand that in today’s fast-paced business environment, your organization needs more than just appliances—it needs reliable, eficient, and innovative solutions that drive productivity and enhance your operational eficiency.</p>
-                </div>
-                <div class="hero-image-container">
-                    <img src="./assets/homepage-images/kitchen appliances 2 by beko.png" />
-                </div>
+            <ul class="menu-items">
+                <a href="./about-us.html" class="dynamic-text">About Us</a>
+                <a class="dynamic-text" href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+            </ul>
+            <div 
+                class="menu-bars small-screen-menu-bars" 
+                id="navigation-bars" 
+                onclick="toggleNavigation(true)" >
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
-    </section>
+        <div class="hamburger-menu">
+            <ul class="hamburger-menu-ul">
+                <a href="./our-projects.html">Our Projects</a>
+                <a href="./our-partners.html">Our Partners</a>
+                <a href="./about-us.html">About Us</a>
+                <li>
+                    <span>Resources</span>
+                    <div class="underline"></div>
+                    <ul>
+                        <a href="careers.html">Careers</a>
+                        <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                    </ul>
+                </li>
+                <a href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <li>
+                    <span>Our Services</span>
+                    <div class="underline"></div>
+                    <ul>
+                        <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                        <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        <a href="./services/telecommunication-equipment-installation-and-maintenance.html">Telecommunication Equipment Installation and Maintenance</a>
+                        <a href="./services/fiber-optics-works.html">Fiber Optics Works</a>
+                        <a href="./services/supply-installation-and-maintenance-of-diesel-generators.html">Supply, Installation and Maintenance of Diesel Generators</a>
+                        <a href="./services/supply-and-implementation-of-power-lines-and-grid-extension-services.html">Supply and implementation of Power Lines and Grid Extension Services</a>
+                        <a href="./services/electrical-and-mechanical-works.html">Electrical and Mechanical Works</a>
+                        <a href="./services/full-turnkey-civil-works.html">Full Turnkey Civil Works</a>
+                        <a href="./services/water-infrustructure-implementation-and-supply-and-extension-projects.html">Water Infrustructure Implementation and Supply and Extension Projects</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- <header>
+        <div>
+            <div>
 
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div>Hamberger menu</div>
+        </div>
+    </header> -->
     <main>
+        <section class="homepage-hero">
+            <div class="hero-container-wrapper">
+                <div class="at-beko">
+                    <div class="hero-image-container">
+                        <img src="./assets/homepage-images/kitchen appliances 3 by beko.png" />
+                    </div>
+                    <div class="hero-text-container">
+                        <h2>At Beko</h2>
+                        <div class="underline"></div>
+                        <p>We embrace sustainability as our business model and aim to inspire sustainable lives throughout our value chain.</p>
+                    </div>
+                </div>
+                <div class="welcome-to-beko">
+                    <div class="hero-text-container">
+                        <h2>Welcome to Beko Corporate Solutions</h2>
+                        <div class="underline"></div>
+                        <p>At Beko Corporate Solutions, we understand that in today’s fast-paced business environment, your organization needs more than just appliances—it needs reliable, eficient, and innovative solutions that drive productivity and enhance your operational eficiency.</p>
+                    </div>
+                    <div class="hero-image-container">
+                        <img src="./assets/homepage-images/kitchen appliances 2 by beko.png" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="what-we-offer">
+            <h2>What We Offer</h2>
+            <div class="underline"></div>
+            <div class="offers">
+                <div class="offer home-appliances">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Beko Europes no 1 banner.png" alt="Beko Europes no 1 banner" />
+                    </div>
+                    <h3>Beko Built In Home Appliances</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer solar-panel-products">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Solar panel and products.png" alt="Solar Panels" />
+                    </div>
+                    <h3>Solar Panel & Products</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer ac-solutions">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/AC Solutions by Beko.png" alt="AC Solutions" />
+                    </div>
+                    <h3>AC Solutions</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer hotel-concepts">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Hotel Concepts.png" alt="Hotel Concept" />
+                    </div>
+                    <h3>Hotel Concepts</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer kitchen-cabinets">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Kitchen cabinets.png" alt="Kitchen Cabinets" />
+                    </div>
+                    <h3>Kitchen Cabinets</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer wardrobes">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Wardrobes.png" alt="Wardrobes" />
+                    </div>
+                    <h3>Wardrobes</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer doors">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Doors.png" alt="Doors" />
+                    </div>
+                    <h3>Doors</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer corporate-scenting-solutions">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/Corporate Scenting Solutions.png" alt="Corporate Scenting Solution" />
+                    </div>
+                    <h3>Corporate Scenting Solutions</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+                <div class="offer ev-chargers">
+                    <div class="offer-image-container">
+                        <img src="./assets/homepage-images/EV Chargers.png" alt="EV Charger" />
+                    </div>
+                    <h3>EV Chargers</h3>
+                    <a href="./products.html" class="browse-button">Browse...</a>
+                </div>
+            </div>
+        </section>
         <section class="why-partner-with-bekocorporate">
             <div class="partnering-with-bekocorporate">
                 <div class="partner-with-bekocorporate">
-                    <div class="partner-image-container">
+                    <div class="hero-image-container">
                         <img src="./assets/homepage-images/kitchen appliances by beko.png" />
                     </div>
-                    <div class="partener-text-container">
-                        <h3>Partner With Beko Corporate Solutions</h3>
-                        <div></div>
+                    <div class="partner-text-container">
+                        <h4>Partner With Beko Corporate Solutions</h4>
+                        <div class="underline"></div>
                         <p>Empower your business with innovative, reliable, and sustainable appliance solutions. Partner with Beko Corporate Solutions and take your operations to the next level.</p>
                     </div>
                 </div>
                 <div class="why-bekocorporate">
                     <div class="my-heading">
                         <h3>Why Beko Corporate Solutions</h3>
-                        <div></div>
+                        <div class="underline"></div>
                     </div>
                     <div class="content-wrapper">
                         <div class="list-style-icon">
@@ -143,7 +296,7 @@
                         </div>
                         <div class="text-container">
                             <div class="header">
-                                <h3>Industry Expertise:</h3>
+                                <h4>Industry Expertise:</h4>
                             </div>
                             <p>With years of experience, we understand the unique challenges of various industries and provide solutions that are tailored to meet them.</p>
                         </div>
@@ -154,7 +307,7 @@
                         </div>
                         <div class="text-container">
                             <div class="header">
-                                <h3>Comprehensive Support:</h3>
+                                <h4>Comprehensive Support:</h4>
                             </div>
                             <p>From consultation to installation and maintenance, we offer end-to-end support to ensure your operations run smoothly.</p>
                         </div>
@@ -165,7 +318,7 @@
                         </div>
                         <div class="text-container">
                             <div class="header">
-                                <h3>Global Presence, Local Understanding</h3>
+                                <h4>Global Presence, Local Understanding</h4>
                             </div>
                             <p>As a global brand with a deep understanding of local markets, we provide solutions that are both globally competitive and locally relevant.</p>
                         </div>
@@ -188,8 +341,8 @@
         </section>
 
     </main>
-    </main>
-    <footer>
+    
+    <footer >
         <div class="footer-content-wrap">
             <div class="brands">
                 <div class="brand-logo-name">
@@ -249,10 +402,11 @@
         </div>
     </footer>
     
-    <script type="text/javascript" src = "./scripts/landing-animation.js"></script>
-    <script type="text/javascript" src = "./scripts/swiper/initialize-swiper-multiple.js"></script>
+    
     <script type="text/javascript" src = "./scripts/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src = "./scripts/swiper/initialize-swiper-multiple.js"></script>
     <script type="text/javascript" src="./scripts/swiper/initialize-swiper.js"></script>
+    <script type="text/javascript" src = "./scripts/landing-animation.js"></script>
     <script type="text/javascript" src="./scripts/current-year.js"></script>
 </body>
 </html>

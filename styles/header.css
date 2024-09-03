@@ -1,0 +1,213 @@
+header{
+    /* height: 30px; */
+    position: sticky;
+    top: 0px;
+    background-color: #273273e1;
+    display: block;
+    z-index: 5;
+}
+.menu, .menu-bars, .logo, .menu-items{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+
+.logo{
+    grid-template-columns: repeat(2, auto);
+    align-content: center;
+    column-gap: 1.5rem;
+}
+
+.menu{
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    padding:0.6rem 1rem;
+    padding:1rem 1rem;
+    align-items: center;
+    /* border:1px solid black; */
+}
+
+.beko-logo{
+    height: 35px;
+}
+.outer-circle{
+    width: 22px;
+    height:22px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: inline-block;
+    text-align: center;
+    margin-left: 1rem;
+}
+.inner-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: inline-block;
+    transition: all .5s;
+}
+
+.menu-bars{
+    width: 38px;
+    height: 35px;
+    border-radius: 5px;
+    grid-template-rows: repeat(3, auto);
+    align-content: space-between;
+    padding:0.6rem 0.5rem;
+}
+
+.menu-bars:hover{
+    cursor: pointer;
+}
+
+.menu-bars:hover > div{
+    background-color: rgb(245, 245, 245);
+}
+
+.menu-bars > div{
+    height: 2px;
+    /* background-color: white; */
+    background-color: white;
+}
+
+.menu-bars > div:nth-of-type(2){
+    width:75%;
+}
+
+.menu-bars > div:nth-of-type(3){
+    width:50%;
+}
+
+.menu-items{
+    grid-template-columns: repeat(3, auto);
+    column-gap:3rem;
+    justify-content: right;
+    list-style: none;
+}
+
+.our-services:hover ul{
+    /* border: 1px solid black; */
+    display: block;
+}
+
+.our-services > span{
+    transition: all .5s;
+}
+.our-services > span:hover{
+    cursor: pointer;
+    color: gold;
+}
+.our-services:hover .inner-circle, .our-services:hover .outer-circle{
+    border-color: gold;
+}
+.our-services > div{
+    position: relative;
+    top:0.8rem;
+    left:-0.3rem;
+    /* border:1px solid red; */
+}
+
+.our-services > div > ul{
+    display: none;
+    position: absolute;
+    width: max-content;
+    padding: 0.8rem 0rem;
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.our-services > div > ul a{
+    display: block;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    border-left:4px solid transparent;
+    transition: border-color 1s;
+}
+.our-services > div > ul a:hover{
+    border-color: #fcc22c;
+    border-left-color: #fcc22c;
+    /* box-shadow: 1px 1px 3px rgb(120, 120, 120); */
+}
+.menu-items li, .menu-items a{
+    padding: 0.8rem 0.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all .5s;
+    /* color: black; */
+}
+
+.menu-items li:hover, .menu-items a:hover{
+    cursor: pointer;
+    color: gold;
+}
+/*
+    Hamburger menu styling
+*/
+.hamburger-menu{
+    /* min-height: 100vh; */
+    background-color: white;
+    width: 0%;
+    /* white-space: nowrap; */
+    position: relative;
+    height: 0px;
+}
+
+.hamburger-menu > ul{
+    position: absolute !important;
+    top: 0px;
+    left:-3px;
+    height:100vh;
+    transition: width 0.5s;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    width:0vw;
+    padding-bottom: 3rem;
+}
+.hamburger-menu > ul ul{
+    margin-left: 1rem;
+}
+.hamburger-menu > ul > li{
+    margin: 1rem 0rem 2rem 0rem;
+}
+.hamburger-menu > ul > li:hover{
+    background-color: white;
+}
+.hamburger-menu a, .hamburger-menu span{
+    display: block;
+    padding: 0.8rem 0.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight:500;
+    margin-left: 1rem;
+}
+.hamburger-menu .underline{
+    width: 40px !important;
+    margin-left: 1rem;
+}
+.small-screen-menu-bars{
+    display: none;
+}
+
+.large-screen-menu-bars{
+    display: grid;
+}
+
+@media (max-width:900px){
+    .menu-items{
+        display: none;
+    }
+    .small-screen-menu-bars{
+        display: grid;
+    }
+    .large-screen-menu-bars{
+        display: none;
+    }
+    .hamburger-menu > ul{
+        background-color: white !important;
+    }
+}
+.dynamic-text{
+    color: white;
+}

@@ -1,0 +1,111 @@
+.products, .product-name, .product-details, .product-info{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+header{
+    background-color: #273273;
+}
+.landing h1{
+    text-align: center;
+    padding: 4rem 0rem 0rem 0rem;
+    background-color: #273273;
+    color: white;
+    padding-bottom: 2rem;
+}
+.landing .underline{
+    margin: auto;
+    background-color: white;
+}
+.curved-background{
+    height: 400px;
+    border-radius: 50%;
+    background-color: #273273;
+    margin-top: -200px;
+    z-index: -2;
+}
+.products{
+    grid-template-columns: repeat(3, 28%);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.product{
+    position: relative;
+}
+.product-image-container > img{
+    border-radius: 2rem 2rem 0rem 0rem;
+}
+.product-info{
+    margin-top: -2rem;
+    box-shadow: 1px 1px 4px rgb(45, 45, 45);
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 2rem;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 1rem;
+}
+
+.product > div:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+.product-info > a{
+    padding: 1.3rem 4rem;
+    background-color: #273273;
+    display: block;
+    color: white;
+    text-decoration: none;
+    width: max-content;
+    margin: 1rem auto;
+    border-radius: 2rem;
+}
+.product-name{
+    grid-template-columns: max-content auto max-content;
+    align-items: center;
+    column-gap: 1rem;
+}
+.product-name p{
+    font-weight: 600;
+}
+.product-info img{
+    width: 33px;
+}
+.share-icon-container{
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px rgb(120, 120, 120);
+}
+.share-icon-container a{
+    width: unset;
+    padding: 0;
+}
+.share-icon-container img{
+    width: 25px;
+}
+.product-details{
+    grid-template-columns: max-content auto;
+    column-gap: 1rem;
+}
+.product > div:nth-of-type(3){
+    transition: height .5s;
+}
+.product > div:nth-of-type(3) .product-details{
+    height: 0px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+.product > div:nth-of-type(3):hover .product-details{
+    height: 20px;
+    height: max-content;
+}
+.breadcrumbs{
+    text-align: center;
+    margin: 2rem auto;
+}
