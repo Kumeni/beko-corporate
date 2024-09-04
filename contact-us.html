@@ -3,10 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/header.css" />
     <link rel="stylesheet" type="text/css" href="./styles/footer.css" />
     <title>Contact Us</title>
 </head>
 <body>
+    <header class="navigation">
+        <div class="menu">
+            <div class="logo">
+                <div 
+                    class="menu-bars large-screen-menu-bars" 
+                    id="navigation-bars" 
+                    onclick="toggleNavigation(true)" >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <a href="./"><img class="beko-logo" src="./assets/icons/white beko logo.png" alt="Beko logo white" /></a>
+            </div>
+            <div class="our-services">
+                <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
+                <div>
+                    <ul>
+                        <a href="#">Product 1</a>
+                        <a href="#">Product 2</a>
+                        <a href="#">Product 3</a>
+                        <a href="#">Product 4</a>
+                    </ul>
+                </div>
+            </div>
+            <ul class="menu-items">
+                <a href="./about-us.html" class="dynamic-text">About Us</a>
+                <a class="dynamic-text" href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+            </ul>
+            <div 
+                class="menu-bars small-screen-menu-bars" 
+                id="navigation-bars" 
+                onclick="toggleNavigation(true)" >
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="hamburger-menu">
+            <ul class="hamburger-menu-ul">
+                <a href="./our-projects.html">Our Projects</a>
+                <a href="./our-partners.html">Our Partners</a>
+                <a href="./about-us.html">About Us</a>
+                <li>
+                    <span>Resources</span>
+                    <div class="underline"></div>
+                    <ul>
+                        <a href="careers.html">Careers</a>
+                        <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                    </ul>
+                </li>
+                <a href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <li>
+                    <span>Our Services</span>
+                    <div class="underline"></div>
+                    <ul>
+                        <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                        <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        <a href="./services/telecommunication-equipment-installation-and-maintenance.html">Telecommunication Equipment Installation and Maintenance</a>
+                        <a href="./services/fiber-optics-works.html">Fiber Optics Works</a>
+                        <a href="./services/supply-installation-and-maintenance-of-diesel-generators.html">Supply, Installation and Maintenance of Diesel Generators</a>
+                        <a href="./services/supply-and-implementation-of-power-lines-and-grid-extension-services.html">Supply and implementation of Power Lines and Grid Extension Services</a>
+                        <a href="./services/electrical-and-mechanical-works.html">Electrical and Mechanical Works</a>
+                        <a href="./services/full-turnkey-civil-works.html">Full Turnkey Civil Works</a>
+                        <a href="./services/water-infrustructure-implementation-and-supply-and-extension-projects.html">Water Infrustructure Implementation and Supply and Extension Projects</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
     
     <footer >
         <div class="footer-content-wrap">
