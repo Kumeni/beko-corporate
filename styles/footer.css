@@ -12,6 +12,9 @@ footer{
     /* display: none; */
 }
 
+footer h3{
+    font-size: 1.2rem;
+}
 .footer-content-wrap {
     display:grid;
     grid-template-columns: auto auto auto auto;
@@ -48,7 +51,7 @@ footer{
 }
 
 .social-media-brand-logos>div img{
-    height: 35px; 
+    height: 25px; 
     width: auto;  
     margin: 0 10px; 
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -88,24 +91,26 @@ footer{
 input[type="email"] {
     width: 300px;
     height: 45px;
-    border-radius: 50px;
-    text-align: center;
+    border-radius: 50px 0px 0px 50px;
+    text-align: left;
+    padding-left: 0.9rem;
     background: #EDEDED;
-    border: 1px solid grey;
-
+    border: 1px solid #54bb6cda;
 }
-
+input[type="email"]:focus{
+    outline: none;
+    border: 1px solid #54BB6C;
+}
 input[type="submit"] {
     width: 120px;
     height: 45px;
     border-radius: 50px;
     background: #54BB6C;
     color: white;
-    margin-left: -30px;
+    margin-left: -50px;
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
-
 }
 
 input[type="submit"]:hover {

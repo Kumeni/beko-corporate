@@ -26,8 +26,8 @@ header{
 }
 .products{
     grid-template-columns: repeat(3, 28%);
-    column-gap: 2rem;
-    row-gap: 2rem;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
     justify-content: center;
     margin-bottom: 2rem;
 }
@@ -57,7 +57,7 @@ header{
     z-index: 2;
 }
 .product-info > a{
-    padding: 1.3rem 4rem;
+    padding: 1.1rem 3rem;
     background-color: #273273;
     display: block;
     color: white;

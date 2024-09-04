@@ -1,4 +1,8 @@
-.single-product-details, .single-product-information, .single-product-information h1, .varieties{
+.single-product-details, 
+.single-product-information, 
+.single-product-information h1, 
+.varieties, .contact-us-component > div,
+.contact-us-and-specifications{
     display: grid;
     display: -ms-grid;
     display: -moz-grid;
@@ -19,18 +23,18 @@
 .single-product-information{
     grid-template-rows: repeat(3, auto);
     align-content: start;
-    row-gap: 2rem;
+    row-gap: 1rem;
     padding: 2rem 0rem;
 }
 
 .single-product-information h1{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     grid-template-columns: auto max-content;
     align-items: center;
 }
 
 .single-product-information h1 img{
-    width: 35px;
+    width: 25px;
 }
 
 .single-product-information h1 a{
@@ -39,7 +43,7 @@
     border-radius: 50%;
 }
 .single-product-information h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 .varieties{
@@ -60,7 +64,7 @@
 
 .more-like-this{
     text-align: center;
-    margin-top:1rem;
+    margin: 5rem auto 3rem auto;
 }
 
 .more-like-this .underline{
@@ -68,18 +72,79 @@
 }
 
 .contact-us-component{
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .contact-us-component > div{
     width: 300px;
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 3rem;
-    border: 1px solid black;
+    grid-template-columns: max-content auto;
+    grid-template-rows: max-content;
+    align-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    margin:0.5rem 0rem;
+    background-color: #273273;
+    color: white;
 }
 
 .contact-us-component > div img{
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: relative;
+    top:2px;
+}
+
+.specifications{
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.specifications table{
+    border-collapse: collapse;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 1px 1px 4px rgb(120, 120, 120);
+    border-radius: 5px;
+}
+.specifications h2{
+    text-align: center;
+    font-size: 1.3rem;
+}
+.specifications .underline{
+    margin: 1rem auto 2rem auto;
+}
+.specifications table td, .specifications table th{
+    /* border: 1px solid rgb(120, 120, 120); */
+    text-align: left;
+    padding: 1rem;
+}
+.specifications table th{
+    width: max-content;
+    width: 200px;
+    border-bottom: 1px solid rgb(120, 120, 120);
+}
+.specifications table td{
+    width: auto;
+    border-left: 1px solid rgb(120, 120, 120);
+    border-bottom: 1px solid rgb(120, 120, 120);
+}
+.specifications table tr:last-of-type th, .specifications table tr:last-of-type td{
+    border-bottom: none;
+}
+.contact-us-and-specifications{
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    width: 80vw;
+    max-width: 1000px;
+    margin:3rem auto;
+    padding: 2rem 0rem;
+    align-items: center;
+    align-content: center;
+}
+
+main h2{
+    font-size: 1.3rem;
 }
