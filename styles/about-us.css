@@ -1,0 +1,16 @@
+.about-us-hero {
+    background-color: #273273e1;
+    color: white;
+    min-height: 50vh;
+}
+
+.hero-text-container h2 {
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+.beko-about-content {
+    background-color: #91BDD3;
+    color: white;
+}
