@@ -1,0 +1,26 @@
+.get-in-touch {
+    background-color: #91BDD3;
+}
+
+.icon-container img{
+    height: 40px; 
+    width: auto;
+}
+
+.contact-form {
+    background-color: #FFFFFF;
+}
+
+.contact-form-details input, textarea {
+    background-color: #E6E7E8;
+}
+
+.gle-maps {
+    display: grid;
+    width: 50%;
+    height: auto;
+    grid-template-columns: auto;
+    justify-self: center;
+    position:relative;
+    left: 25%;
+}

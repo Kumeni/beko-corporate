@@ -1,0 +1,25 @@
+.contact-us-hero {
+    background-color: #273273e1;
+    color: white;
+}
+
+.hero-banner {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.hero-text-container {
+    display: grid;
+    width: 50%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 1rem;
+    justify-self: center;
+    border: 1px solid blue;
+    margin-top: 3rem;
+    line-height: 1.05;
+}
+
+.hero-text-container h2 {
+    text-align: center;
+}
