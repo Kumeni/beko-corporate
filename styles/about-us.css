@@ -13,4 +13,79 @@
 .beko-about-content {
     background-color: #91BDD3;
     color: white;
+    min-height: 200vh;
 }
+
+.beko-about-information {
+    display: grid;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+    width: 100%;
+}
+
+.paragrapgh-content {
+    width: 60%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, auto);
+    row-gap: 1rem;
+    justify-self: center;
+}
+
+.paragrapgh-content h3 {
+    border-left: 3px solid #273273e1;
+    padding-left: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .beko-about-information {
+        top: 50px;
+        width: 100%;
+    } 
+    .paragrapgh-content {
+        width: 70%;
+        padding: 0.22rem;
+    }
+
+    .paragrapgh-content h3{
+        font-size: 1.3rem;
+        padding-left: 0.25rem;
+        border-left: 2.5px solid #273273e1;
+    }
+}
+
+@media (max-width: 768px) {
+    .beko-about-information {
+        top: 50px;
+        width: 100%;
+    } 
+    .paragrapgh-content {
+        width: 80%;
+        padding: 0.5rem;
+    }
+
+    .paragrapgh-content h3{
+        font-size: 1.3rem;
+        padding-left: 1rem;
+        border-left: 2.5px solid #273273e1;
+    }
+}
+
+@media (max-width: 320px) {
+    .beko-about-information {
+        top: 50px;
+        width: 100%;
+    } 
+    .paragrapgh-content {
+        width: 90%;
+        padding: 0.22rem;
+    }
+
+    .paragrapgh-content h3{
+        font-size: 1.3rem;
+        padding-left: 0.25rem;
+        border-left: 2.5px solid #273273e1;
+    }
+}
+
