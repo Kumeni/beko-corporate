@@ -31,6 +31,7 @@
     grid-template-rows: repeat(6, auto);
     row-gap: 1rem;
     justify-self: center;
+    box-shadow: 1px 1px 4px rgb(210, 210, 210);
 }
 
 .paragrapgh-content h3 {
