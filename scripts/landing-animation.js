@@ -31,7 +31,7 @@ const prepareFlyInFromRight = elements => {
 let nextSlide = 1, previousIndex;
 swiperLanding.on('slideChange', function (event) {
     let slides = document.getElementsByClassName("landing"), i, j, elementsToAnimate;
-    console.log(event.realIndex);
+    //console.log(event.realIndex);
 
     for(i=0; i<slides.length; i++){
         elementsToAnimate  = slides[i].getElementsByClassName("fly-in-from-right");
@@ -51,7 +51,9 @@ swiperLanding.on('slideChange', function (event) {
                  * If end of slides prepare the first slide
                  */
                 elementsToAnimate = slides[0].getElementsByClassName("fly-in-from-right");
-                prepareFlyInFromRight(elementsToAnimate);
+                //setTimeout(()=>{
+                    prepareFlyInFromRight(elementsToAnimate);
+                //}, 200);
             }
         }{
             /**
@@ -59,7 +61,9 @@ swiperLanding.on('slideChange', function (event) {
              */
             elementsToAnimate = slides[i].getElementsByClassName("fly-in-from-right");
             if(i > event.realIndex){
-                prepareFlyInFromRight(elementsToAnimate);
+                setTimeout(() => {
+                    prepareFlyInFromRight(elementsToAnimate);
+                }, 200);
             } else if(i < event.realIndex){
                 flyInFromRight(elementsToAnimate, 0);
             }

@@ -122,7 +122,6 @@ input[type="submit"]:hover {
     width: 100%;
     background: rgb(196, 204, 212);
     min-height: 10vh;
-    font-weight: bold;
     display: grid;
     align-items: center;
 }
@@ -287,7 +286,7 @@ input[type="submit"]:hover {
         column-gap: 2%;
         row-gap: 2rem;
         justify-content: space-between;
-        padding: 1rem;
+        padding: 4rem 1rem;
         width: 100%;
         line-break: auto;
         line-height: 1.5;
@@ -315,7 +314,7 @@ input[type="submit"]:hover {
     }
 
     .news-letter h3,
-    h4 {
+    .news-letter h4 {
         text-align: center;
     }
 }

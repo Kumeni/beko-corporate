@@ -7,7 +7,7 @@ header{
     z-index: 5;
 }
 
-.menu, .menu-bars, .logo, .menu-items{
+.menu, .menu-bars, .logo, .menu-items, .outer-circle, .dynamic-text{
     display: grid;
     display: -ms-grid;
     display: -moz-grid;
@@ -37,18 +37,24 @@ header{
     height:22px;
     border-radius: 50%;
     border: 2px solid white;
-    display: inline-block;
-    text-align: center;
+    /* display: inline-block; */
+    /* text-align: center; */
     margin-left: 1rem;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .inner-circle{
     width: 10px;
     height: 10px;
+    display: block;
     border-radius: 50%;
     border: 2px solid white;
     display: inline-block;
     transition: all .5s;
+    justify-self: center;
 }
 
 .menu-bars{
@@ -216,4 +222,6 @@ header{
 }
 .dynamic-text{
     color: white;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
 }

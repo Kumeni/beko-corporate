@@ -17,6 +17,16 @@
     row-gap: 2rem;
     justify-content: center;;
 }
+@media (max-width:1024px){
+    .offers{
+        grid-template-columns: repeat(2, 46%);
+    }
+}
+@media (max-width: 768px){
+    .offers{
+        grid-template-columns: auto;
+    }
+}
 .offer{
     border-radius: 20px;
     box-shadow: 1px 1px 4px rgb(210, 210, 210);
@@ -31,6 +41,14 @@
     overflow: hidden;
 }
 
+@media (max-width: 768px){
+    .offers{
+        grid-template-columns: auto;
+    }
+    .offer{
+        width: 95vw;
+    }
+}
 .offer img{
     transition: all 1s ease-in-out;
 }

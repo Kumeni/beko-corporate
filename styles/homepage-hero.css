@@ -12,93 +12,47 @@
 
 .hero-container-wrapper {
     max-width: 1440px;
-    padding-top: 3rem;
+    padding: 2rem 0rem;
     margin: auto;
 }
 
-.at-beko {
+.at-beko, .welcome-to-beko {
     grid-template-columns: repeat(2, 50%);
-    column-gap: 2%;
+    column-gap: 1rem;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    width: 100vw;
     max-width: 1440px;
-}
-
-.welcome-to-beko {
-    grid-template-columns: repeat(2, 50%);
-    column-gap: 2%;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    padding: 2rem 4rem;
-    width: 100vw;
-    max-width: 1440px;
-}
-
-.at-beko, .welcome-to-beko{
     width: 90vw;
     margin: auto;
 }
-
 .hero-image-container img{
     border-radius: 10px;
 }
-
+@media (max-width: 1024px){
+    .at-beko, .welcome-to-beko{
+        width: 100vw;
+        padding: 1rem 2rem;
+    }
+}
 .hero-container-wrapper .hero-text-container{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     row-gap: 1rem;
 }
-
-@media (max-width: 1024px) {
-    .at-beko {
-        column-gap: 1%;
-        margin: 0 auto;
-        padding: 1rem;
-        padding: 1rem 3rem;
-        width: 95vw;
-        max-width: 1024px;
-    }
-
-    .welcome-to-beko {
-        column-gap: 1%;
-        margin: 0 auto;
-        padding: 1rem;
-        padding: 1rem 3rem;
-        width: 95vw;
-        max-width: 1024px;
-    }
-}
-
 @media (max-width: 768px) {
-    .at-beko {
+    .at-beko, .welcome-to-beko {
         grid-template-columns: auto;
+        row-gap: 2rem;
+        padding: 1rem;
     }
-
-    .at-beko .hero-text-container {
-        row-gap: 1.25rem;
-    }
-
-    .welcome-to-beko {
-        grid-template-columns: auto;
-    }
-
     .welcome-to-beko .hero-text-container{
-        position: relative;
-        top: 425px;
-        row-gap: 1.5rem;
-    }
-
-    .welcome-to-beko .hero-image-container{
-        position: relative;
-        bottom: 220px;
+        grid-area: 2/1/span 1/span 1;
     }
 }
 
-@media (max-width: 425px) {
+/*@media (max-width: 425px) {
     .welcome-to-beko .hero-text-container {
         position:relative;
         top: 210px;
@@ -147,4 +101,4 @@
         position: relative;
         bottom: 500px;
     }
-}
+}*/

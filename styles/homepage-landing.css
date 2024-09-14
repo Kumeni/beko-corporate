@@ -5,11 +5,15 @@
 }
 
 .homepage-landing-container{
-    position: sticky;
-    top: 0;
+    /*position: sticky;
+    top: 0;*/
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
     background-color: #273273;
 }
-.homepage-landing{
+.homepage-landing, .homepage-landing-decoy{
     min-height: 100vh;
     position: relative;
     width:auto;
@@ -61,7 +65,11 @@
 .navigation-buttons button img{
     height: 70px;
 }
-
+@media (max-width: 420px){
+    .navigation-buttons button img{
+        height: 40px;
+    }
+}
 /*
     Styling the landing image
 */
@@ -76,7 +84,6 @@
     height: 100%;
     object-fit: cover;
 }
-
 
 /*
     Positioning elements in the landing container
@@ -173,7 +180,7 @@
 
 
 @media (max-width:1024px) and (min-width: 820px){
-    .homepage-landing{
+    .homepage-landing, .homepage-landing-decoy{
         min-height: unset;
         max-height: 628px;
         overflow: hidden;
@@ -256,7 +263,7 @@
         width: 90px;
     }
     .slide-title{
-        bottom: 10%;
+        bottom: 20%;
         left: 5vw;
         width: 90vw;
     }
@@ -281,7 +288,14 @@
         line-height: 3.5rem;
     }
     .slide-1 .title{
+        font-size: 2.6rem;
+        line-height: 2.6rem;
+    }
+    .slide-3 .title{
         font-size: 2.8rem;
         line-height: 2.8rem;
     }
+}
+@media (max-width: 320px){
+
 }

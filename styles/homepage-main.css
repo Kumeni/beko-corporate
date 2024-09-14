@@ -3,11 +3,15 @@ main{
     position:relative;
     z-index: 1;
 }
+.partnering-with-bekocorporate, .partner-with-bekocorporate{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
 .partnering-with-bekocorporate  {
     background: #ffff;
     width: 100%;
     max-width: 1440px;
-    display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(2, 50%);
     row-gap: 2.9rem;
@@ -16,30 +20,29 @@ main{
 }
 
 .partner-with-bekocorporate {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    column-gap: 2%;
+    grid-template-columns: 50% 50%;
+    column-gap: 2rem;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    padding: 1rem;
-    padding: 2rem 4rem;
+    padding: 1rem 2rem;
     width: 100vw;
     max-width: 1440px;
 }
-
-.partner-text-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    row-gap: 1rem;
+.partner-text-container .underline{
+    margin: 1rem 0rem;
 }
-
+.partner-text-container{
+    width: 80%;
+}
+@media (max-width: 1200px){
+    .partner-text-container{
+        width: 100%;
+    }
+}
 .why-bekocorporate {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto;
-    row-gap: 2.5rem;
+    row-gap: 2rem;
     justify-content: center;
 }
 
@@ -50,7 +53,9 @@ main{
     row-gap: 2rem;
     justify-content: center;
 }
-
+.my-heading h3{
+    text-align: center;
+}
 .my-heading .underline{
     margin: auto;
 }
@@ -60,12 +65,13 @@ main{
 
 .header h4 {
     padding-left: 1rem;
+    text-align: left;
 }
 
 .content-wrapper {
     display: grid;
     grid-template-columns: max-content auto;
-    column-gap: 1.5rem;
+    column-gap: 1rem;
     align-items: center;
     width: 80%;
     padding: 2rem 2rem;
@@ -85,13 +91,12 @@ main{
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     row-gap: 1.5rem;
-    padding: 0;
 }
 
 .beko-production-network {
     background: #122145;
     overflow: hidden;
-    margin-top: 13rem;
+    margin-top: 2rem;
 }
 
 .beko-in-numbers {
@@ -105,23 +110,15 @@ main{
     .content-wrapper {
         column-gap: 1rem;
         line-break: auto;
-        width: 60%;;
         margin-left: 0.1;
-        padding: 0;
+        padding: 2rem;
     }
 
     .partner-with-bekocorporate {
-        grid-template-columns: auto auto;
-        column-gap: 1.5%;
-        margin: 0;
-        padding: 0.5rem;
-        padding: 1.5rem 3.5rem;
-        width: 95vw;
-        max-width: 1024px;
+        column-gap: 1rem;
     }
 
     .partnering-with-bekocorporate  {
-        line-height: 1;
         max-width: 1024px;
         grid-template-columns: auto;
         grid-template-rows: auto auto;
@@ -137,6 +134,7 @@ main{
 @media (max-width: 768px) {
     .partner-with-bekocorporate {
         grid-template-columns: auto;
+        row-gap:1rem;
     }
 
     .partnering-with-bekocorporate .partener-text-container {
@@ -144,28 +142,20 @@ main{
         top: 25px;
         padding-bottom: 20px;
     }
+    .content-wrapper{
+        width: 95%;
+    }
 }
 
 @media (max-width: 425px) {
     .beko-in-numbers img{
-        width: 300px;
+        width:100%;
     }
-
-    /* .content-wrapper {
-        grid-template-columns: auto auto;
-        column-gap: 1rem;
-        line-height: 1;
-        margin: 0;
-        padding: 0.25rem;
-    } */
-
-    .content-wrapper {
-        grid-template-columns: auto auto;
-        column-gap: 1rem;
-        line-height: 1.5;
-        margin: 0;
-        padding: 0.25rem;
-        width: 100%;
+    .partner-with-bekocorporate {
+        padding: 1rem;
+    }
+    .content-wrapper{
+        padding:1rem;
     }
 }
 
@@ -178,14 +168,5 @@ main{
 
     .partner-with-bekocorporate {
         grid-template-columns: auto;
-    }
-
-    .content-wrapper {
-        grid-template-columns: auto auto;
-        column-gap: 1rem;
-        line-height: 1.5;
-        margin: 0;
-        padding: 0.25rem;
-        width: 100%;
     }
 }
