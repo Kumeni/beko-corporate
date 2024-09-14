@@ -25,7 +25,7 @@ header{
     z-index: -2;
 }
 .products{
-    grid-template-columns: repeat(3, 28%);
+    grid-template-columns: repeat(3, 25%);
     column-gap: 1.5rem;
     row-gap: 1.5rem;
     justify-content: center;
@@ -33,9 +33,20 @@ header{
 }
 .product{
     position: relative;
+    height: max-content;
+}
+.product-image-container{
+    background-color: skyblue;
+    border-radius: 2rem 2rem 0rem 0rem;
+    padding: 2rem 0.5rem 3rem 0.5rem;
 }
 .product-image-container > img{
-    border-radius: 2rem 2rem 0rem 0rem;
+    /* border-radius: 2rem 2rem 0rem 0rem; */
+    cursor: pointer;
+    transition: all .5s;
+}
+.product:hover .product-image-container > img{
+    transform:scale(95%);
 }
 .product-info{
     margin-top: -2rem;

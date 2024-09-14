@@ -11,6 +11,7 @@ main{
     grid-template-columns: auto;
     grid-template-rows: repeat(2, 50%);
     row-gap: 2.9rem;
+    margin: auto;
     /* display: none; */
 }
 

@@ -13,7 +13,8 @@
     min-height: 100vh;
     position: relative;
     width:auto;
-    max-width: 1440px;
+    /* max-width: 1440px; */
+    margin: auto;
 }
 
 .swiper-slide{
