@@ -45,13 +45,6 @@
 .hero-image-container img{
     border-radius: 10px;
 }
-/* 
-.hero-text-container>div {
-    width: 100px;
-    height: 2.5px;
-    background: #FFC831;
-    line-break: auto;
-} */
 
 .hero-container-wrapper .hero-text-container{
     display: grid;
