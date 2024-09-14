@@ -13,12 +13,29 @@
     justify-content: center;
     column-gap: 1rem;
 }
-
+@media (max-width: 1250px){
+    .single-product-details{
+        grid-template-columns: repeat(2, 47%);
+    }
+}
+@media (max-width: 767px){
+    .single-product-details{
+        grid-template-columns: auto;
+        padding: 1rem;
+    }
+}
 .single-product-images{
     background-color: skyblue;
     height: 500px;
     border-radius: 10px;
     padding: 1rem;
+}
+@media(max-width: 767px){
+    .single-product-images{
+        height: auto;
+        background-color: unset;
+        padding: 0rem;
+    }
 }
 
 .single-product-image{
@@ -62,8 +79,26 @@
     height: 100px;
     background-color: #273273;
     margin-bottom: 0.5rem;
+    border-radius: 10px;
 }
-
+@media(max-width: 375px){
+    .varieties > div > div:first-of-type{
+        width: 25vw;
+        height:25vw;
+        margin: 0rem auto 0.5rem auto;
+    }
+    .varieties > div > p{
+        text-align: center;
+    }
+    .single-product-varieties h2{
+        text-align: center;
+    }
+    .varieties{
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        row-gap: 1rem;
+    }
+}
 .varieties > div > div:hover{
     cursor: pointer;
 }
@@ -94,7 +129,11 @@
     background-color: #273273;
     color: white;
 }
-
+@media(max-width: 767px){
+    .contact-us-component > div{
+        margin: 0.5rem auto;
+    }
+}
 .contact-us-component > div img{
     width: 55px;
     height: 55px;
@@ -106,6 +145,7 @@
 .specifications{
     max-width: 1000px;
     margin: 2rem auto;
+    padding: 1rem;
 }
 
 .specifications table{
@@ -132,6 +172,16 @@
     width: 200px;
     border-bottom: 1px solid rgb(120, 120, 120);
 }
+@media (max-width: 550px){
+    .specifications table th{
+        width: 130px;
+    }
+}
+@media(max-width: 375px){
+    .specifications table th{
+        width: 100px;
+    }
+}
 .specifications table td{
     width: auto;
     border-left: 1px solid rgb(120, 120, 120);
@@ -149,8 +199,19 @@
     padding: 2rem 0rem;
     align-items: center;
     align-content: center;
+    column-gap: 1rem;
 }
-
+@media(max-width: 768px){
+    .contact-us-and-specifications{
+        width: auto;
+        padding: 1rem;
+    }
+}
+@media (max-width: 767px){
+    .contact-us-and-specifications{
+        grid-template-columns: auto;
+    }
+}
 main h2{
     font-size: 1.3rem;
 }
