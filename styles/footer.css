@@ -88,7 +88,7 @@ footer h3{
 }
 
 
-input[type="email"] {
+footer input[type="email"] {
     width: 300px;
     height: 45px;
     border-radius: 50px 0px 0px 50px;
@@ -97,11 +97,11 @@ input[type="email"] {
     background: #EDEDED;
     border: 1px solid #54bb6cda;
 }
-input[type="email"]:focus{
+footer input[type="email"]:focus{
     outline: none;
     border: 1px solid #54BB6C;
 }
-input[type="submit"] {
+footer input[type="submit"] {
     width: 120px;
     height: 45px;
     border-radius: 50px;
@@ -113,7 +113,7 @@ input[type="submit"] {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-input[type="submit"]:hover {
+footer input[type="submit"]:hover {
     color: goldenrod;
 }
 
@@ -132,7 +132,7 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 1091px) {
-    input[type="email"] {
+    footer input[type="email"] {
         width: 250px;
         height: 45px;
         text-align: left;
@@ -140,7 +140,7 @@ input[type="submit"]:hover {
         margin-left: -10px;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 110px;
         margin-left: -70px;
     }
@@ -159,7 +159,7 @@ input[type="submit"]:hover {
         line-height: 1.5;
     }
 
-    input[type="email"] {
+    footer input[type="email"] {
         width: 250px;
         height: 45px;
         text-align: left;
@@ -167,7 +167,7 @@ input[type="submit"]:hover {
         margin-left: -10px;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 110px;
         margin-left: -70px;
     }
@@ -186,7 +186,7 @@ input[type="submit"]:hover {
         line-break: auto;
         line-height: 1.5;
     }
-    input[type="email"] {
+    footer input[type="email"] {
         width: 350px;
         height: 45px;
         text-align: left;
@@ -194,14 +194,14 @@ input[type="submit"]:hover {
         margin-left: -10px;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 150px;
         margin-left: -50px;
     }
 }
 
 @media (max-width: 835px) {
-    input[type="email"] {
+    footer input[type="email"] {
         width: 250px;
         height: 45px;
         text-align: left;
@@ -209,7 +209,7 @@ input[type="submit"]:hover {
         margin-left: -10px;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 150px;
         margin-left: -30px;
     }
@@ -233,7 +233,7 @@ input[type="submit"]:hover {
         line-height: 1.5;
     }
 
-    input[type="email"] {
+    footer input[type="email"] {
         width: 250px;
         height: 45px;
         text-align: left;
@@ -241,7 +241,7 @@ input[type="submit"]:hover {
         margin-left: -10px;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 110px;
         margin-left: -70px;
     }
@@ -261,7 +261,7 @@ input[type="submit"]:hover {
         line-height: 1.5;
     }
 
-    input[type="email"] {
+    footer input[type="email"] {
         width: 300px;
         height: 45px;
         text-align: left;
@@ -269,7 +269,7 @@ input[type="submit"]:hover {
         margin-left: -10px;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 110px;
         margin-left: -30px;
     }
@@ -294,12 +294,12 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 425px) {
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 110px;
         margin-left: -60px;
     }
 
-    input[type="email"] {
+    footer input[type="email"] {
         width: 250px;
         height: 45px;
         text-align: left;
@@ -342,16 +342,16 @@ input[type="submit"]:hover {
     }
 
     .news-letter h3,
-    h4 {
+    footer h4 {
         text-align: center;
     }
 
-    input[type="submit"] {
+    footer input[type="submit"] {
         width: 110px;
         margin-left: -60px;
     }
 
-    input[type="email"] {
+    footer input[type="email"] {
         width: 250px;
         height: 45px;
         text-align: left;
