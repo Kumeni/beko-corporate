@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./styles/global.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/categories.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/popup.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/form-elements.css" />
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        header
+    </header>
+    <header>
+        header
+    </header>
+    <main>
+        <nav class="navigation">
+            <ul>
+                <li><a href="./">Dashboard</a></li>
+                <li><a href="./categories.html">Categories</a></li>
+                <li><a href="./products.html">Products</a></li>
+            </ul>
+        </nav>
+        <nav>
+        </nav>
+        <section class="content">
+            <h1>Categories</h1>
+            <div class="underline"></div>
+            <div class="categories">
+                <ul class="primary-categories">
+                    <li>
+                        Category 1
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 2
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 3
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 4
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 5
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 6
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <button onclick="editCategory({parent:0, category:undefined})" class="create-category-button">Create Category</button>
+                </ul>
+                <ul>
+                    <li>
+                        Category 1
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 2
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <button onclick="editCategory({parent:1, category:undefined})" class="create-category-button">Create Category</button>
+                </ul>
+                <ul>
+                    <li>
+                        Category 1
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 2
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 3
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 4
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 5
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <button onclick="editCategory({parent:2, category:undefined})" class="create-category-button">Create Category</button>
+                </ul>
+                <ul>
+                    <li>
+                        Category 1
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <li>
+                        Category 2
+                        <span>
+                            <img src="./assets/icons/edit icon.png" alt="edit icon"/>
+                            <img src="./assets/icons/delete icon.png" alt="delete icon"/>
+                        </span>
+                    </li>
+                    <button onclick="editCategory({parent:4, category:undefined})" class="create-category-button">Create Category</button>
+                </ul>
+            </div>
+        </section>
+        <section class="popup">
+            <div>
+                <div class="popup-close">
+                    <span onclick="editCategory()" title="Close">&times;</span>
+                </div>
+            </div>
+            <div>
+                <form class="category-form" onsubmit="handleCategoryUpload(event)">
+                    <h2>Product Category</h2>
+                    <div class="underline"></div>
+                    <div class="category-name">
+                        <label>Category Name<span class="danger">*</span></label>
+                        <div>
+                            <input id="category-input" onchange="handleCategoryChange(event)" type="text" name="categoryName" class="input" />
+                            <span id="category-error" class="danger text-danger"></span>
+                        </div>
+                        <input type="SUBMIT" class="bg-success text-white" value="CREATE" id="edit-category-button"/>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="./scripts/edit-category.js"></script>
+</body>
+</html>

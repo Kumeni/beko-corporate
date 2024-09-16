@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./scripts/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/global.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/product-tile.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/popup.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/products.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/form-elements.css" />
+
+    <title>Products</title>
+</head>
+<body>
+    <header>
+        header
+    </header>
+    <header>
+        header
+    </header>
+    <main>
+        <nav class="navigation">
+            <ul>
+                <li><a href="./">Dashboard</a></li>
+                <li><a href="./categories.html">Categories</a></li>
+                <li><a href="./products.html">Products</a></li>
+            </ul>
+        </nav>
+        <nav>
+        </nav>
+        <section class="content">
+            <h1>Products</h1>
+            <div class="underline"></div>
+            <button class="upload-product-button" onclick="editProduct({})">UPLOAD PRODUCT</button>
+            <div class="products">
+                <div class="product-tile">
+                    <div class="product-image">
+                        <img src="./assets/e-commerce.jpg" alt="e-commerce picture" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-identity">
+                            <p><strong>Product Name</strong></p>
+                            <div onclick="showActionButtons(index)" class="product-options" title="More options">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="product-buttons">
+                            <p>Ksh. 2,500</p>
+                            <button title="Edit product details" class="product-edit-button" onclick="editProduct({})">EDIT</button>
+                            <!-- <button onclick="showStats(true)" title="View vehicle current status" class="vehicle-stats-button text-white bg-primary">STATS</button> -->
+                            <div class="action-buttons">
+                                <!-- <button title="Edit product details" onclick='editProduct({})' class="">EDIT</button> -->
+                                <button title="Delete product" onclick="deleteProduct(1)" class="bg-danger text-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tile">
+                    <div class="product-image">
+                        <img src="./assets/e-commerce.jpg" alt="e-commerce picture" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-identity">
+                            <p><strong>Product Name</strong></p>
+                            <div onclick="showActionButtons(index)" class="product-options" title="More options">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="product-buttons">
+                            <p style="visibility:hidden;">Ksh. 2,500</p>
+                            <button title="Edit product details" class="product-edit-button" onclick="editProduct({})">EDIT</button>
+                            <!-- <button onclick="showStats(true)" title="View vehicle current status" class="vehicle-stats-button text-white bg-primary">STATS</button> -->
+                            <div class="action-buttons">
+                                <!-- <button title="Edit product details" onclick='editProduct({})' class="">EDIT</button> -->
+                                <button title="Delete product" onclick="deleteProduct(1)" class="bg-danger text-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tile">
+                    <div class="product-image">
+                        <img src="./assets/e-commerce.jpg" alt="e-commerce picture" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-identity">
+                            <p><strong>Product Name</strong></p>
+                            <div onclick="showActionButtons(index)" class="product-options" title="More options">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="product-buttons">
+                            <p>Ksh. 2,500</p>
+                            <button title="Edit product details" class="product-edit-button" onclick="editProduct({})">EDIT</button>
+                            <!-- <button onclick="showStats(true)" title="View vehicle current status" class="vehicle-stats-button text-white bg-primary">STATS</button> -->
+                            <div class="action-buttons">
+                                <!-- <button title="Edit product details" onclick='editProduct({})' class="">EDIT</button> -->
+                                <button title="Delete product" onclick="deleteProduct(1)" class="bg-danger text-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tile">
+                    <div class="product-image">
+                        <img src="./assets/e-commerce.jpg" alt="e-commerce picture" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-identity">
+                            <p><strong>Product Name</strong></p>
+                            <div onclick="showActionButtons(index)" class="product-options" title="More options">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="product-buttons">
+                            <p>Ksh. 2,500</p>
+                            <button title="Edit product details" class="product-edit-button" onclick="editProduct({})">EDIT</button>
+                            <!-- <button onclick="showStats(true)" title="View vehicle current status" class="vehicle-stats-button text-white bg-primary">STATS</button> -->
+                            <div class="action-buttons">
+                                <!-- <button title="Edit product details" onclick='editProduct({})' class="">EDIT</button> -->
+                                <button title="Delete product" onclick="deleteProduct(1)" class="bg-danger text-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="popup">
+            <div>
+                <div class="popup-close">
+                    <span onclick="editProduct()" title="Close">&times;</span>
+                </div>
+            </div>
+            <div>
+                <form class="product-form" onsubmit="handleProductUpload(event)">
+                    <h2>Product</h2>
+                    <div class="underline"></div>
+                    <div class="general-details">
+                        <label>Product Name<span class="danger">*</span></label>
+                        <div>
+                            <input id="product-name-input" onchange="handleProductNameChange(event)" type="text" name="product-name" class="input" />
+                            <span id="product-name-error" class="danger text-danger error"></span>
+                        </div>
+                        <label>Product Description<span class="danger">*</span></label>
+                        <div>
+                            <textarea id="product-description" onchange="handleProductDescriptionChange(event)" name="product-description"></textarea>
+                            <span id="product-description-error" class="danger text-danger error"></span>
+                        </div>
+                    </div>
+
+                    <h3>Product Varieties</h3>
+                    <div class="underline"></div>
+                    <div class="varieties">
+                        <div class="variety">
+                            <h4>Variety 1 <span class="close-variety" title="Remove variety">&times;</span></h4>
+                            <label>Images <span class="danger">*</span></label>
+                            <div class="variety-images">
+                                <div class="image-preview">
+                                    <div class="no-image">
+                                        <p>No Image</p>
+                                    </div>
+                                </div>
+                                <input class="image-input" onchange="handleVarietyImageChange(0, event)" class="image-input" type="file" />
+                                <span class="image-input-error error"></span>
+                            </div>
+                            <div class="variety-details">
+                                <label>Variety Name<span class="danger">*</span></label>
+                                <div>
+                                    <input class="variety-name input" onchange="handleVarietyNameChange(0, event)" type="text" name="variety-name" />
+                                    <span class="variety-name-error danger text-danger error"></span>
+                                </div>
+                                <label>Variety Price<span class="danger">*</span></label>
+                                <div>
+                                    <input class="variety-price input" onchange="handleVarietyPriceChange(0, event)" type="number" name="variety-price"/>
+                                    <span class="variety-price-error danger text-danger error"></span>
+                                </div>
+                                <label>Variety Description<span class="danger">*</span></label>
+                                <div>
+                                    <textarea class="variety-description" onchange="handleVarietyDescriptionChange(0, event)" name="variety-description"></textarea>
+                                    <span class="variety-description-error danger text-danger error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-variety-button bg-primary" onclick="addVariety(event)">ADD VARIETY</button>
+                    
+                    <h3>Product Specifications</h3>
+                    <div class="underline"></div>
+                    <div class="product-specifications">
+                        <div class="product-specifications-group">
+                            <input type="text" placeholder="Group Name" value="Dimensions and Weight" onchange="handleGroupNameChange(0, event)"/>
+                            <table>
+                                <thead></thead>
+                                <tbody>
+                                    <tr></tr>
+                                        <th><input type="text" placeholder="Propety Name" value="Length" onchange="handlePropertyNameChange(0, 0, event)"/></th>
+                                        <td><input type="text" placeholder="Value" onchange="handleValueChange(0, 0, event)"/></td>
+                                        <td class="remove-specification-button"><button onclick="removeSpecification(0, 0)"><img src="./assets/icons/Remove Icon.png" alt="remove icon" /></button></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" placeholder="Propety Name" value="Width" onchange="handlePropertyNameChange(1, 0, event)"/></th>
+                                        <td><input type="text" placeholder="Value" onchange="handleValueChange(1, 0, event)"/></td>
+                                        <td class="remove-specification-button"><button onclick="removePropertyAndValue(1, 0)"><img src="./assets/icons/Remove Icon.png" alt="remove icon" /></button></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" placeholder="Propety Name" value="Height" onchange="handlePropertyNameChange(2, 0, event)"/></th>
+                                        <td><input type="text" placeholder="Value" onchange="handleValueChange(2, 0, event)"/></td>
+                                        <td class="remove-specification-button"><button onclick="removePropertyAndValue(2, 0)"><img src="./assets/icons/Remove Icon.png" alt="remove icon" /></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="add-specification-button" onclick="addPropertyAndValue(0)"><img src="./assets/icons/Add icon.png" alt="add icon" /></button>
+                        </div>
+                    </div>
+                    <button class="add-variety-button bg-primary" onclick="addSpecification(event)">ADD SPECIFICATIONS GROUP</button>                    
+
+                    <h3>Product Category(ies)</h3>
+                    <div class="underline"></div>
+                    <div class="categories">
+                        <div class="swiper-categories">
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div class="same-parent-categories">
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="same-parent-categories">
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="same-parent-categories">
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                        <div>Category Name <input type="checkbox" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="categorize-further">
+                        <button onclick="back(event)">Back</button>
+                        <button onclick="categorizeFurther(event)">Categorize Further</button>
+                        <div>
+                            <img src="./assets/icons/More info icon.png" alt="more info icon" class="more-info-icon" />
+                            <div class="more-info">The product will be visible in the selected categories</div>
+                        </div>
+                    </div>
+
+                    <h3>Additional Information(s)</h3>
+                    <div class="underline"></div>
+                    <div class="editors">
+                        <div class="editor"></div><br />
+                    </div>
+                    <button class="add-variety-button bg-primary" onclick="addAdditionalInfo(event)">ADD ADDITIONAL INFO</button>
+                    
+                    <input type="SUBMIT" class="bg-success text-white" value="UPLOAD PRODUCT"/>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="./scripts/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./scripts/swiper/initialize-swiper-multiple.js"></script>
+    <script type="text/javascript" src="./scripts/swiper/initialize-swiper.js"></script>
+    <script type="text/javascript" src="./scripts/quilljs/quill.min.js"></script>
+    <script type="text/javascript" src="./scripts/edit-product.js"></script>
+    <link rel="stylesheet" type="text/css" href="./scripts/quilljs/quill.bubble.css" />
+    <link rel="stylesheet" type="text/css" href="./scripts/quilljs/quill.snow.css" />
+
+    <!-- Initialize Quill editor -->
+    <script>
+
+        let quill = [];
+        const options = {
+            placeholder: 'Hello, World!',
+            theme: 'snow'
+        };
+
+        let editors = document.getElementsByClassName("editor"), i=0;
+
+        for(i=0; i<editors.length; i++){
+            quill[i] = new Quill(editors[i], options);
+        }
+    </script>
+</body>
+</html>
+
+
+

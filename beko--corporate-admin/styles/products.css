@@ -1,0 +1,266 @@
+.products, 
+.general-details, 
+.variety-details, 
+.same-parent-categories,
+.same-parent-categories > div,
+.categorize-further{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+.upload-product-button{
+    padding: 1rem 2rem;
+    border: none;
+    box-shadow: 1px 1px rgb(210, 210, 210);
+}
+.upload-product-button:hover{
+    cursor: pointer;
+}
+.products{
+    margin: 2rem auto;
+    grid-template-columns: repeat(4, 23%);
+    justify-content: space-between;
+}
+
+.product-form h2{
+    text-align: center;
+}
+
+.product-form .underline:first-of-type{
+    margin: 1rem auto;
+}
+
+.general-details{
+    margin-top: 2rem;
+}
+
+.general-details, .variety-details{
+    grid-template-columns: 180px auto;
+    row-gap: 1rem;
+    align-items: center;
+}
+
+.product-form{
+    width: 60vw;
+    margin: auto;
+}
+
+.product-form h3{
+    margin-top: 2rem;
+}
+
+.variety{
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px 4px rgb(210, 210, 210);
+    margin: 1rem 0rem;
+}
+
+.variety h4{
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.close-variety{
+    display: inline-block;
+    margin-left: auto;
+    font-size:2rem;
+    position: absolute;
+    top:-10px;
+    right: 0;
+    padding: 0rem 0.6rem 0rem 0.6rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px 4px rgb(210, 210, 210);
+}
+
+.close-variety:hover{
+    color: red;
+    cursor:pointer;
+}
+.variety-images{
+    padding: 1rem 0rem;
+}
+.single-image-preview{
+    position: relative;
+}
+.remove-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0rem 0.7rem;
+    background-color: red;
+    color: white;
+    font-size:2rem;
+    border: none;
+}
+.remove-button:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 4px rgb(45, 45, 45);
+    border-radius: 5px;
+}
+.variety-image{
+    max-height: 300px;
+    width: auto;
+}
+
+.image-preview > div:not(:first-of-type){
+    margin-left: 1rem;
+}
+.variety-images .image-preview{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: horizontal;
+    align-items: start;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.image-input{
+    margin: 1.5rem 0rem;
+}
+.variety-images .image-preview .no-image{
+    border: 2px dotted black;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.no-image{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    justify-content: center;
+    align-items: center;
+}
+.add-variety-button{
+    padding: 1rem 2rem;
+    display: block;
+    margin:2rem auto;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 4px 4px rgb(210, 210, 210);
+    border: none;
+}
+
+.add-variety-button:hover{
+    cursor: pointer;
+}
+
+.product-specifications{
+    width: max-content;
+    margin: auto;
+}
+
+.product-specifications input{
+    border: none !important;
+}
+
+.product-specifications table{
+    border-collapse: collapse;
+}
+
+.product-specifications td, .product-specifications th{
+    border: 1px solid rgb(210, 210, 210);
+}
+
+.product-specifications-group > input{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.product-specifications button{
+    background-color: none;
+    border: none;
+}
+
+.product-specifications img{
+    height: 30px;
+}
+
+.remove-specification-button{
+    position: relative;
+}
+
+.remove-specification-button button{
+    position: absolute;
+    top:10%;
+    left:1rem;
+    background-color: transparent;
+}
+
+.remove-specification-button button:hover{
+    cursor: pointer;
+}
+
+.remove-specification-button img{
+    position: relative;
+    display: block;
+    top: -50%;
+}
+.add-specification-button{
+    display: block;
+    margin: 1rem auto;
+    background-color: transparent;
+}
+
+.add-specification-button:hover{
+    cursor: pointer;
+}
+.categories{
+    margin: auto;
+}
+
+.swiper-categories{
+    overflow: hidden;
+}
+.same-parent-categories{
+    grid-template-columns: repeat(4, auto);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.same-parent-categories > div{
+    border: 1px solid rgb(210, 210, 210);
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.categorize-further{
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    align-items: center;
+    column-gap:1rem;;
+    margin: 2rem auto;
+}
+
+.categorize-further button{
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 1px 1px 4px 4px rgb(210, 210, 210);
+    display: block;
+    margin-left: auto;
+}
+
+.categorize-further > div{
+    position: relative;
+}
+
+.categorize-further .more-info{
+    position: absolute;
+    top: 20%;
+    width: 400px;
+    left: 4rem;
+}
+
+.more-info-icon{
+    width: 2.5rem;
+}
+
+.editor{
+    margin: 2rem auto;
+    border: 2px solid green;
+}
