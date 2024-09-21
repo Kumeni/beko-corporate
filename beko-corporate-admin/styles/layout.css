@@ -1,0 +1,29 @@
+main{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+
+main{
+    grid-template-columns: 200px auto;
+}
+
+header{
+    height: 64px;
+}
+
+main nav:first-of-type{
+    position: fixed;
+    top: 64px;
+    bottom: 0px;
+    overflow: auto;
+    width:200px;
+    z-index:1;
+    background-color: rgb(245, 245, 245);
+}
+
+.content{
+    padding: 2rem;
+    background-color: white;
+    min-height: 100vh;
+}
