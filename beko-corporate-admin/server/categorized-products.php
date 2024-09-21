@@ -121,6 +121,7 @@
                 $allProducts = $newArray;
                 // Build the category node
                 $categoryNode = [
+                    'id' => $category["id"],
                     'name' => $category['name'],
                     'parent' => $category['parent'],
                     'products' => $allProducts, // Include products from this category and all descendants
@@ -307,6 +308,7 @@
         //return $products;
         return $products;
     }
+    
 
     function test_input($data){
         $data = trim($data);

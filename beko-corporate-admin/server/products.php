@@ -101,7 +101,6 @@
          * Create varieties
          */
         $varieties = json_decode($varieties, true);
-        var_dump($varieties);
         foreach ($varieties as $key => $variety) {
             # code...
             if(isset($variety["id"])){
@@ -270,6 +269,7 @@
         /**
          * Create product articles;
          */
+        //var_dump($articles);
         $articles = json_decode($articles, true);
         //var_dump($articlesDeltas);
 
@@ -278,6 +278,8 @@
              * Create articles in the database;
              */
             $html = $article["html"];
+            $html = html_entity_decode($html, ENT_QUOTES, 'UTF-8');
+            $html= htmlspecialchars($html, ENT_QUOTES);
             $text = $article["text"];
             //$delta = $articlesDeltas[$key]; 
             if(isset($article["id"])){
@@ -285,10 +287,22 @@
                  * Update the existing article
                  */
                 $articleId = $article["id"];
-                $sql = "UPDATE articles SET html='$html', text='$text' WHERE id=$articleId";
+                $delta = $articlesDeltas[$key];
+
+                $delta = html_entity_decode($delta, ENT_QUOTES, 'UTF-8');
+                $delta = addslashes($delta);
+                $text = addslashes($text);
+
+                //$sql = "UPDATE articles SET html='$html', text='$text' WHERE id=$articleId";
+                $sql = "UPDATE articles SET delta='$delta', html = '$html', text = '$text' WHERE id=$articleId";
                 update($host, $user, $password, $database, $sql);
             } else {
-                $sql = "INSERT INTO articles(`html`, `text`, `product_id`) VALUES('$html', '$text', '$productId')";
+                $delta = $articlesDeltas[$key];
+                $delta = html_entity_decode($delta, ENT_QUOTES, 'UTF-8');
+
+                $delta = addslashes($delta);
+                $text = addslashes($text);
+                $sql = "INSERT INTO articles(`delta`, `html`, `text`, `product_id`) VALUES('$delta', '$html', '$text', '$productId')";
                 create($host, $user, $password, $database, $sql);
             }
         }
@@ -501,6 +515,19 @@
             foreach ($articles as $index2 => $article) {
                 # code...
                 unset($article["deleted"]);
+                unset($article["html"]);
+                
+                //var_dump($article["delta"]);
+                //$article["html"] = stripslashes($article["html"]);
+                //$article["html"] = htmlspecialchars_decode($article["html"]);
+                //$article["text"] = stripslashes($article["text"]);
+                //$article["text"] = addslashes($article["text"]);
+                $article["delta"] = json_decode($article["delta"], true);
+
+                //var_dump(json_encode($article["delta"]));
+                //unset($article["delta"]);
+                $article["text"] = addslashes($article["text"]);
+                //var_dump($article["text"]);
                 $newArray[] = $article;
             }
 

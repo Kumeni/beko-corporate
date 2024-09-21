@@ -75,11 +75,29 @@
 }
 
 .varieties > div > div:first-of-type{
-    width: 100px;
-    height: 100px;
-    background-color: #273273;
+    width: auto;
+    height: 150px;
+    background-color: skyblue;
     margin-bottom: 0.5rem;
     border-radius: 10px;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.varieties > div > div:first-of-type > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.varieties > div > div:first-of-type > img:hover{
+    transform: scale(105%);
+    cursor: pointer;
+}
+
+.varieties > div p{
+    font-weight: 600;
+    text-align: center;
 }
 @media(max-width: 375px){
     .varieties > div > div:first-of-type{

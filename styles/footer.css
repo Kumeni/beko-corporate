@@ -378,3 +378,27 @@ footer input[type="submit"]:hover {
         width: max-content;
     }
 }
+
+footer .contact-information-icons-details {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 1rem;
+    justify-content: left;
+    padding-left: 0rem;
+}
+
+footer .contact-information-icons-details a {
+    text-decoration: none;
+}
+
+footer .contact-information-icons-details > div{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+footer .contact-information-icons-details > div{
+    grid-template-columns: 40px auto;
+    column-gap: 1rem;
+    align-items: center;
+}

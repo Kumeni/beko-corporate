@@ -49,35 +49,94 @@
             </div>
         </div>
         <div class="hamburger-menu">
-            <ul class="hamburger-menu-ul">
-                <a href="./our-projects.html">Our Projects</a>
-                <a href="./our-partners.html">Our Partners</a>
-                <a href="./about-us.html">About Us</a>
-                <li>
-                    <span>Resources</span>
-                    <div class="underline"></div>
-                    <ul>
-                        <a href="careers.html">Careers</a>
-                        <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
-                    </ul>
-                </li>
-                <a href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
-                <li>
-                    <span>Our Services</span>
-                    <div class="underline"></div>
-                    <ul>
-                        <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                        <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        <a href="./services/telecommunication-equipment-installation-and-maintenance.html">Telecommunication Equipment Installation and Maintenance</a>
-                        <a href="./services/fiber-optics-works.html">Fiber Optics Works</a>
-                        <a href="./services/supply-installation-and-maintenance-of-diesel-generators.html">Supply, Installation and Maintenance of Diesel Generators</a>
-                        <a href="./services/supply-and-implementation-of-power-lines-and-grid-extension-services.html">Supply and implementation of Power Lines and Grid Extension Services</a>
-                        <a href="./services/electrical-and-mechanical-works.html">Electrical and Mechanical Works</a>
-                        <a href="./services/full-turnkey-civil-works.html">Full Turnkey Civil Works</a>
-                        <a href="./services/water-infrustructure-implementation-and-supply-and-extension-projects.html">Water Infrustructure Implementation and Supply and Extension Projects</a>
-                    </ul>
-                </li>
-            </ul>
+            <div id="hamburger-menu-container">
+                <ul class="hamburger-menu-ul">
+                    <span title="Close" class="close-hamburger-menu" onclick="toggleNavigation(false)">&times;</span>
+                    <a href="./our-projects.html">Home</a>
+                    <a href="./about-us.html">About Us</a>
+                    <li>
+                        <span>Built In Home Appliances</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="careers.html">Careers</a>
+                            <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Solar Panel & Products</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Solar Panel & Products</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>AC Solutions</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Hotel Concepts</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Kitchen Cabinets</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Wardrobes</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Doors</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Corporate Scenting Solutions</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>EV Chargers</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
+                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
+                        </ul>
+                    </li>
+                    <a href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                </ul>
+            </div>
         </div>
     </header>
     <section class="contact-us-hero">
@@ -206,7 +265,32 @@
             </div>
             <div class="contact">
                 <h3>Contact</h3> <br />
-                <p>Lorem ipsum dolor sit amet consectetur,  adipisicing elit. Dolorum repellat nihil   voluptatem rerum et, atque porro id fuga voluptas  numquam laboriosam similique. Pariatur itaque neque autem impedit quasi numquam earum?</p>
+                <div class="contact-information-icons-details">
+                    <div class="phone-details">
+                        <div class="icon-container">
+                            <img src="./assets/icons/phone-white-icon.png" />
+                        </div>
+                        <div class="phone-link">
+                            <a href="tel: +2547000000000">+254700 000000</a>
+                        </div>
+                    </div>
+                    <div class="email-details">
+                        <div class="icon-container">
+                            <img src="./assets/icons/email-white-icon.png" />
+                        </div>
+                        <div class="email-link">
+                            <a href="mailto: info@bekocorporate.com">info@bekocorporate.com</a>
+                        </div>
+                    </div>
+                    <div class="address-details">
+                        <div class="icon-container">
+                            <img src="./assets/icons/address-white-icon.png" />
+                        </div>
+                        <div class="address-link">
+                            <p>Home, off gong road</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="news-letter">
                 <h3>Subscribe to our Email</h3><br />

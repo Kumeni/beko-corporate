@@ -71,10 +71,10 @@ const handleCategoryUpload = event => {
         if(request.readyState === 4 && request.status === 200){
             categories = JSON.parse(request.response);
             editCategory();
-            //updateAllCategories(categories);
+            updateAllCategories(categories);
             //get the active categoryFrom the categories/
             //get its parent
-            updateAllCategories(getCategoryFromTree(activeCategories));
+            //updateAllCategories(getCategoryFromTree(activeCategories));
             //updatePrimaryCategories(categories);
         }
     }
@@ -156,6 +156,7 @@ const updatePrimaryCategories = categories => {
     let innerHTML = ``;
 
     innerHTML += `<ul class="primary-categories">`;
+    if(categories[1] == undefined) categories[1] = [];
 
     categories[1].forEach((category, index2) => {
         innerHTML += `<li onclick='updateAllCategories(${JSON.stringify(category)})'>
@@ -293,8 +294,9 @@ const generate2DArrayFromTreeDataStructure = (element, level=0, generatedCategor
 const getCategoryFromTree = (category, tree) => {
 
     let treeCategory;
-
+    console.log(tree);
     const getAnElementFromTreeDataStructure = (target, tree) =>{
+        console.log(tree);
         if(tree.id == target.id) treeCategory = tree;
         
         if(tree.categories)

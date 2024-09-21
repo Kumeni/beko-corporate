@@ -34,9 +34,19 @@ let selectedCategories = [];
 let additionalInfos = [{}];
 let activeCategories;
 
-const editProduct = product => {
+const editProduct = productIndex => {
     //First show the popup
     //Just that;
+    let product;
+    if(productIndex != undefined){
+        if(productIndex == -1){
+            product = {};
+        } else {
+            product = products[productIndex];
+        }
+        
+    }
+    
     let popup = document.getElementsByClassName("popup")[0];
 
     if(product == undefined){
@@ -49,8 +59,9 @@ const editProduct = product => {
 
         productName= undefined;
         productDescription = undefined;
-
-        vareities = [{
+        document.getElementById("product-name-input").value = null;
+        document.getElementById("product-description").innerHTML = null;
+        varieties = [{
             images:[],
             name:undefined,
             description:undefined,
@@ -112,80 +123,22 @@ const editProduct = product => {
              */
             //console.log(product.specifications);
             specifications = product.specifications;
-            console.log(specifications);
             updateSpecifications(specifications);
 
             selectedCategories = product.categories;
             activeCategories = generate2DArrayFromTreeDataStructure(productCategories);
             updateProductCategories(activeCategories);
+            console.log(selectedCategories);
 
             additionalInfos = product.articles;
+            if(additionalInfos.length == 0){
+                additionalInfos.push({});
+            }
+            console.log(additionalInfos);
             updateAdditionalInfos(additionalInfos);
 
             activeProduct = product;
-            console.log(activeProduct);
 
-            /*document.getElementById("number-plate").value = activeVehicle.number_plate;
-            document.getElementById("description").value = activeVehicle.description;
-            document.getElementById("storage-width").value = activeVehicle.storage_width;
-            document.getElementById("storage-length").value = activeVehicle.storage_length;
-            document.getElementById("storage-height").value = activeVehicle.storage_height;
-            document.getElementById("maximum-weight").value = activeVehicle.maximum_weight;
-            document.getElementById("rate-per-km").value = activeVehicle.rate_per_km;
-            vehicleImages = activeVehicle.images;
-            
-            //Input the vehicle categery
-            let i = 0, innerHTML= ``, length = document.getElementById("available-trackers").getElementsByTagName("span").length;
-            for(i = 0; i < length; i++){
-                if(document.getElementById("available-trackers").getElementsByTagName("span")[i].dataset.category_id = activeVehicle.vehicle_category_id) 
-                    document.getElementById("available-trackers").getElementsByTagName("span")[i].click();
-            }*/
-
-            /**
-             * Show the available image;
-             */
-            /*let imagePreview = document.getElementsByClassName("image-preview")[0];
-
-            vehicleImages.forEach((vehicleImage, index) => {
-        
-                innerHTML += `
-                        <div>
-                            <button onclick="removeImage(event, ${index})" class="remove-button">&times;</button>
-                            <img class="image" src=".${vehicleImage.path}" />
-                        </div>`;
-            });
-
-            imagePreview.innerHTML = innerHTML;
-            imageInput.value = "";*/
-
-            /**Scroll to the end of the image preview */
-            //imagePreview.scrollTo(10000, 0);
-            /*if(activeVehicle.images.length > 0){
-                imagePreview.style.display = "block";
-                removeImageButton.style.display = "block";
-                imagePreview.src = "." + activeVehicle.images[0].path;
-                imageInput.style.display = "none";
-                imageInput.value = "";
-            } else {
-                imagePreview.style.display = "none";
-                removeImageButton.style.display = "none";
-                imageInput.style.display = "block";
-                imageInput.value = "";
-            }*/
-
-            /**
-             * Update the images array and add the images;
-             */
-
-            /**
-             * Adding more trackers
-             */
-            //updateFormTrackers(trackers, activeVehicle);
-            //let availableTrackers = document.getElementById("available-trackers").getElementsByTagName("span");
-            //if(availableTrackers.length > 0) availableTrackers[0].click();
-            /**
-             * Select the first tracker;
-             */
         } else {
             //If creating a vehicle
 
@@ -240,16 +193,18 @@ const handleVarietyImageChange = (index, event) => {
             }
         } else {
             innerHTML += `
-                <div>
+                <div class="single-image-preview">
                     <button onclick="removeImage(event, ${index})" class="remove-button">&times;</button>
-                    <img class="image" src=".${vehicleImage.path}" />
+                    <img class="variety-image" src=".${varietyImage.path}" />
                 </div>`;
 
-                if(index == vehicleImages.length -1){
+                if(index2 == varieties[index].images.length-1){
                     imagePreview.innerHTML = innerHTML;
                     imageInput.value = "";
 
-                    imagePreview.scrollTo(10000, 0);
+                    /**Scroll to the end of the image preview */
+                    setTimeout(() => {imagePreview.scrollTo(10000, 0)}, 500);
+                    ;
                 }
         }
     });
@@ -332,7 +287,7 @@ const getProductCategories = () => {
             //console.log(JSON.parse(request.response));
             //console.log(request.response);
             productCategories = JSON.parse(request.response);
-            console.log(productCategories);
+            //console.log(productCategories);
             activeCategories = generate2DArrayFromTreeDataStructure(productCategories);
             updateProductCategories(activeCategories);
             
@@ -369,7 +324,7 @@ const updateProductCategories = (productCategories) => {
     }
 
     
-    console.log(productCategories);
+    //console.log(productCategories);
     for(i=0; i<productCategories.length; i++){
         if(i < noOfSlides){
             /**
@@ -603,7 +558,6 @@ const handleProductUpload = event => {
      */
     if(productDescription){
         formData.append("product-description", productDescription);
-        console.log(productDescription);
     } else {
         /**
          * Handle Product Description Missing Error
@@ -620,7 +574,7 @@ const handleProductUpload = event => {
         /**
          * Create a 2 dimensional array of images
          */
-        if(element.images.length == 0){
+        if(element.images && element.images.length == 0){
             /**
              * If Element Has no images, throw an error
              */
@@ -628,7 +582,7 @@ const handleProductUpload = event => {
             document.getElementsByClassName("image-input-error")[index].innerHTML = "Variety Image(s) are required!";
         }
         varietyImages[index] = element.images;
-        delete element.images;
+        //delete element.images;
         //holder = {};
         /**
          * Check if variety name is present
@@ -660,6 +614,10 @@ const handleProductUpload = event => {
         //newVarieties.push(holder);
     });
 
+    varieties.map((element, index) => {
+        delete element.images;
+    });
+
     formData.append("varieties", JSON.stringify(varieties));
     //formData.append("varieties", JSON.stringify(newVarieties));
     
@@ -685,6 +643,7 @@ const handleProductUpload = event => {
     for(i = 0; i < quill.length; i++){
         holder = additionalInfos[i];
         
+        holder.delta = quill[i].getContents();
         holder.text = quill[i].getText();
         holder.html = quill[i].getSemanticHTML();
 
@@ -695,9 +654,11 @@ const handleProductUpload = event => {
             articles.push(holder);
         }
         
-        //articlesDeltas.push(quill[i].getContents());
+        articlesDeltas.push(quill[i].getContents());
     }
+    console.log(articles);
     formData.append("articles", JSON.stringify(articles));
+    console.log(JSON.stringify(articles));
     if(deletedArticles.length > 0) formData.append("deleted-articles", JSON.stringify(deletedArticles));
     
     articlesDeltas.forEach((element, index) => {
@@ -745,10 +706,13 @@ const handleProductUpload = event => {
     request.onreadystatechange = () => {
         if(request.readyState === 4 && request.status === 200){
             console.log(request.response);
-            //vehicles = JSON.parse(request.response);
-            //console.log(vehicles);
-            //updateVehicles(vehicles);
-            //editVehicle();
+            products = JSON.parse(request.response);
+            products = JSON.parse(products);
+            console.log(products);
+            //products = JSON.parse(products);
+            console.log(products);
+            updateProducts(products);
+            editProduct();
         }
     }
 
@@ -788,7 +752,7 @@ const getProducts = event => {
             products = JSON.parse(products);
             console.log(products);
             updateProducts(products);
-            //editVehicle();
+            editProduct();
         }
     }
 
@@ -812,7 +776,7 @@ const updateProducts = products => {
         } else {
             //show the default vehicle
         }
-
+        //${JSON.stringify(product)}
         innerHTML += `
             <div class="product-tile">
                 <div class="product-image">
@@ -829,7 +793,8 @@ const updateProducts = products => {
                     </div>
                     <div class="product-buttons">
                         <p style="visibility:hidden;">Ksh. 2,500</p>
-                        <button title="Edit product details" class="product-edit-button" onclick='editProduct(${JSON.stringify(product)})'>EDIT</button>
+                        
+                        <button title="Edit product details" class="product-edit-button" onclick="editProduct(${index})">EDIT</button>
                         <!-- <button onclick="showStats(true)" title="View vehicle current status" class="vehicle-stats-button text-white bg-primary">STATS</button> -->
                         <div class="action-buttons">
                             <!-- <button title="Edit product details" onclick='editProduct({})' class="">EDIT</button> -->
@@ -911,20 +876,21 @@ const updateVarieties = (varieties) => {
     });*/
     const imagesHTML = (index, element) => {
         let innerHTML = ``;
-        if(element.images.length == 0){
-            return  `<div class="no-image">
-                <p>No Image</p>
-            </div>`;
-        } else {
-            element.images.forEach((element2, index2) => {
-                innerHTML += `<div class="single-image-preview">
-                    <button title="Remove image" onclick="removeImage(${index}, ${index2}, event)" class="remove-button">&times;</button>
-                    <img class="variety-image" src="" />
+        if(element.images)
+            if(element.images && element.images.length == 0){
+                return  `<div class="no-image">
+                    <p>No Image</p>
                 </div>`;
-            });
+            } else {
+                element.images.forEach((element2, index2) => {
+                    innerHTML += `<div class="single-image-preview">
+                        <button title="Remove image" onclick="removeImage(${index}, ${index2}, event)" class="remove-button">&times;</button>
+                        <img class="variety-image" src="" />
+                    </div>`;
+                });
 
-            return innerHTML;
-        }
+                return innerHTML;
+            }
     }
 
     let innerHTML = ``;
@@ -968,18 +934,18 @@ const updateVarieties = (varieties) => {
     let varietyElements = document.getElementsByClassName("variety");
 
     varieties.forEach((element, index) => {
-        element.images.forEach((element2, index2) => {
-            if(element2.id == undefined){
-                let reader = new FileReader();
-                reader.readAsDataURL(element2);
-                reader.onload = (event) => {
-                    varietyElements[index].getElementsByClassName("variety-image")[index2].src = event.target.result;
+        if(element.images)
+            element.images.forEach((element2, index2) => {
+                if(element2.id == undefined){
+                    let reader = new FileReader();
+                    reader.readAsDataURL(element2);
+                    reader.onload = (event) => {
+                        varietyElements[index].getElementsByClassName("variety-image")[index2].src = event.target.result;
+                    }
+                } else {
+                    varietyElements[index].getElementsByClassName("variety-image")[index2].src = "." + element2.path;
                 }
-            } else {
-                varietyElements[index].getElementsByClassName("variety-image")[index2].src = "." + element2.path;
-            }
-            
-        });
+            });
     });
 }
 
@@ -1067,14 +1033,33 @@ const updateSpecifications = (specifications) => {
 
 const addAdditionalInfo = (event) => {
     event.preventDefault();
+    /*
+        Store existing additional Info;
+    */
+    let holder;
+    for(i=0; i<quill.length; i++){
+        holder = {};
 
+        holder.text = quill[i].getText();
+        holder.html = quill[i].getSemanticHTML();
+        holder.delta = quill[i].getContents();
+        
+        if(additionalInfos[i].id == undefined){
+            additionalInfos[i] = holder;
+            //quill[i].clipboard.dangerouslyPasteHTML(additionalInfos[i].html);
+        } else {
+            additionalInfos[i].html = quill[i].getSemanticHTML();
+            additionalInfos[i].text = quill[i].getText();
+            additionalInfos[i].delta = quill[i].getContents();
+        }
+    }
     additionalInfos = additionalInfos.concat({});
-
     /**Update the additional Informations */
     updateAdditionalInfos(additionalInfos);
 }
 
 const updateAdditionalInfos = (additionalInfos) => {
+    console.log(additionalInfos);
     let additionalInfosContainer = document.getElementsByClassName("editors")[0];
 
     let editorHTML = `<div class="editor"></div><br/>`;
@@ -1095,10 +1080,13 @@ const updateAdditionalInfos = (additionalInfos) => {
     let editors = document.getElementsByClassName("editor"), i=0;
 
     var delta;
+    console.log(editors);
     for(i=0; i<editors.length; i++){
         quill[i] = new Quill(editors[i], options);
-        if(additionalInfos[i].id){
-            quill[i].clipboard.dangerouslyPasteHTML(additionalInfos[i].html);
+        if(additionalInfos[i].delta){
+            console.log(additionalInfos[i]);
+            //quill[i].clipboard.dangerouslyPasteHTML(additionalInfos[i].html);
+            quill[i].setContents(additionalInfos[i].delta);
         }
     }
 }
