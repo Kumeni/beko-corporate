@@ -47,6 +47,15 @@
     }
     .offer{
         width: 95vw;
+        height: 300px;
+    }
+}
+@media (max-width: 425px){
+    .offers{
+        row-gap: 0.5rem;
+    }
+    .offer{
+        height: 300px;
     }
 }
 .offer img{

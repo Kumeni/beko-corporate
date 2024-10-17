@@ -326,94 +326,10 @@
         echo "<script>let categorizedProducts=$categorizedProductsJSON; console.log(categorizedProducts);</script>";
     ?>
 
-    <title>Beko Corporate</title>
+    <title>Beko Corporate Solutions</title>
 </head>
 <body>
-    <section class="homepage-landing-container" style="position:sticky"></section>
-        <section class="homepage-landing-decoy"></section>
-    </section>
-    <section class="homepage-landing-container">
-        <section class="homepage-landing">
-            <div class="navigation-buttons">
-                <button class="left-arrow" onclick="prevLandingSlide()"><img src="./assets/icons/left arrow.png" alt="left arrow" /></button>
-                <button class="right-arrow" onclick="nextLandingSlide()"><img src="./assets/icons/right arrow.png" alt="right arrow" /></button>
-            </div>
-            <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <!-- <div class="swiper-slide small landing_logo">
-                        <img id="landing_logo"src="./icons/solar prime logo.png" alt = "solar prime logo" />
-                    </div> -->
-                    <div class="swiper-slide slide-1">
-                        <section class="landing">
-                            <div class="landing-image">
-                                <img src="./assets/homepage-images/landing-images/office layout by beko corporate.png" alt="office layout by beko corporate" />
-                            </div>
-                            <div class="blue-rectangle-container">
-                                <div class="blue-rectangle fly-in-from-right"></div>
-                            </div>
-                            <div class="beko-logo-container">
-                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
-                            </div>
-                            <div class="slide-title">
-                                <h1 class="index fly-in-from-right">01</h1>
-                                <h1 class="title fly-in-from-right">Commited to<br /> Sustainability</h1>
-                            </div>
-                            <div class="more-info-container">
-                                <div class="more-info fly-in-from-right">
-                                    <p class="fly-in-from-right">We are dedicated to supporting your sustainability goals. Our energy-efficient appliances not only reduce operational costs but also contribute to a greener planet.</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="swiper-slide slide-2">
-                        <section class="landing">
-                            <div class="landing-image">
-                                <img src="./assets/homepage-images/landing-images/fully furnished kitchen by beko corporate.png" alt="fully furnished kitchen by beko corporate" />
-                            </div>
-                            <div class="blue-rectangle-container">
-                                <div class="blue-rectangle fly-in-from-right"></div>
-                            </div>
-                            <div class="beko-logo-container">
-                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
-                            </div>
-                            <div class="slide-title">
-                                <h1 class="index fly-in-from-right">02</h1>
-                                <h1 class="title fly-in-from-right">Tailored Solutions for<br />Every Industry</h1>
-                            </div>
-                            <div class="more-info-container">
-                                <div class="more-info fly-in-from-right">
-                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="swiper-slide slide-3">
-                        <section class="landing">
-                            <div class="landing-image">
-                                <img src="./assets/homepage-images/landing-images/office with huge windows by beko corporate.png" alt="office with huge windows by beko corporate" />
-                            </div>
-                            <div class="blue-rectangle-container">
-                                <div class="blue-rectangle fly-in-from-right"></div>
-                            </div>
-                            <div class="beko-logo-container">
-                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
-                            </div>
-                            <div class="slide-title ">
-                                <h1 class="index fly-in-from-right">03</h1>
-                                <h1 class="title fly-in-from-right">Innovative Technology,<br />Unmatched Quality</h1>
-                            </div>
-                            <div class="more-info-container">
-                                <div class="more-info fly-in-from-right">
-                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
-                                </div>
-                            </div>
-                            
-                        </section>
-                    </div>
-                </div>
-        </section>
-    </section>
-    <header class="navigation">
+<header class="navigation">
         <div class="menu">
             <div class="logo">
                 <div 
@@ -430,21 +346,27 @@
                 <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
                 <div>
                     <ul>
-                        <a href="./products.php?category-id=1">Built In Home Appliances</a>
-                        <a href="./products.php?category-id=2">Solar Panel & Products</a>
-                        <a href="./products.php?category-id=3">AC Solutions</a>
-                        <a href="./products.php?category-id=4">Hotel Concepts</a>
-                        <a href="./products.php?category-id=5">Kitchen Cabinets</a>
-                        <a href="./products.php?category-id=6">Wardrobes</a>
-                        <a href="./products.php?category-id=7">Doors</a>
-                        <a href="./products.php?category-id=8">Corporate Scenting Solutions</a>
-                        <a href="./products.php?category-id=9">EV Chargers</a>
+                        <?php
+                            $innerHTML = "";
+                            foreach ($categorizedProducts["categories"] as $index => $category) {
+                                # code...
+                                $categoryId = $category["id"];
+                                $categoryName = $category["name"];
+                                if($categoryId == 1){
+                                    $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                } else {
+                                    $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                }
+                                
+                            }
+                            echo $innerHTML;
+                        ?>
                     </ul>
                 </div>
             </div>
             <ul class="menu-items">
-                <a href="./about-us.html" class="dynamic-text">About Us</a>
-                <a class="dynamic-text" href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <a href="./about-us.php" class="dynamic-text">About Us</a>
+                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
             </ul>
             <div 
                 class="menu-bars small-screen-menu-bars" 
@@ -459,97 +381,204 @@
             <div id="hamburger-menu-container">
                 <ul class="hamburger-menu-ul">
                     <span title="Close" class="close-hamburger-menu" onclick="toggleNavigation(false)">&times;</span>
-                    <a href="./our-projects.html">Home</a>
-                    <a href="./about-us.html">About Us</a>
-                    <li>
+                    <a href="./">Home</a>
+                    <a href="./about-us.php">About Us</a>
+                    <a href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                    <?php
+                        $innerHTML = "";
+                        foreach ($categorizedProducts["categories"] as $index => $category) {
+                            # code...
+                            $categoryId = $category["id"];
+                            $categoryName = $category["name"];
+                            $innerHTML .= "<li>";
+                            if($categoryId == 1){
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                            } else {
+                                $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
+                            }
+                            
+                            $innerHTML .="
+                                <div class='underline'></div>
+                                <ul>";
+                                    if($categoryId != 1){
+                                        foreach ($category["categories"] as $key => $subCategory) {
+                                            # code...
+                                            $subCategoryId = $subCategory["id"];
+                                            $subCategoryName = $subCategory["name"];
+                                            $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                        }
+                                    }
+                            $innerHTML .="</ul>
+                            </li>";
+                        }
+                        echo $innerHTML;
+                    ?>
+                    <!-- <li>
                         <span>Built In Home Appliances</span>
                         <div class="underline"></div>
                         <ul>
                             <a href="careers.html">Careers</a>
                             <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
                         </ul>
-                    </li>
-                    <li>
-                        <span>Solar Panel & Products</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Solar Panel & Products</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>AC Solutions</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Hotel Concepts</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Kitchen Cabinets</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Wardrobes</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Doors</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Corporate Scenting Solutions</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>EV Chargers</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <a href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </header>
+    <!-- <section class="homepage-landing-container" style="position:sticky"></section>
+        <section class="homepage-landing-decoy"></section>
+    </section> -->
+    <section class="homepage-landing-container">
+        <section class="homepage-landing">
+            <div class="navigation-buttons">
+                <button class="left-arrow" onclick="prevLandingSlide()"><img src="./assets/icons/left arrow.png" alt="left arrow" /></button>
+                <button class="right-arrow" onclick="nextLandingSlide()"><img src="./assets/icons/right arrow.png" alt="right arrow" /></button>
+            </div>
+            <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!-- <div class="swiper-slide small landing_logo">
+                        <img id="landing_logo"src="./icons/solar prime logo.png" alt = "solar prime logo" />
+                    </div> -->
+                    <div class="swiper-slide slide-1">
+                        <section class="landing">
+                            <div class="landing-image">
+                                <!-- <img src="./assets/homepage-images/landing-images/beko no 1 banner.jpg" alt="office layout by beko corporate" /> -->
+                                <!-- <img src="./assets/homepage-images/landing-images/banners5.jpg" alt="office layout by beko corporate" /> -->
+                                <img class="small-screen-banner" src="./assets/homepage-images/landing-images/beko no 1 banner small.jpg" />
+                                <img class="large-screen-banner" src="./assets/homepage-images/landing-images/beko no 1 banner.jpg" alt="office layout by beko corporate" />
+                                
+                            <!-- <div class="landing-image">
+                                <img src="./assets/homepage-images/landing-images/office layout by beko corporate.png" alt="office layout by beko corporate" />
+                            </div>
+                            <div class="blue-rectangle-container">
+                                <div class="blue-rectangle fly-in-from-right"></div>
+                            </div>
+                            <div class="beko-logo-container">
+                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                            </div>
+                            <div class="slide-title">
+                                <h1 class="index fly-in-from-right">01</h1>
+                                <h1 class="title fly-in-from-right">Commited to<br /> Sustainability</h1>
+                            </div>
+                            <div class="more-info-container">
+                                <div class="more-info fly-in-from-right">
+                                    <p class="fly-in-from-right">We are dedicated to supporting your sustainability goals. Our energy-efficient appliances not only reduce operational costs but also contribute to a greener planet.</p>
+                                </div>
+                            </div> -->
+                        </section>
+                    </div>
+                    <div class="swiper-slide slide-2">
+                        <section class="landing">
+                            <div class="landing-image">
+                                <img class="small-screen-banner" src="./assets/homepage-images/landing-images/beko kitchen appliances banner small.jpg" alt="fully furnished kitchen by beko corporate" />
+                                <img class="large-screen-banner" src="./assets/homepage-images/landing-images/beko kitchen appliances banner.jpg" alt="fully furnished kitchen by beko corporate" />
+                            </div>
+                            <!-- <div class="landing-image">
+                                <img src="./assets/homepage-images/landing-images/fully furnished kitchen by beko corporate.png" alt="fully furnished kitchen by beko corporate" />
+                            </div>
+                            <div class="blue-rectangle-container">
+                                <div class="blue-rectangle fly-in-from-right"></div>
+                            </div>
+                            <div class="beko-logo-container">
+                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                            </div>
+                            <div class="slide-title">
+                                <h1 class="index fly-in-from-right">02</h1>
+                                <h1 class="title fly-in-from-right">Tailored Solutions for<br />Every Industry</h1>
+                            </div>
+                            <div class="more-info-container">
+                                <div class="more-info fly-in-from-right">
+                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                                </div>
+                            </div> -->
+                        </section>
+                    </div>
+                    <div class="swiper-slide slide-3">
+                        <section class="landing">
+                            <div class="landing-image">
+                                <img class="small-screen-banner" src="./assets/homepage-images/landing-images/beko productions networks banner small.jpg" alt="office with huge windows by beko corporate" />
+                                <img class="large-screen-banner" src="./assets/homepage-images/landing-images/beko productions networks banner.jpg" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <!-- <div class="landing-image">
+                                <img src="./assets/homepage-images/landing-images/office with huge windows by beko corporate.png" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <div class="blue-rectangle-container">
+                                <div class="blue-rectangle fly-in-from-right"></div>
+                            </div>
+                            <div class="beko-logo-container">
+                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                            </div>
+                            <div class="slide-title ">
+                                <h1 class="index fly-in-from-right">03</h1>
+                                <h1 class="title fly-in-from-right">Innovative Technology,<br />Unmatched Quality</h1>
+                            </div>
+                            <div class="more-info-container">
+                                <div class="more-info fly-in-from-right">
+                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                                </div>
+                            </div> -->
+                        </section>
+                    </div>
+                    <div class="swiper-slide slide-3">
+                        <section class="landing">
+                            <div class="landing-image">
+                                <img class="small-screen-banner" src="./assets/homepage-images/landing-images/beko employees banner small.jpg" alt="office with huge windows by beko corporate" />
+                                <img class="large-screen-banner" src="./assets/homepage-images/landing-images/beko employees banner.jpg" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <!-- <div class="landing-image">
+                                <img src="./assets/homepage-images/landing-images/office with huge windows by beko corporate.png" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <div class="blue-rectangle-container">
+                                <div class="blue-rectangle fly-in-from-right"></div>
+                            </div>
+                            <div class="beko-logo-container">
+                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                            </div>
+                            <div class="slide-title ">
+                                <h1 class="index fly-in-from-right">03</h1>
+                                <h1 class="title fly-in-from-right">Innovative Technology,<br />Unmatched Quality</h1>
+                            </div>
+                            <div class="more-info-container">
+                                <div class="more-info fly-in-from-right">
+                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                                </div>
+                            </div> -->
+                        </section>
+                    </div>
+                    <div class="swiper-slide slide-3">
+                        <section class="landing">
+                            <div class="landing-image">
+                                <img class="small-screen-banner" src="./assets/homepage-images/landing-images/beko kitchen appliance banner small.jpg" alt="office with huge windows by beko corporate" />
+                                <img class="large-screen-banner" src="./assets/homepage-images/landing-images/beko kitchen appliance banner.jpg" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <!-- <div class="landing-image">
+                                <img src="./assets/homepage-images/landing-images/office with huge windows by beko corporate.png" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <div class="blue-rectangle-container">
+                                <div class="blue-rectangle fly-in-from-right"></div>
+                            </div>
+                            <div class="beko-logo-container">
+                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                            </div>
+                            <div class="slide-title ">
+                                <h1 class="index fly-in-from-right">03</h1>
+                                <h1 class="title fly-in-from-right">Innovative Technology,<br />Unmatched Quality</h1>
+                            </div>
+                            <div class="more-info-container">
+                                <div class="more-info fly-in-from-right">
+                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                                </div>
+                            </div> -->
+                        </section>
+                    </div>
+                </div>
+        </section>
+    </section>
+    
     <main>
         <section class="homepage-hero">
             <div class="hero-container-wrapper">
-                <div class="at-beko">
+                <!-- <div class="at-beko">
                     <div class="hero-image-container">
                         <img src="./assets/homepage-images/kitchen appliances 3 by beko.png" />
                     </div>
@@ -558,7 +587,7 @@
                         <div class="underline"></div>
                         <p>We embrace sustainability as our business model and aim to inspire sustainable lives throughout our value chain.</p>
                     </div>
-                </div>
+                </div> -->
                 <div class="welcome-to-beko">
                     <div class="hero-text-container">
                         <h2>Welcome to Beko Corporate Solutions</h2>
@@ -566,7 +595,7 @@
                         <p>At Beko Corporate Solutions, we understand that in today’s fast-paced business environment, your organization needs more than just appliances—it needs reliable, eficient, and innovative solutions that drive productivity and enhance your operational eficiency.</p>
                     </div>
                     <div class="hero-image-container">
-                        <img src="./assets/homepage-images/kitchen appliances 2 by beko.png" />
+                        <!-- <img src="./assets/homepage-images/kitchen appliances 2 by beko.png" /> -->
                     </div>
                 </div>
             </div>
@@ -580,7 +609,7 @@
                         <img src="./assets/homepage-images/Beko Europes no 1 banner.png" alt="Beko Europes no 1 banner" />
                     </div>
                     <h3>Beko Built In Home Appliances</h3>
-                    <a href="./products.php?category-id=1" class="browse-button">Browse...</a>
+                    <a href="https://www.beko.com/ke-en" target="_blank" class="browse-button">Browse...</a>
                 </div>
                 <div class="offer solar-panel-products">
                     <div class="offer-image-container">
@@ -741,25 +770,33 @@
             <div class="quick-links">
                 <h3>Quick Links</h3>
                 <a href="./index.html">Home</a>
-                <a href="./products.php?category-id=1">Built In Home Appliances</a>
-                <a href="./products.php?category-id=2">Solar Panel & Products</a>
-                <a href="./products.php?category-id=3">AC Solutions</a>
-                <a href="./products.php?category-id=4">Hotel Concepts</a>
-                <a href="./products.php?category-id=5">Kitchen Cabinets</a>
-                <a href="./products.php?category-id=6">Wardrobes</a>
-                <a href="./products.php?category-id=7">Doors</a>
-                <a href="./products.php?category-id=8">Corporate Scenting Solutions</a>
-                <a href="./products.php?category-id=9">EV Chargers</a>
+                 <?php
+                    $innerHTML = "";
+                    foreach ($categorizedProducts["categories"] as $index => $category) {
+                        # code...
+                        $categoryId = $category["id"];
+                        $categoryName = $category["name"];
+                        if($categoryId == 1){
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                        } else {
+                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        }
+                        
+                    }
+                    echo $innerHTML;
+                ?>
+                <a href="./about-us.php">About Us</a>
+                <a href="./contact-us.php">Contact Us</a>
             </div>
             <div class="contact">
-                <h3>Contact</h3> <br />
+                <h3>Contacts</h3> <br />
                 <div class="contact-information-icons-details">
                     <div class="phone-details">
                         <div class="icon-container">
                             <img src="./assets/icons/phone-white-icon.png" />
                         </div>
                         <div class="phone-link">
-                            <a href="tel: +2547000000000">+254700 000000</a>
+                            <a href="tel: +254716785847">+254716785847</a>
                         </div>
                     </div>
                     <div class="email-details">
@@ -767,7 +804,7 @@
                             <img src="./assets/icons/email-white-icon.png" />
                         </div>
                         <div class="email-link">
-                            <a href="mailto: info@bekocorporate.com">info@bekocorporate.com</a>
+                            <a href="mailto: info@bekocorporatesolutions.com">info@bekocorporatesolutions.com</a>
                         </div>
                     </div>
                     <div class="address-details">
@@ -784,8 +821,8 @@
                 <h3>Subscribe to our Email</h3><br />
                 <h4>For Latest News and Updates</h4><br />
                 <div class="form-container">
-                    <form id="form">
-                        <input type="email" id="email" name="email" placeholder="youremail.example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  required />
+                    <form id="form" onsubmit="subscribeToOurEmail(event)">
+                        <input onchange="handleEmailChange(event)" type="email" id="email" name="email" placeholder="youremail.example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  required />
                         <input type="Submit" id="subscribe" value="Subscribe"> 
                     </form>
                 </div>
@@ -802,6 +839,8 @@
     
     
     <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/footer.js"></script>
+    <script type="text/javascript" src="./scripts/share-product.js"></script>
     <script type="text/javascript" src = "./scripts/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src = "./scripts/swiper/initialize-swiper-multiple.js"></script>
     <script type="text/javascript" src="./scripts/swiper/initialize-swiper.js"></script>

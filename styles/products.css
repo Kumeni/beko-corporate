@@ -131,12 +131,20 @@ header{
     border-radius: 50%;
     box-shadow: 2px 2px 4px rgb(120, 120, 120);
 }
-.share-icon-container a{
+.share-icon-container:hover{
+    cursor: pointer;
+}
+.share-icon-container button{
     width: unset;
     padding: 0;
+    border: none;
+    background-color: transparent;
 }
 .share-icon-container img{
     width: 25px;
+}
+.share-icon-container img:hover{
+    cursor: pointer;
 }
 .product-details{
     grid-template-columns: max-content auto;

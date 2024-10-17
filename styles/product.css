@@ -24,14 +24,14 @@
         padding: 1rem;
     }
 }
-.single-product-images{
-    background-color: skyblue;
-    height: 500px;
+.single-product-image-container{
+    /* background-color: skyblue; */
+    height: auto;
     border-radius: 10px;
     padding: 1rem;
 }
 @media(max-width: 767px){
-    .single-product-images{
+    .single-product-image-container{
         height: auto;
         background-color: unset;
         padding: 0rem;
