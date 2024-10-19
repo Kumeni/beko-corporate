@@ -3,9 +3,6 @@
     display: -ms-grid;
     display: -moz-grid;
 }
-header{
-    background-color: #273273;
-}
 .landing h1{
     text-align: center;
     padding: 4rem 0rem 0rem 0rem;

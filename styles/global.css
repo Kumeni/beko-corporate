@@ -5,6 +5,9 @@
 
 body{
     overflow-x: hidden;
+    background-color: #f4f6f9;
+    /* font-family: Roboto; */
+    color: #01426a;
 }
 
 .underline{

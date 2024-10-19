@@ -1,6 +1,6 @@
 let swiperLanding = new Swiper('.homepage-landing', {
   // Optional parameters
-  speed:6000,
+  speed:1500,
   spaceBetween:0,
   slidesPerView:1,
   direction: 'horizontal',

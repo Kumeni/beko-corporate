@@ -353,27 +353,34 @@
                     <div></div>
                     <div></div>
                 </div>
-                <a href="./"><img class="beko-logo" src="./assets/icons/white beko logo.png" alt="Beko logo white" /></a>
+                <a href="./"><img class="beko-logo" src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko logo white" /></a>
             </div>
-            <div class="our-services">
-                <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
-                <div>
-                    <ul>
-                        <a href="./products.php?category-id=1">Built In Home Appliances</a>
-                        <a href="./products.php?category-id=2">Solar Panel & Products</a>
-                        <a href="./products.php?category-id=3">AC Solutions</a>
-                        <a href="./products.php?category-id=4">Hotel Concepts</a>
-                        <a href="./products.php?category-id=5">Kitchen Cabinets</a>
-                        <a href="./products.php?category-id=6">Wardrobes</a>
-                        <a href="./products.php?category-id=7">Doors</a>
-                        <a href="./products.php?category-id=8">Corporate Scenting Solutions</a>
-                        <a href="./products.php?category-id=9">EV Chargers</a>
-                    </ul>
-                </div>
-            </div>
+            
             <ul class="menu-items">
+                <div class="our-services">
+                    <span class="dynamic-text">Products</span>
+                    <div>
+                        <ul>
+                            <?php
+                                $innerHTML = "";
+                                foreach ($categorizedProducts["categories"] as $index => $category) {
+                                    # code...
+                                    $categoryId = $category["id"];
+                                    $categoryName = $category["name"];
+                                    if($categoryId == 1){
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                    } else {
+                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                    }
+                                    
+                                }
+                                echo $innerHTML;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
                 <a href="./about-us.php" class="dynamic-text">About Us</a>
-                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
             </ul>
             <div 
                 class="menu-bars small-screen-menu-bars" 
@@ -397,22 +404,37 @@
                             # code...
                             $categoryId = $category["id"];
                             $categoryName = $category["name"];
-                            $innerHTML .= "<li>
-                                <span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>
+                            $innerHTML .= "<li>";
+                            if($categoryId == 1){
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                            } else {
+                                $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
+                            }
+                            
+                            $innerHTML .="
                                 <div class='underline'></div>
                                 <ul>";
-
-                                    foreach ($category["categories"] as $key => $subCategory) {
-                                        # code...
-                                        $subCategoryId = $subCategory["id"];
-                                        $subCategoryName = $subCategory["name"];
-                                        $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                    if($categoryId != 1){
+                                        foreach ($category["categories"] as $key => $subCategory) {
+                                            # code...
+                                            $subCategoryId = $subCategory["id"];
+                                            $subCategoryName = $subCategory["name"];
+                                            $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                        }
                                     }
                             $innerHTML .="</ul>
                             </li>";
                         }
                         echo $innerHTML;
                     ?>
+                    <!-- <li>
+                        <span>Built In Home Appliances</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="careers.html">Careers</a>
+                            <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                        </ul>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -524,39 +546,36 @@
             <div class="brands">
                 <div class="brand-logo-name">
                     <div class="brand-logo">
-                        <img src="./assets/icons/blue beko logo.png" />
+                        <img src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko Corporate Solutions Blue Logo" />
                     </div> 
                 </div>
                 <div class="brands-paragraph-content">
-                <p>Beko is committed to delivering innovative, high-quality appliances designed to make your everyday life easier. With a focus on energy efficiency and smart technology, we strive to bring sustainable solutions to your home.</p>
+                    <p>We work for a sustainable future through our technology, human resources, and production power.
+                    Our vision is to rejuvenate ourselves and our industry to become a trusted lifestyle solutions provider to the digital household.</p>
                 </div> 
                 <div class="social-media-brand-logos">
                     <div>
-                        <a href="#instagram">
+                        <a href="https://www.instagram.com/bekocorporate_solutions/" target="_blank">
                             <img src="./assets/icons/instagram icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#linkedin">
-                            <img src="./assets/icons/linkedin icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#facebook">
-                            <img src = "./assets/icons/facebook icon.png" />
                         </a>
                     </div>
                 </div>
             </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
-                <?php
+                <a href="./index.html">Home</a>
+                 <?php
                     $innerHTML = "";
                     foreach ($categorizedProducts["categories"] as $index => $category) {
                         # code...
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
-                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        if($categoryId == 1){
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                        } else {
+                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        }
+                        
                     }
                     echo $innerHTML;
                 ?>
@@ -571,7 +590,7 @@
                             <img src="./assets/icons/phone-white-icon.png" />
                         </div>
                         <div class="phone-link">
-                            <a href="tel: +254716785847">+254716785847</a>
+                            <a href="tel:+254768444404">+254 768 444 404</a>
                         </div>
                     </div>
                     <div class="email-details">
@@ -579,7 +598,7 @@
                             <img src="./assets/icons/email-white-icon.png" />
                         </div>
                         <div class="email-link">
-                            <a href="mailto: info@bekocorporatesolutions.com">info@bekocorporatesolutions.com</a>
+                            <a href="mailto:bekocorporate@Koch.co.ke">bekocorporate@koch.co.ke</a>
                         </div>
                     </div>
                     <div class="address-details">
@@ -587,7 +606,10 @@
                             <img src="./assets/icons/address-white-icon.png" />
                         </div>
                         <div class="address-link">
-                            <p>Home, off gong road</p>
+                            <p>
+                                Ground Floor, Apollo Center <br />
+                                Ring Road,  Nairobi – Kenya.
+                            </p>
                         </div>
                     </div>
                 </div>

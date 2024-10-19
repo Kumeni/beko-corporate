@@ -1,5 +1,4 @@
 main{
-    background-color: white;
     position:relative;
     z-index: 1;
 }
@@ -9,7 +8,7 @@ main{
     display: -moz-grid;
 }
 .partnering-with-bekocorporate  {
-    background: #ffff;
+    /* background: #ffff; */
     width: 100%;
     max-width: 1440px;
     grid-template-columns: auto;
@@ -20,19 +19,14 @@ main{
 }
 
 .partner-with-bekocorporate {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto;
     column-gap: 2rem;
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
-    width: 100vw;
-    max-width: 1440px;
 }
 .partner-text-container .underline{
     margin: 1rem 0rem;
-}
-.partner-text-container{
-    width: 80%;
 }
 @media (max-width: 1200px){
     .partner-text-container{
@@ -78,6 +72,7 @@ main{
     border-radius: 5px;
     margin: auto;
     box-shadow: 1px 1px 4px rgb(210, 210, 210);
+    background-color: white;
 }
 
 .list-style-icon {

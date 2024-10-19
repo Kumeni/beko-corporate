@@ -5,34 +5,67 @@
 }
 .about-us-hero{
     /* justify-content: center; */
-    align-items: center;
 }
 .about-us-hero {
-    background-color: #273273e1;
+    background-color: #01426a;
     color: white;
     min-height: 20vh;
 }
-.hero-text-container h2 {
-    text-align: center;
-    /* position: relative;
-    top: 100px; */
+.about-us-hero > div{
+    position: relative;
 }
-
+.about-us-hero .our-vision{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    grid-template-columns: 40% auto;
+    column-gap: 2rem;
+    padding: 2rem;
+    height: 100%;
+    align-items: center;
+}
+.about-us-hero > div > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.our-vision{
+    position: absolute;
+    top:0;
+}
+.our-vision h2{
+    font-size: 3.5rem;
+}
+.our-vision p{
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+}
 .beko-about-content {
-    background-color: #91BDD3;
-    color: white;
+    /* background-color: #91BDD3; */
     /* min-height: 250vh; */
+    color: #01426a;
 }
 
 .beko-about-information {
     display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    grid-template-columns: 25% 85%;
+    column-gap: 2rem;
     justify-content: center;
-    width: 100%;
+    width: 70%;
+    max-width: 1200px;
+    margin: auto;
     padding: 4rem 1rem;
 }
-
+.beko-about-information h1{
+    font-size: 2.5rem;
+}
+.beko-about-information div p:first-of-type{
+    font-size: 1.5rem;
+}
 .paragrapgh-content {
-    width: 60%;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(6, auto);
@@ -40,10 +73,8 @@
     justify-self: center;
     /* box-shadow: 1px 1px 4px rgb(210, 210, 210); */
 }
-
-.paragrapgh-content h3 {
-    border-left: 3px solid #273273e1;
-    padding-left: 1rem;
+.paragrapgh-content p{
+    line-height: 1.8rem;
 }
 @media (max-width: 768px){
     .paragrapgh-content{

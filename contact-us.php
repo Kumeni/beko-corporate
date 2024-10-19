@@ -323,7 +323,7 @@
     <title>Contact Us</title>
 </head>
 <body>
-    <header class="navigation">
+<header class="navigation">
         <div class="menu">
             <div class="logo">
                 <div 
@@ -334,28 +334,34 @@
                     <div></div>
                     <div></div>
                 </div>
-                <a href="./"><img class="beko-logo" src="./assets/icons/white beko logo.png" alt="Beko logo white" /></a>
+                <a href="./"><img class="beko-logo" src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko logo white" /></a>
             </div>
-            <div class="our-services">
-                <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
-                <div>
-                    <ul>
-                        <?php
-                            $innerHTML = "";
-                            foreach ($categorizedProducts["categories"] as $index => $category) {
-                                # code...
-                                $categoryId = $category["id"];
-                                $categoryName = $category["name"];
-                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
-                            }
-                            echo $innerHTML;
-                        ?>
-                    </ul>
-                </div>
-            </div>
+            
             <ul class="menu-items">
+                <div class="our-services">
+                    <span class="dynamic-text">Products</span>
+                    <div>
+                        <ul>
+                            <?php
+                                $innerHTML = "";
+                                foreach ($categorizedProducts["categories"] as $index => $category) {
+                                    # code...
+                                    $categoryId = $category["id"];
+                                    $categoryName = $category["name"];
+                                    if($categoryId == 1){
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                    } else {
+                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                    }
+                                    
+                                }
+                                echo $innerHTML;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
                 <a href="./about-us.php" class="dynamic-text">About Us</a>
-                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
             </ul>
             <div 
                 class="menu-bars small-screen-menu-bars" 
@@ -379,22 +385,37 @@
                             # code...
                             $categoryId = $category["id"];
                             $categoryName = $category["name"];
-                            $innerHTML .= "<li>
-                                <span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>
+                            $innerHTML .= "<li>";
+                            if($categoryId == 1){
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                            } else {
+                                $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
+                            }
+                            
+                            $innerHTML .="
                                 <div class='underline'></div>
                                 <ul>";
-
-                                    foreach ($category["categories"] as $key => $subCategory) {
-                                        # code...
-                                        $subCategoryId = $subCategory["id"];
-                                        $subCategoryName = $subCategory["name"];
-                                        $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                    if($categoryId != 1){
+                                        foreach ($category["categories"] as $key => $subCategory) {
+                                            # code...
+                                            $subCategoryId = $subCategory["id"];
+                                            $subCategoryName = $subCategory["name"];
+                                            $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                        }
                                     }
                             $innerHTML .="</ul>
                             </li>";
                         }
                         echo $innerHTML;
                     ?>
+                    <!-- <li>
+                        <span>Built In Home Appliances</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="careers.html">Careers</a>
+                            <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                        </ul>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -402,7 +423,6 @@
     <section class="contact-us-hero">
         <div class="hero-banner">
             <div class="hero-text-container">
-                <h1>Welcome to Beko's Contact Page!</h1>
                 <p>At Beko, we're committed to providing exceptional customer service and ensuring your experience with our products is nothing short of excellent. Whether you have a question, need support, or want to give feedback, our team is here to assist you. Please feel free to reach out using the options below, and we'll get back to you as soon as possible.</p>
             </div>
         </div>
@@ -410,9 +430,9 @@
     <main class="contact-us-channels">
         <section class="get-in-touch">
             <div class="get-in-touch-container">
-                <div class="get-in-touch-header">
+                <!-- <div class="get-in-touch-header">
                     <p class="breadcrumbs"> <a href="/">Home</a> / <a href="/products.html">Products</a></p>
-                </div>
+                </div> -->
                 <div class="contact-information-container">
                     <div class="contact-information">
                         <div class="contact-information-text-container">
@@ -430,7 +450,7 @@
                                 </div>
                                 <div class="phone-link">
                                     <p>Phone</p>
-                                    <a href="tel: +2547000000000">+254700 000000</a>
+                                    <a href="tel:+254768444404">+254 768 444 404</a>
                                 </div>
                             </div>
                             <div class="email-details">
@@ -439,7 +459,7 @@
                                 </div>
                                 <div class="email-link">
                                     <p>Email</p>
-                                    <a href="mailto: info@bekocorporate.com">info@bekocorporate.com</a>
+                                    <a href="mailto:bekocorporate@Koch.co.ke">bekocorporate@koch.co.ke</a>
                                 </div>
                             </div>
                             <div class="address-details">
@@ -448,7 +468,10 @@
                                 </div>
                                 <div class="address-link">
                                     <p>Address</p>
-                                    <p>Home, off gong road</p>
+                                    <p>
+                                        Ground Floor, Apollo Center <br />
+                                        Ring Road,  Nairobi – Kenya.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -458,11 +481,8 @@
                                 <h4>Follow Us:</h4>
                             </div>
                             <div class="icon-container">
-                                <a href="#">
-                                    <img src="./assets/icons/x-white-icon.png" />
-                                </a>
-                                <a href="#">
-                                    <img src="./assets/icons/instagram-white-icon.png" />
+                                <a href="https://www.instagram.com/bekocorporate_solutions/" target="_blank">
+                                    <img src="./assets/icons/instagram icon.png" />
                                 </a>
                             </div>
                         </div>
@@ -479,11 +499,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="gle-maps">
+                <!-- <div class="gle-maps">
                     <div class="gle-maps-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.777225041228!2d36.77961597496577!3d-1.3089279986786446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11616b6fff21%3A0x47f83d7f26050db!2sCustom%20t-shirt%20branding!5e0!3m2!1sen!2ske!4v1725734306670!5m2!1sen!2ske" width=300 height=500 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
@@ -492,26 +512,17 @@
             <div class="brands">
                 <div class="brand-logo-name">
                     <div class="brand-logo">
-                        <img src="./assets/icons/blue beko logo.png" />
+                        <img src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko Corporate Solutions Blue Logo" />
                     </div> 
                 </div>
                 <div class="brands-paragraph-content">
-                <p>Beko is committed to delivering innovative, high-quality appliances designed to make your everyday life easier. With a focus on energy efficiency and smart technology, we strive to bring sustainable solutions to your home.</p>
+                    <p>We work for a sustainable future through our technology, human resources, and production power.
+                    Our vision is to rejuvenate ourselves and our industry to become a trusted lifestyle solutions provider to the digital household.</p>
                 </div> 
                 <div class="social-media-brand-logos">
                     <div>
-                        <a href="#instagram">
+                        <a href="https://www.instagram.com/bekocorporate_solutions/" target="_blank">
                             <img src="./assets/icons/instagram icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#linkedin">
-                            <img src="./assets/icons/linkedin icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#facebook">
-                            <img src = "./assets/icons/facebook icon.png" />
                         </a>
                     </div>
                 </div>
@@ -525,7 +536,12 @@
                         # code...
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
-                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        if($categoryId == 1){
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                        } else {
+                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        }
+                        
                     }
                     echo $innerHTML;
                 ?>
@@ -533,14 +549,14 @@
                 <a href="./contact-us.php">Contact Us</a>
             </div>
             <div class="contact">
-                <h3>Contact</h3> <br />
+                <h3>Contacts</h3> <br />
                 <div class="contact-information-icons-details">
                     <div class="phone-details">
                         <div class="icon-container">
                             <img src="./assets/icons/phone-white-icon.png" />
                         </div>
                         <div class="phone-link">
-                            <a href="tel: +2547000000000">+254700 000000</a>
+                            <a href="tel:+254768444404">+254 768 444 404</a>
                         </div>
                     </div>
                     <div class="email-details">
@@ -548,7 +564,7 @@
                             <img src="./assets/icons/email-white-icon.png" />
                         </div>
                         <div class="email-link">
-                            <a href="mailto: info@bekocorporate.com">info@bekocorporate.com</a>
+                            <a href="mailto:bekocorporate@Koch.co.ke">bekocorporate@koch.co.ke</a>
                         </div>
                     </div>
                     <div class="address-details">
@@ -556,7 +572,10 @@
                             <img src="./assets/icons/address-white-icon.png" />
                         </div>
                         <div class="address-link">
-                            <p>Home, off gong road</p>
+                            <p>
+                                Ground Floor, Apollo Center <br />
+                                Ring Road,  Nairobi – Kenya.
+                            </p>
                         </div>
                     </div>
                 </div>

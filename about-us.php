@@ -315,6 +315,10 @@
     <link rel="stylesheet" type="text/css" href="./styles/header.css" />
     <link rel="stylesheet" type="text/css" href="./styles/footer.css" />
     <link rel="stylesheet" type="text/css" href="./styles/about-us.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>About Us</title>
 </head>
 <body>
@@ -329,28 +333,34 @@
                     <div></div>
                     <div></div>
                 </div>
-                <a href="./"><img class="beko-logo" src="./assets/icons/white beko logo.png" alt="Beko logo white" /></a>
+                <a href="./"><img class="beko-logo" src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko logo white" /></a>
             </div>
-            <div class="our-services">
-                <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
-                <div>
-                    <ul>
-                        <?php
-                            $innerHTML = "";
-                            foreach ($categorizedProducts["categories"] as $index => $category) {
-                                # code...
-                                $categoryId = $category["id"];
-                                $categoryName = $category["name"];
-                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
-                            }
-                            echo $innerHTML;
-                        ?>
-                    </ul>
-                </div>
-            </div>
+            
             <ul class="menu-items">
+                <div class="our-services">
+                    <span class="dynamic-text">Products</span>
+                    <div>
+                        <ul>
+                            <?php
+                                $innerHTML = "";
+                                foreach ($categorizedProducts["categories"] as $index => $category) {
+                                    # code...
+                                    $categoryId = $category["id"];
+                                    $categoryName = $category["name"];
+                                    if($categoryId == 1){
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                    } else {
+                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                    }
+                                    
+                                }
+                                echo $innerHTML;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
                 <a href="./about-us.php" class="dynamic-text">About Us</a>
-                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
             </ul>
             <div 
                 class="menu-bars small-screen-menu-bars" 
@@ -374,81 +384,63 @@
                             # code...
                             $categoryId = $category["id"];
                             $categoryName = $category["name"];
-                            $innerHTML .= "<li>
-                                <span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>
+                            $innerHTML .= "<li>";
+                            if($categoryId == 1){
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                            } else {
+                                $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
+                            }
+                            
+                            $innerHTML .="
                                 <div class='underline'></div>
                                 <ul>";
-
-                                    foreach ($category["categories"] as $key => $subCategory) {
-                                        # code...
-                                        $subCategoryId = $subCategory["id"];
-                                        $subCategoryName = $subCategory["name"];
-                                        $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                    if($categoryId != 1){
+                                        foreach ($category["categories"] as $key => $subCategory) {
+                                            # code...
+                                            $subCategoryId = $subCategory["id"];
+                                            $subCategoryName = $subCategory["name"];
+                                            $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                        }
                                     }
                             $innerHTML .="</ul>
                             </li>";
                         }
                         echo $innerHTML;
                     ?>
+                    <!-- <li>
+                        <span>Built In Home Appliances</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="careers.html">Careers</a>
+                            <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                        </ul>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </header>
     <section class="about-us-hero">
-        <div class="hero-banner">
-            <div class="hero-text-container">
-                <h2>About Beko</h2>
-            </div>
+        <div>
+            <img src="./assets/about-us/Capture.PNG" alt="our vision banner"/>
+            <!-- <div class="our-vision">
+                <h2>Our Vision</h2>
+                <p>Our vision is to rejuvenate ourselves and our industry to become a trusted lifestyle solutions provider to the digital household.</p>
+            </div> -->
         </div>
     </section>
     <main class="beko-about-content">
         <section class="beko-about-information">
+            <h1>About us</h1>
             <div class="paragrapgh-content">
-                <h3>Innovation For Every Home</h3>
-                <p>At Beko, we believe in creating appliances that make life easier, healthier and more sustainable for everyone. 
-                    Established in 1955, Beko has grown into one of the world's leading home appliance brands, serving millions of 
-                    households across over 130 countries. Our mission is to provide high-quality, energy-efficient and innovative products
-                    that meet the needs of modern life style, ensuring that every home is equiped with smart, practical solutions.
+                <p>Our journey started in 1955...</p>
+                <p>
+                    55,000 employees throughout the world with its global operations through its subsidiaries in 58 countries and 46 production facilities in 14 countries (i.e. Türkiye, UK, Italy, Romania, Slovakia, Poland, South Africa, Russia, Pakistan, India, Bangladesh, Thailand, China and Egypt). Beko has 22 brands owned or used with a limited license (Arçelik, Beko, Whirlpool*, Grundig, Hotpoint, Arctic, Ariston*, Leisure, Indesit, Blomberg, Defy, Dawlance, Hitachi*, Voltas Beko, Singer*, ElektraBregenz, Flavel, Bauknecht, Privileg, Altus, Ignis, Polar). Beko became the largest white goods company in Europe with its market share (based on volumes) and reached a consolidated turnover of 8 billion Euros in 2023. Beko’s 31 R&D and Design Centers & Offices across the globe are home to over 2,300 researchers and hold more than 3,500 international registered patent applications to date. For the 5th consecutive year, the highest score in the DHP Household Durables industry (based on the results dated 27 October 2023) in the Dow Jones Sustainability Index of the S&P Global Corporate Sustainability Assessment was achieved.** Beko’s vision is ‘Respecting the World, Respected Worldwide.’  
                 </p>
-            </div>
-            <div class="paragrapgh-content">
-                <h3>A Global Leader In Home Appliances</h3>
-                <p>As part if Arcelic, one of the largest consumer goods companies, Beko combines decades of expertise with commitment to innovation.
-                    we produce a wide range of appliances, from refrigerators, dishwashers and washing machines to cookers, vacuum cleaners, and air 
-                    conditioners, all designed with the latest technology to improve  everyday living. Our products are recognized for their durabilty
-                    , sleek design, and energy efficiency, making them a preffered choice in homes worldwide.
-                </p>
-            </div>
-            <div class="paragrapgh-content">
-                <h3>Our Commitment To Sustainability</h3>
-                <p>At Beko, we are committed to building a better future. Sustainability is at the core of everything we do, from the eco-friendly technologies
-                    we develop to the materials we use. Our appliances are designed to reduce energy consumption and minimize their environmental impact, 
-                    helping consumers live more sustainably without compromising on performance.
-                </p>
-            </div>
-            <div class="paragrapgh-content">
-                <h3>Innovation And Smart Technology</h3>
-                <p>We constantly push the boundaries of technology to create smarter, more efficient appliances
-                    Whether it's smart refrigerators with advanced cooling systems or washing machines
-                    that use less water and energy, our goal is to make every task easier and more 
-                    convenient. Beko's innovative solutions are inspired by real-life needs, ensuring our customers
-                    always get the best in both design and functionality.
-                </p>
-            </div>
-            <div class="paragrapgh-content">
-                <h3>Customer-Centric Approach</h3>
-                <p>At the heart of Beko is our commitment to our customers. We listen to their needs, adapt to 
-                    their evolving preferences, and strive to exceed their expectations. Our goal is to provide appliances
-                    that make everyday life simpler, more enjoyable, and worry-free. With a global
-                    network of support services and partners, we ensure that help is always at hand when you need it.
-                </p>
-            </div>
-            <div class="paragrapgh-content">
-                <h3>Our Vision for the Future</h3>
-                <p>Beko envisons a world where technology and sustainability work hand in hand to create healthier
-                    smarter, and more sustainable homes. As we look to the future, we will continue to innovate and 
-                    lead the industry with solutions that psoitively impact both our customers
-                    and the planet.
+                <p>
+                    <b>
+                    *Licensee limited to certain jurisdictions.<br />
+                    **The data presented belongs to Arçelik A.Ş., a parent company of Beko.
+                    </b>
                 </p>
             </div>
         </section>
@@ -458,26 +450,17 @@
             <div class="brands">
                 <div class="brand-logo-name">
                     <div class="brand-logo">
-                        <img src="./assets/icons/blue beko logo.png" />
+                        <img src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko Corporate Solutions Blue Logo" />
                     </div> 
                 </div>
                 <div class="brands-paragraph-content">
-                <p>Beko is committed to delivering innovative, high-quality appliances designed to make your everyday life easier. With a focus on energy efficiency and smart technology, we strive to bring sustainable solutions to your home.</p>
+                    <p>We work for a sustainable future through our technology, human resources, and production power.
+                    Our vision is to rejuvenate ourselves and our industry to become a trusted lifestyle solutions provider to the digital household.</p>
                 </div> 
                 <div class="social-media-brand-logos">
                     <div>
-                        <a href="#instagram">
+                        <a href="https://www.instagram.com/bekocorporate_solutions/" target="_blank">
                             <img src="./assets/icons/instagram icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#linkedin">
-                            <img src="./assets/icons/linkedin icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#facebook">
-                            <img src = "./assets/icons/facebook icon.png" />
                         </a>
                     </div>
                 </div>
@@ -491,7 +474,12 @@
                         # code...
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
-                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        if($categoryId == 1){
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                        } else {
+                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        }
+                        
                     }
                     echo $innerHTML;
                 ?>
@@ -499,14 +487,14 @@
                 <a href="./contact-us.php">Contact Us</a>
             </div>
             <div class="contact">
-                <h3>Contact</h3> <br />
+                <h3>Contacts</h3> <br />
                 <div class="contact-information-icons-details">
                     <div class="phone-details">
                         <div class="icon-container">
                             <img src="./assets/icons/phone-white-icon.png" />
                         </div>
                         <div class="phone-link">
-                            <a href="tel: +254716785847">+254716785847</a>
+                            <a href="tel:+254768444404">+254 768 444 404</a>
                         </div>
                     </div>
                     <div class="email-details">
@@ -514,7 +502,7 @@
                             <img src="./assets/icons/email-white-icon.png" />
                         </div>
                         <div class="email-link">
-                            <a href="mailto: info@bekocorporatesolutions.com">info@bekocorporatesolutions.com</a>
+                            <a href="mailto:bekocorporate@Koch.co.ke">bekocorporate@koch.co.ke</a>
                         </div>
                     </div>
                     <div class="address-details">
@@ -522,7 +510,10 @@
                             <img src="./assets/icons/address-white-icon.png" />
                         </div>
                         <div class="address-link">
-                            <p>Home, off gong road</p>
+                            <p>
+                                Ground Floor, Apollo Center <br />
+                                Ring Road,  Nairobi – Kenya.
+                            </p>
                         </div>
                     </div>
                 </div>

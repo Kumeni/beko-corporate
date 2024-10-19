@@ -468,7 +468,103 @@
             </div>
         </div>
     </header>
-
+    <header class="navigation">
+        <div class="menu">
+            <div class="logo">
+                <div 
+                    class="menu-bars large-screen-menu-bars" 
+                    id="navigation-bars" 
+                    onclick="toggleNavigation(true)" >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <a href="./"><img class="beko-logo" src="../assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko logo white" /></a>
+            </div>
+            
+            <ul class="menu-items">
+                <div class="our-services">
+                    <span class="dynamic-text">Products</span>
+                    <div>
+                        <ul>
+                            <?php
+                                $innerHTML = "";
+                                foreach ($categorizedProducts["categories"] as $index => $category) {
+                                    # code...
+                                    $categoryId = $category["id"];
+                                    $categoryName = $category["name"];
+                                    if($categoryId == 1){
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'">$categoryName</a>";
+                                    } else {
+                                        $innerHTML .= "<a href='../products.php?category-id=$categoryId'>$categoryName</a>";
+                                    }
+                                    
+                                }
+                                echo $innerHTML;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <a href="../about-us.php" class="dynamic-text">About Us</a>
+                <a class="dynamic-text" href="../contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
+            </ul>
+            <div 
+                class="menu-bars small-screen-menu-bars" 
+                id="navigation-bars" 
+                onclick="toggleNavigation(true)" >
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="hamburger-menu">
+            <div id="hamburger-menu-container">
+                <ul class="hamburger-menu-ul">
+                    <span title="Close" class="close-hamburger-menu" onclick="toggleNavigation(false)">&times;</span>
+                    <a href="../">Home</a>
+                    <a href="../about-us.php">About Us</a>
+                    <a href="../contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                    <?php
+                        $innerHTML = "";
+                        foreach ($categorizedProducts["categories"] as $index => $category) {
+                            # code...
+                            $categoryId = $category["id"];
+                            $categoryName = $category["name"];
+                            $innerHTML .= "<li>";
+                            if($categoryId == 1){
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a></span>";
+                            } else {
+                                $innerHTML .= "<span><a href='../products.php?category-id=$categoryId'>$categoryName</a></span>";
+                            }
+                            
+                            $innerHTML .="
+                                <div class='underline'></div>
+                                <ul>";
+                                    if($categoryId != 1){
+                                        foreach ($category["categories"] as $key => $subCategory) {
+                                            # code...
+                                            $subCategoryId = $subCategory["id"];
+                                            $subCategoryName = $subCategory["name"];
+                                            $innerHTML .= "<a href='../products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                        }
+                                    }
+                            $innerHTML .="</ul>
+                            </li>";
+                        }
+                        echo $innerHTML;
+                    ?>
+                    <!-- <li>
+                        <span>Built In Home Appliances</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="careers.html">Careers</a>
+                            <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </header>
     <main>
 
         <?php
