@@ -2,12 +2,15 @@ header{
     /* height: 30px; */
     position: sticky;
     top: 0px;
-    background-color: #273273e1;
+    /* background-color: #273273e1; */
+    background-color: #01426a;
+    background-color: white;
     display: block;
     z-index: 5;
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
-.menu, .menu-bars, .logo, .menu-items, .outer-circle, .dynamic-text{
+.menu, .menu-bars, .logo, .menu-items, .outer-circle, .dynamic-text, .our-services{
     display: grid;
     display: -ms-grid;
     display: -moz-grid;
@@ -20,7 +23,7 @@ header{
 }
 
 .menu{
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
     justify-content: space-between;
     padding:0.6rem 1rem;
     padding:1rem 1rem;
@@ -70,14 +73,18 @@ header{
     cursor: pointer;
 }
 
-.menu-bars:hover > div{
+/* .menu-bars:hover > div{
     background-color: rgb(245, 245, 245);
+} */
+
+.menu-bars:hover{
+    background-color: #01426a31;
 }
 
 .menu-bars > div{
     height: 2px;
     /* background-color: white; */
-    background-color: white;
+    background-color: #01426a;
 }
 
 /*.menu-bars > div:nth-of-type(2){
@@ -95,12 +102,23 @@ header{
     list-style: none;
 }
 
+.menu-items a{
+    color: #01426a;
+}
 .our-services:hover ul{
     display: block;
 }
-
+.our-services{
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    align-items: center;
+    height: max-content;
+    align-self: center;
+}
 .our-services > span{
     transition: all .5s;
+    align-self: center;
+    font-weight: 600;
 }
 .our-services > span:hover{
     cursor: pointer;
@@ -125,9 +143,15 @@ header{
     background-color: white;
     background-color: #273273;
     border-radius: 0px 0px 5px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
-.our-services > div > ul a{
+.our-services > div > ul ul{
+    margin-left: 1rem;
+}
+.our-services > div > ul a, .our-services > div > ul span{
     display: block;
     padding: 0.8rem 2rem;
     border-radius: 5px;
@@ -147,9 +171,11 @@ header{
     text-decoration: none;
     font-weight: 500;
     transition: all .5s;
-    /* color: black; */
+    color: #01426a;
 }
-
+.menu-items > a{
+    font-weight: 600;
+}
 .menu-items li:hover, .menu-items a:hover{
     cursor: pointer;
     color: gold;
@@ -159,7 +185,7 @@ header{
 */
 .hamburger-menu{
     /* min-height: 100vh; */
-    background-color: white;
+    background-color: #01426a;
     width: 0%;
     /* white-space: nowrap; */
     position: relative;
@@ -183,7 +209,8 @@ header{
     transition: width 0.5s;
     overflow: auto;
     background-color: white;
-    width:50%;
+    width:100%;
+    max-width:700px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -193,7 +220,7 @@ header{
     margin-left: 1rem;
 }
 .hamburger-menu ul > li{
-    margin: 1rem 0rem 2rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
 }
 .hamburger-menu ul > li:hover{
     background-color: white;
@@ -201,10 +228,13 @@ header{
 .hamburger-menu a, .hamburger-menu span{
     display: block;
     padding: 0.8rem 0.2rem;
-    color: black;
+    color: #01426a;
     text-decoration: none;
     font-weight:500;
     margin-left: 1rem;
+}
+.hamburger-menu-ul > li > span{
+    margin-left: 0rem;
 }
 .hamburger-menu-ul > span:first-of-type{
     font-size: 2.5rem;
@@ -246,9 +276,13 @@ header{
     .hamburger-menu > ul{
         background-color: white !important;
     }
+    .our-services{
+        visibility: hidden;
+    }
 }
 .dynamic-text{
-    color: white;
+    color: #01426a;
     grid-template-columns: repeat(2, auto);
     align-items: center;
+    font-weight: 500;
 }

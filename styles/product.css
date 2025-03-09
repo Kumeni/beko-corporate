@@ -2,7 +2,8 @@
 .single-product-information, 
 .single-product-information h1, 
 .varieties, .contact-us-component > div,
-.contact-us-and-specifications{
+.contact-us-and-specifications,
+.contact-us-component > div > a{
     display: grid;
     display: -ms-grid;
     display: -moz-grid;
@@ -24,14 +25,14 @@
         padding: 1rem;
     }
 }
-.single-product-images{
-    background-color: skyblue;
-    height: 500px;
+.single-product-image-container{
+    /* background-color: skyblue; */
+    height: auto;
     border-radius: 10px;
     padding: 1rem;
 }
 @media(max-width: 767px){
-    .single-product-images{
+    .single-product-image-container{
         height: auto;
         background-color: unset;
         padding: 0rem;
@@ -42,6 +43,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    max-height: 80vh;
 }
 .single-product-information{
     grid-template-rows: repeat(3, auto);
@@ -134,7 +136,7 @@
     /* border: 1px solid black; */
 }
 
-.contact-us-component > div{
+.contact-us-component > div > a{
     width: 300px;
     padding: 0.8rem;
     border-radius: 3rem;
@@ -232,4 +234,8 @@
 }
 main h2{
     font-size: 1.3rem;
+}
+
+.checked-icon{
+    width:30px;
 }

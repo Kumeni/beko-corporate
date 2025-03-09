@@ -3,9 +3,9 @@
     $user = "root";
     $password = "";
     $database = "beko_corporate";
-    //$user = "sirneilc";
-    //$password = "0geSE(31Yja[8G";
-    //$database = "sirneilc_db";
+    /*$user = "bekocorp";
+    $password = "JubY7R;5Gc86n[";
+    $database = "bekocorp_db";*/
 
     /*$host = 'localhost';
     $user = "ioxtechp";

@@ -4,7 +4,6 @@
     display: -moz-grid;
 }
 .homepage-hero {
-    background: #ffff;
     line-height: 1.5;
     width: 100%;
     position: relative;
@@ -25,6 +24,13 @@
     max-width: 1440px;
     width: 90vw;
     margin: auto;
+}
+.welcome-to-beko{
+    grid-template-columns: auto;
+    padding: 2rem;
+    /* box-shadow: 1px 1px 4px rgb(120, 120, 120); */
+    max-width: 800px;
+    border-radius: 5px;
 }
 .hero-image-container img{
     border-radius: 10px;

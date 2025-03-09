@@ -1,6 +1,6 @@
 const swiper = new Swiper('.swiper', {
     // Optional parameters
-    speed:600,
+    speed:300,
     spaceBetween:30,
     slidesPerView:1,
     direction: 'horizontal',
@@ -12,7 +12,7 @@ const swiper = new Swiper('.swiper', {
     },
 
     autoplay:{
-      delay:5000,
+      delay:2500,
       disableOnInteraction:false,
     },
   
@@ -28,7 +28,7 @@ const swiper = new Swiper('.swiper', {
     },
 
     // Responsive breakpoints
-    breakpoints: {
+    /*breakpoints: {
         //when window width is <=425px
         425:{
           slidesPerView:1,
@@ -43,5 +43,5 @@ const swiper = new Swiper('.swiper', {
             slidesPerView: 3,
             //spaceBetween: 30
         },
-    }
+    }*/
 });

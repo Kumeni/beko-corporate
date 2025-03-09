@@ -15,7 +15,7 @@
     grid-template-columns: repeat(2, 40%);
     column-gap: 2rem;
     row-gap: 2rem;
-    justify-content: center;;
+    justify-content: center;
 }
 @media (max-width:1024px){
     .offers{
@@ -27,7 +27,7 @@
         grid-template-columns: auto;
     }
 }
-.offer{
+/*.offer{
     border-radius: 20px;
     box-shadow: 1px 1px 4px rgb(210, 210, 210);
     position: relative;
@@ -39,15 +39,53 @@
     padding:1rem 2rem;
     border-radius: 20px;
     overflow: hidden;
+}*/
+.offer{
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgb(210, 210, 210);
+    position: relative;
+    height: 370px;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-content: end;
+    row-gap: 2rem;
+    text-align: left;
+    padding:2rem 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    margin: auto;
 }
-
+.home-appliances{
+    padding: 0.5rem 2rem;
+}
+.offer video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 @media (max-width: 768px){
     .offers{
         grid-template-columns: auto;
     }
     .offer{
         width: 95vw;
+        height: 300px;
     }
+}
+@media (max-width: 425px){
+    .offers{
+        row-gap: 0.5rem;
+    }
+    .offer{
+        height: 300px;
+    }
+}
+.offer > div:nth-of-type(2){
+    z-index: 2;
+}
+.offer > div:nth-of-type(2) ul li{
+    color: white;
 }
 .offer img{
     transition: all 1s ease-in-out;
@@ -75,12 +113,17 @@
 }
 .offer a{
     background-color: white;
+    background-color: #01426a !important;
+    background-color: rgb(245, 245, 245);
     color: black;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     transition: all .5s;
+    height: max-content;
+    align-self: center;
 }
-.home-appliances a{
+/*.home-appliances a{
     background-color: #ee313a;
     color: white;
 }
@@ -102,10 +145,10 @@
 }
 .doors a, .corporate-scenting-solutions a, .ev-chargers{
     background-color: #dcdcdc;
-}
+}*/
 .offer h3{
     font-size: 1.9rem;
-    color: #273273;
+    color: #01426a;
 }
 .browse-button{
     padding: 1rem 3rem;
@@ -113,6 +156,11 @@
     box-shadow: 2px 2px 6px rgb(45, 45, 45);
     width: max-content;
     text-decoration: none;
+}
+@media (max-width: 320px){
+    .browse-button{
+        padding: 1rem 1.5rem;
+    }
 }
 .offer a:hover{
     color: gold;
@@ -122,12 +170,44 @@
 }
 .solar-panel-products h3{
     color: white;
+    background-color: rgba(0, 0, 0, 0.219);
+}
+.hotel-concepts ul li{
+    color: #01426a !important;
+}
+.hotel-concepts ul{
+    list-style: none;
+}
+.kitchen-cabinets h3{
+    color: #01426a;
+}
+.kitchen-cabinets ul li{
+    color: #01426a ! important;
+}
+.hotel-concepts ul li, .kitchen-cabinets ul li{
+    font-weight: 600;
+    font-weight:1.2rem;
+}
+.kitchen-cabinets ul{
+    list-style: none;
+}
+.wardrobes h3{
+    color: white;
 }
 .ev-chargers h3{
     color: white;
 }
+.ac-solutions h3{
+    color: #01426a;
+}
+.ac-solutions .offer-image-container img{
+    transform: scale(70%);
+}
+.doors h3{
+    color: white;
+}
 .corporate-scenting-solutions h3{
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
     padding: 0.5rem;
 }

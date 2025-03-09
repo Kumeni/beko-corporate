@@ -3,15 +3,17 @@
     display: -ms-grid;
     display: -moz-grid;
 }
-header{
+.landing{
     background-color: #273273;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 .landing h1{
     text-align: center;
     padding: 4rem 0rem 0rem 0rem;
     background-color: #273273;
     color: white;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .landing .underline{
     margin: auto;
@@ -69,6 +71,8 @@ header{
     }
 }
 .product{
+    border:1px solid rgb(210, 210, 210);
+    border-radius: 2rem;
     position: relative;
     height: max-content;
 }
@@ -76,12 +80,17 @@ header{
     /* background-color: skyblue; */
     border-radius: 2rem 2rem 0rem 0rem;
     padding: 2rem 0.5rem 3rem 0.5rem;
-    border:1px solid rgb(210, 210, 210);
+    /* border:1px solid rgb(210, 210, 210); */
 }
 .product-image-container > img{
     /* border-radius: 2rem 2rem 0rem 0rem; */
     cursor: pointer;
     transition: all .5s;
+    max-height: 60vh;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin: auto;
 }
 .product:hover .product-image-container > img{
     transform:scale(95%);
@@ -131,12 +140,20 @@ header{
     border-radius: 50%;
     box-shadow: 2px 2px 4px rgb(120, 120, 120);
 }
-.share-icon-container a{
+.share-icon-container:hover{
+    cursor: pointer;
+}
+.share-icon-container button{
     width: unset;
     padding: 0;
+    border: none;
+    background-color: transparent;
 }
 .share-icon-container img{
     width: 25px;
+}
+.share-icon-container img:hover{
+    cursor: pointer;
 }
 .product-details{
     grid-template-columns: max-content auto;

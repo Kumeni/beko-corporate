@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /beko-corporate-admin/
+Allow: /beko-corporate-admin/upload/

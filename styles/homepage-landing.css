@@ -7,22 +7,25 @@
 .homepage-landing-container{
     /*position: sticky;
     top: 0;*/
-    position: fixed;
+    /* position: fixed;
     top:0;
     left:0;
-    right:0;
-    background-color: #273273;
+    right:0; */
+    margin-top: 1rem;
+    overflow: hidden;
 }
 .homepage-landing, .homepage-landing-decoy{
-    min-height: 100vh;
+    height: auto;
     position: relative;
     width:auto;
+
     /* max-width: 1440px; */
-    margin: auto;
+    margin: 1rem auto;
+    overflow: hidden;
 }
 
 .swiper-slide{
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 /*
@@ -38,7 +41,7 @@
 }
 
 .navigation-buttons button{
-    background-color: #273273e8;
+    background-color: #01426a;
     padding: 1.5rem 1rem;
     border: none;
     position: relative;
@@ -75,16 +78,29 @@
 */
 .landing-image{
     width: 100%;
-    height: 100vh;
+    height: auto;
     overflow: hidden;
 }
 
 .landing-image img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
 }
 
+.small-screen-banner{
+    display: none;
+}
+.large-screen-banner{
+    display: inline;
+}
+@media (max-width: 425px){
+    .small-screen-banner{
+        display: inline;
+    }
+    .large-screen-banner{
+        display: none;
+    }
+}
 /*
     Positioning elements in the landing container
 */
@@ -180,11 +196,11 @@
 
 
 @media (max-width:1024px) and (min-width: 820px){
-    .homepage-landing, .homepage-landing-decoy{
+    /* .homepage-landing, .homepage-landing-decoy{
         min-height: unset;
         max-height: 628px;
         overflow: hidden;
-    }
+    } */
     .swiper-slide{
         max-height: 628px;
     }
@@ -295,7 +311,4 @@
         font-size: 2.8rem;
         line-height: 2.8rem;
     }
-}
-@media (max-width: 320px){
-
 }

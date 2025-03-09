@@ -128,7 +128,7 @@ const editProduct = productIndex => {
             selectedCategories = product.categories;
             activeCategories = generate2DArrayFromTreeDataStructure(productCategories);
             updateProductCategories(activeCategories);
-            console.log(selectedCategories);
+            //console.log(selectedCategories);
 
             additionalInfos = product.articles;
             if(additionalInfos.length == 0){
@@ -212,68 +212,19 @@ const handleVarietyImageChange = (index, event) => {
     if(vehicleImages.length >= 8) imageInput.style.display = "none";
 }
 
-const removeImage = (event, index) => {
+const removeImage = (imageIndex, varietyIndex, event) => {
     event.preventDefault();
     //let imagePreview = document.getElementById("image-preview");
-    let imageInput = document.getElementById("image-input");
-    let imagePreview = document.getElementsByClassName("image-preview")[0];
+    //let imageInput = document.getElementById("image-input");
+    //let imagePreview = document.getElementsByClassName("image-preview")[0];
     //let removeImageButton = document.getElementById("remove-image-button");
 
-    console.log(index);
-    console.log(vehicleImages);
-    if(vehicleImages[index].id){
-        deletedImages = deletedImages.concat(vehicleImages[index].id);
+    let imageId = varieties[varietyIndex].images[imageIndex].id;
+    if(imageId != undefined){
+        deletedImages = deletedImages.concat(imageId);
     }
-
-    vehicleImages.splice(index, 1);
-
-    let reader, innerHTML = ``;
-
-    if(vehicleImages.length == 0){
-        imagePreview.innerHTML = ``;
-    } else vehicleImages.forEach((vehicleImage, index) => {
-        
-        if(vehicleImage.id == undefined){
-            reader = new FileReader();
-            reader.readAsDataURL(vehicleImage);
-            reader.onload = event => {
-                //imagePreview.style.display = "inline";
-                //removeImageButton.style.display = "block";
-                imagePreview.src = event.target.result;
-                innerHTML += `
-                    <div>
-                        <button onclick="removeImage(event, ${index})" class="remove-button">&times;</button>
-                        <img class="image" src="${imagePreview.src}" />
-                    </div>`;
-
-                if(index == vehicleImages.length -1){
-                    imagePreview.innerHTML = innerHTML;
-                    imageInput.value = "";
-
-                    /**Scroll to the end of the image preview */
-                    imagePreview.scrollTo(10000, 0);
-                }
-            }
-        } else {
-            //deletedImages = deletedImages.concat(vehicleImage.id);
-            innerHTML += `
-                    <div>
-                        <button onclick="removeImage(event, ${index})" class="remove-button">&times;</button>
-                        <img class="image" src=".${vehicleImage.path}" />
-                    </div>`;
-
-                if(index == vehicleImages.length -1){
-                    imagePreview.innerHTML = innerHTML;
-                    imageInput.value = "";
-
-                    /**Scroll to the end of the image preview */
-                    imagePreview.scrollTo(10000, 0);
-                }
-        }
-    });
-
-    imageInput.style.display = "block";
-    imageInput.value = "";
+    varieties[varietyIndex].images.splice(imageIndex, 1);
+    updateVarieties(varieties);
 }
 
 const getProductCategories = () => {
@@ -540,6 +491,14 @@ const handleProductUpload = event => {
     if(deletedVarieties.length > 0){
         formData.append("deleted-varieties", JSON.stringify(deletedVarieties));
     }
+    
+    /**
+     * Deleted images
+     */
+    console.log(deletedImages);
+    if(deletedImages.length > 0){
+        formData.append("deleted-images", JSON.stringify(deletedImages));
+    }
     /**
      * Processing product name
      */
@@ -749,7 +708,7 @@ const getProducts = event => {
         if(request.readyState === 4 && request.status === 200){
             console.log(request.response);
             products = JSON.parse(request.response);
-            products = JSON.parse(products);
+            //products = JSON.parse(products);
             console.log(products);
             updateProducts(products);
             editProduct();
@@ -884,7 +843,7 @@ const updateVarieties = (varieties) => {
             } else {
                 element.images.forEach((element2, index2) => {
                     innerHTML += `<div class="single-image-preview">
-                        <button title="Remove image" onclick="removeImage(${index}, ${index2}, event)" class="remove-button">&times;</button>
+                        <button title="Remove image" onclick="removeImage(${index2}, ${index}, event)" class="remove-button">&times;</button>
                         <img class="variety-image" src="" />
                     </div>`;
                 });
@@ -1059,7 +1018,6 @@ const addAdditionalInfo = (event) => {
 }
 
 const updateAdditionalInfos = (additionalInfos) => {
-    console.log(additionalInfos);
     let additionalInfosContainer = document.getElementsByClassName("editors")[0];
 
     let editorHTML = `<div class="editor"></div><br/>`;
@@ -1080,13 +1038,10 @@ const updateAdditionalInfos = (additionalInfos) => {
     let editors = document.getElementsByClassName("editor"), i=0;
 
     var delta;
-    console.log(editors);
     for(i=0; i<editors.length; i++){
         quill[i] = new Quill(editors[i], options);
         if(additionalInfos[i].delta){
-            console.log(additionalInfos[i]);
-            //quill[i].clipboard.dangerouslyPasteHTML(additionalInfos[i].html);
-            quill[i].setContents(additionalInfos[i].delta);
+            quill[i].setContents(JSON.parse(additionalInfos[i].delta));
         }
     }
 }

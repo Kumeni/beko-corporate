@@ -17,20 +17,6 @@
             die();
         }
 
-        if(isset($_POST["deleted-images"])){
-            /**
-             * Delete all the deleted images
-             */
-            $deletedImages = $_POST["deleted-images"];
-            $deletedImages = json_decode($deletedImages);
-
-            foreach ($deletedImages as $index => $deletedImage) {
-                # code...
-                $sql = "UPDATE images SET deleted='1' WHERE id=$deletedImage";
-                update($host, $user, $password, $database, $sql);
-            }
-        }
-
         if(isset($_POST["product-name"])){
             $productName = $_POST["product-name"];
             $productName = test_input($productName);
@@ -53,6 +39,11 @@
 
         if(isset($_POST["deleted-varieties"])){
             $deletedVarieties = $_POST["deleted-varieties"];
+            //$varieties = test_input($varieties);
+        }
+        
+        if(isset($_POST["deleted-images"])){
+            $deletedImages = $_POST["deleted-images"];
             //$varieties = test_input($varieties);
         }
         
@@ -138,6 +129,20 @@
                 # code...
                 
                 $sql = "UPDATE product_varieties SET deleted='1' WHERE id=$deletedVarietyId";
+                update($host, $user, $password, $database, $sql);
+            }
+        }
+        
+        
+        /**
+         * Delete a deleted image
+         */
+        if(isset($deletedImages)){
+            $deletedImages = json_decode($deletedImages, true);
+            foreach ($deletedImages as $key => $deletedImageId) {
+                # code...
+                
+                $sql = "UPDATE images SET deleted='1' WHERE id=$deletedImageId";
                 update($host, $user, $password, $database, $sql);
             }
         }
@@ -353,7 +358,20 @@
 
         echo json_encode(getAllProducts($host, $user, $password, $database));
     } if($_SERVER["REQUEST_METHOD"] == "GET"){
-        echo json_encode(getAllProducts($host, $user, $password, $database));
+        //$json_products = json_encode(getAllProducts($host, $user, $password, $database));
+        $products = getAllProducts($host, $user, $password, $database);
+        //$productsJson = json_encode($products);
+        $productsJson = $products;
+        //var_dump($productsJson);
+
+        /*if ($productsJson === false) {
+            echo "JSON Error: " . json_last_error_msg();
+        } else {
+            echo $productsJson;
+        }*/
+        //echo json_encode(getAllProducts($host, $user, $password, $database));
+        //var_dump($products);
+        echo $productsJson;
     }
 
     function getAllProducts($host, $user, $password, $database){
@@ -522,11 +540,12 @@
                 //$article["html"] = htmlspecialchars_decode($article["html"]);
                 //$article["text"] = stripslashes($article["text"]);
                 //$article["text"] = addslashes($article["text"]);
-                $article["delta"] = json_decode($article["delta"], true);
+                //$article["delta"] = json_decode($article["delta"], true);
+                //$article["delta"] = $article["delta"];
 
                 //var_dump(json_encode($article["delta"]));
                 //unset($article["delta"]);
-                $article["text"] = addslashes($article["text"]);
+                //$article["text"] = addslashes($article["text"]);
                 //var_dump($article["text"]);
                 $newArray[] = $article;
             }
@@ -536,7 +555,7 @@
         }
 
         //return $products;
-        $products = json_encode($products);
+        $products = json_encode($products, JSON_INVALID_UTF8_IGNORE);
         return $products;
     }
 

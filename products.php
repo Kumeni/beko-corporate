@@ -335,11 +335,20 @@
     <link rel="stylesheet" type="text/css" href="./styles/footer.css" />
     <link rel="stylesheet" type="text/css" href="./styles/header.css" />
     <link rel="stylesheet" type="text/css" href="./styles/products.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./styles/mosaic.css" /> -->
 
     <?php 
         echo "<script>let categorizedProducts=$categorizedProductsJSON;</script>";
     ?>
-    <title>Products</title>
+
+    <?php
+        if(isset($_GET["category-id"])){
+            $categoryId = $_GET["category-id"];
+            $category = findCategory($categorizedProducts, $categoryId, $searchBy = 'id');
+            $categoryName = $category["name"];
+        }
+    ?>
+    <title><?php echo $categoryName; ?> | Beko Corporate Solutions</title>
 </head>
 <body>
     <header class="navigation">
@@ -353,27 +362,46 @@
                     <div></div>
                     <div></div>
                 </div>
-                <a href="./"><img class="beko-logo" src="./assets/icons/white beko logo.png" alt="Beko logo white" /></a>
+                <a href="./"><img class="beko-logo" src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko logo white" /></a>
             </div>
-            <div class="our-services">
-                <span class="dynamic-text">Products <span class="outer-circle"><span class="inner-circle"></span></span></span>
-                <div>
-                    <ul>
-                        <a href="./products.php?category-id=1">Built In Home Appliances</a>
-                        <a href="./products.php?category-id=2">Solar Panel & Products</a>
-                        <a href="./products.php?category-id=3">AC Solutions</a>
-                        <a href="./products.php?category-id=4">Hotel Concepts</a>
-                        <a href="./products.php?category-id=5">Kitchen Cabinets</a>
-                        <a href="./products.php?category-id=6">Wardrobes</a>
-                        <a href="./products.php?category-id=7">Doors</a>
-                        <a href="./products.php?category-id=8">Corporate Scenting Solutions</a>
-                        <a href="./products.php?category-id=9">EV Chargers</a>
-                    </ul>
-                </div>
-            </div>
+            
             <ul class="menu-items">
-                <a href="./about-us.html" class="dynamic-text">About Us</a>
-                <a class="dynamic-text" href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                <div class="our-services">
+                    <span class="dynamic-text">Products</span>
+                    <div>
+                        <ul>
+                            <?php
+                                $innerHTML = "";
+                                foreach ($categorizedProducts["categories"] as $index => $category) {
+                                    # code...
+                                    $categoryId = $category["id"];
+                                    $categoryName = $category["name"];
+                                    if($categoryId == 1){
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
+                                    } else {
+                                        if(count($category["categories"]) > 0){
+                                            $innerHTML .= "<span>$categoryName</span><ul>";
+
+                                            foreach($category["categories"] as $index2 => $category){
+                                                $categoryId = $category["id"];
+                                                $categoryName = $category["name"];
+                                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                            }
+
+                                            $innerHTML .= "</ul>";
+                                        } else {
+                                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        }
+                                    }
+                                    
+                                }
+                                echo $innerHTML;
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <a href="./about-us.php" class="dynamic-text">About Us</a>
+                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
             </ul>
             <div 
                 class="menu-bars small-screen-menu-bars" 
@@ -388,96 +416,52 @@
             <div id="hamburger-menu-container">
                 <ul class="hamburger-menu-ul">
                     <span title="Close" class="close-hamburger-menu" onclick="toggleNavigation(false)">&times;</span>
-                    <a href="./our-projects.html">Home</a>
-                    <a href="./about-us.html">About Us</a>
-                    <li>
+                    <a href="./">Home</a>
+                    <a href="./about-us.php">About Us</a>
+                    <a href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                    <?php
+                        $innerHTML = "";
+                        foreach ($categorizedProducts["categories"] as $index => $category) {
+                            # code...
+                            $categoryId = $category["id"];
+                            $categoryName = $category["name"];
+                            $innerHTML .= "<li>";
+                            if($categoryId == 1){
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a></span>";
+                            } else {
+                                $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
+                            }
+                            
+                            $innerHTML .="
+                                <div class='underline'></div>
+                                <ul>";
+                                    if($categoryId != 1){
+                                        foreach ($category["categories"] as $key => $subCategory) {
+                                            # code...
+                                            $subCategoryId = $subCategory["id"];
+                                            $subCategoryName = $subCategory["name"];
+                                            $innerHTML .= "<a href='./products.php?category-id=$subCategoryId'>$subCategoryName</a>";
+                                        }
+                                    }
+                            $innerHTML .="</ul>
+                            </li>";
+                        }
+                        echo $innerHTML;
+                    ?>
+                    <!-- <li>
                         <span>Built In Home Appliances</span>
                         <div class="underline"></div>
                         <ul>
                             <a href="careers.html">Careers</a>
                             <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
                         </ul>
-                    </li>
-                    <li>
-                        <span>Solar Panel & Products</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Solar Panel & Products</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>AC Solutions</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Hotel Concepts</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Kitchen Cabinets</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Wardrobes</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Doors</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>Corporate Scenting Solutions</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>EV Chargers</span>
-                        <div class="underline"></div>
-                        <ul>
-                            <a href="./services/residential-solar-system-solutions.html">Residential Solar Systems Solutions</a>
-                            <a href="./services/commercial-solar-system-solutions.html">Commercial Solar System Solutions</a>
-                        </ul>
-                    </li>
-                    <a href="./contact-us.html" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </header>
 
     <main>
-        
         <?php
             if(isset($_GET["category-id"])){
                 $categoryId = $_GET["category-id"];
@@ -500,10 +484,10 @@
         <section class="landing">
             <h1><?php echo $categoryName ?></h1>
             <div class="underline"></div>
-            <div class="curved-background"></div>
+            <!-- <div class="curved-background"></div> -->
         </section>
-        <p class="breadcrumbs"> <a href="/">Home</a> / <a href="/products.html">Products</a></p>
-        <section class="products">
+        <!-- <p class="breadcrumbs"> <a href="/">Home</a> / <a href="/products.html">Products</a></p> -->
+        <section class="products mosaic">
 
             <?php
                 if(isset($products)){
@@ -511,28 +495,20 @@
                         # code...
                         $productImage = getProductImage($product);
                         $productName = $product["name"];
-                        $productDescription = $product["description"];
+                        
                         $productPath = "./products/product.php?product-id=" . $product["id"];
-                        echo "<div class='product'>
-                                <div class='product-image-container'>
-                                    <img src='$productImage' alt='e-commerce image' />
-                                </div>
-                                <div class='product-info' style='visibility: hidden;'>
+                        $productURL = "/products/product.php?product-id=" . $product["id"];
+
+                        $productDescription = $product["description"];
+                        
+                        
+
+                        $productInfo = "<div class='product-info'>
                                     <div class='product-name'>
                                         <img src='./assets/icons/product icon.png' alt='product icon' />
                                         <p>$productName</p>
                                         <div class='share-icon-container'>
-                                            <a href=''><img src=''./assets/icons/share icon.png' alt='share-icon' /></a>
-                                        </div>
-                                    </div>
-                                    <a href='$productPath'>More Info...</a>
-                                </div>
-                                <div class='product-info'>
-                                    <div class='product-name'>
-                                        <img src='./assets/icons/product icon.png' alt='product icon' />
-                                        <p>$productName</p>
-                                        <div class='share-icon-container'>
-                                            <a href='#'><img src='./assets/icons/share icon.png' alt='share-icon' /></a>
+                                            <button onclick='shareProduct($index, event)' href='#'><img src='./assets/icons/share icon.png' alt='share-icon' /></button>
                                         </div>
                                     </div>
                                     <div class='product-details'>
@@ -540,7 +516,30 @@
                                         <p>$productDescription</p>
                                     </div>
                                     <a href='$productPath'>More Info...</a>
+                                </div>";
+
+                        $hiddenContent = "<div class='product-info' style='visibility: hidden;'>
+                                <div class='product-name'>
+                                    <img src='./assets/icons/product icon.png' alt='product icon' />
+                                    <p>$productName</p>
+                                    <div class='share-icon-container'>
+                                        <a href=''><img src=''../assets/icons/share icon.png' alt='share-icon' /></a>
+                                    </div>
                                 </div>
+                                <a href='$productPath'>More Info...</a>
+                            </div>";
+                        
+                        if($category["id"] != "9" && $category["id"] != "8" && $category["id"] != "52" && $category["id"] != "53" && $category["id"] != "3" ){
+                            $productInfo = "";
+                            $hiddenContent = "";
+                        }
+                        
+                        echo "<div class='product box'>
+                                <div class='product-image-container'>
+                                    <img src='$productImage' alt='e-commerce image' />
+                                </div>
+                                $hiddenContent
+                                $productInfo
                             </div>";
                     }
                 }
@@ -581,47 +580,80 @@
             <div class="brands">
                 <div class="brand-logo-name">
                     <div class="brand-logo">
-                        <img src="./assets/icons/blue beko logo.png" />
+                        <img src="./assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko Corporate Solutions Blue Logo" />
                     </div> 
                 </div>
                 <div class="brands-paragraph-content">
-                    <p>Lorem ipsum dolor sit amet consectetur,adipisicing  elit. Necessitatibus sunt maiores velit corporis, ut sed eaque dolores  neque, accusantium  amet accusamus! Debitis aut dolorem nemo expedita accusantium  ipsum dolore iure.</p>
+                    <p>We work for a sustainable future through our technology, human resources, and production power.
+                    Our vision is to rejuvenate ourselves and our industry to become a trusted lifestyle solutions provider to the digital household.</p>
                 </div> 
                 <div class="social-media-brand-logos">
                     <div>
-                        <a href="#instagram">
+                        <a href="https://www.instagram.com/bekocorporate_solutions/" target="_blank">
                             <img src="./assets/icons/instagram icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#linkedin">
-                            <img src="./assets/icons/linkedin icon.png" />
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#facebook">
-                            <img src = "./assets/icons/facebook icon.png" />
                         </a>
                     </div>
                 </div>
             </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#About">About</a>
-                <a href="#Shop">Shop</a>
-                <a href="#Contact">Contact</a>
+                <a href="./index.php">Home</a>
+                 <?php
+                    $innerHTML = "";
+                    foreach ($categorizedProducts["categories"] as $index => $category) {
+                        # code...
+                        $categoryId = $category["id"];
+                        $categoryName = $category["name"];
+                        if($categoryId == 1){
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
+                        } else {
+                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                        }
+                        
+                    }
+                    echo $innerHTML;
+                ?>
+                <a href="./about-us.php">About Us</a>
+                <a href="./contact-us.php">Contact Us</a>
             </div>
             <div class="contact">
-                <h3>Contact</h3> <br />
-                <p>Lorem ipsum dolor sit amet consectetur,  adipisicing elit. Dolorum repellat nihil   voluptatem rerum et, atque porro id fuga voluptas  numquam laboriosam similique. Pariatur itaque neque autem impedit quasi numquam earum?</p>
+                <h3>Contacts</h3> <br />
+                <div class="contact-information-icons-details">
+                    <div class="phone-details">
+                        <div class="icon-container">
+                            <img src="./assets/icons/phone-white-icon.png" />
+                        </div>
+                        <div class="phone-link">
+                            <a href="tel:+254768444404">+254 768 444 404</a>
+                        </div>
+                    </div>
+                    <div class="email-details">
+                        <div class="icon-container">
+                            <img src="./assets/icons/email-white-icon.png" />
+                        </div>
+                        <div class="email-link">
+                            <a href="mailto:bekocorporate@koch.co.ke">bekocorporate@koch.co.ke</a>
+                        </div>
+                    </div>
+                    <div class="address-details">
+                        <div class="icon-container">
+                            <img src="./assets/icons/address-white-icon.png" />
+                        </div>
+                        <div class="address-link">
+                            <p>
+                                Ground Floor, Apollo Center <br />
+                                Ring Road,  Nairobi – Kenya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="news-letter">
                 <h3>Subscribe to our Email</h3><br />
                 <h4>For Latest News and Updates</h4><br />
                 <div class="form-container">
-                    <form id="form">
-                        <input type="email" id="email" name="email" placeholder="youremail.example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  required />
+                    <form id="form" onsubmit="subscribeToOurEmail(event)">
+                        <input onchange="handleEmailChange(event)" type="email" id="email" name="email" placeholder="youremail.example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  required />
                         <input type="Submit" id="subscribe" value="Subscribe"> 
                     </form>
                 </div>
@@ -629,7 +661,7 @@
         </div>
         <div class="copyright-tag">
             <p>Copyright &copy; <span id="year">
-            </span> | Beko Corporate | Maintained by <span>
+            </span> | Beko Corporate Solutions | Maintained by <span>
                 <a href="https://www.yosambranding.art" target="_blank">Yosam Branding</a>
             </span>
             </p>
@@ -637,6 +669,9 @@
     </footer>
     
     <script type="text/javascript" src="./scripts/navigation.js"></script>
+    <script type="text/javascript" src="./scripts/footer.js"></script>
     <script type="text/javascript" src="./scripts/current-year.js"></script>
+    <script type="text/javascript" src="./scripts/share-product.js"></script>
+    <script type="text/javascript" src="./scripts/mosaic.js"></script>
 </body>
 </html>
