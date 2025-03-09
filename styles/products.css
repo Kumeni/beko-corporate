@@ -3,12 +3,17 @@
     display: -ms-grid;
     display: -moz-grid;
 }
+.landing{
+    background-color: #273273;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+}
 .landing h1{
     text-align: center;
     padding: 4rem 0rem 0rem 0rem;
     background-color: #273273;
     color: white;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .landing .underline{
     margin: auto;
@@ -66,6 +71,8 @@
     }
 }
 .product{
+    border:1px solid rgb(210, 210, 210);
+    border-radius: 2rem;
     position: relative;
     height: max-content;
 }
@@ -73,12 +80,17 @@
     /* background-color: skyblue; */
     border-radius: 2rem 2rem 0rem 0rem;
     padding: 2rem 0.5rem 3rem 0.5rem;
-    border:1px solid rgb(210, 210, 210);
+    /* border:1px solid rgb(210, 210, 210); */
 }
 .product-image-container > img{
     /* border-radius: 2rem 2rem 0rem 0rem; */
     cursor: pointer;
     transition: all .5s;
+    max-height: 60vh;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin: auto;
 }
 .product:hover .product-image-container > img{
     transform:scale(95%);

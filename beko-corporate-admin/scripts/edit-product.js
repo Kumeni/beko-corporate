@@ -128,7 +128,7 @@ const editProduct = productIndex => {
             selectedCategories = product.categories;
             activeCategories = generate2DArrayFromTreeDataStructure(productCategories);
             updateProductCategories(activeCategories);
-            console.log(selectedCategories);
+            //console.log(selectedCategories);
 
             additionalInfos = product.articles;
             if(additionalInfos.length == 0){
@@ -708,7 +708,7 @@ const getProducts = event => {
         if(request.readyState === 4 && request.status === 200){
             console.log(request.response);
             products = JSON.parse(request.response);
-            products = JSON.parse(products);
+            //products = JSON.parse(products);
             console.log(products);
             updateProducts(products);
             editProduct();
@@ -1018,7 +1018,6 @@ const addAdditionalInfo = (event) => {
 }
 
 const updateAdditionalInfos = (additionalInfos) => {
-    console.log(additionalInfos);
     let additionalInfosContainer = document.getElementsByClassName("editors")[0];
 
     let editorHTML = `<div class="editor"></div><br/>`;
@@ -1039,13 +1038,10 @@ const updateAdditionalInfos = (additionalInfos) => {
     let editors = document.getElementsByClassName("editor"), i=0;
 
     var delta;
-    console.log(editors);
     for(i=0; i<editors.length; i++){
         quill[i] = new Quill(editors[i], options);
         if(additionalInfos[i].delta){
-            console.log(additionalInfos[i]);
-            //quill[i].clipboard.dangerouslyPasteHTML(additionalInfos[i].html);
-            quill[i].setContents(additionalInfos[i].delta);
+            quill[i].setContents(JSON.parse(additionalInfos[i].delta));
         }
     }
 }

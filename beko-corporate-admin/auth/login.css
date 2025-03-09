@@ -1,0 +1,48 @@
+.login-form-container{
+    max-width: 500px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem 0rem;
+    color: #01426a;
+}
+
+.login-form-container > img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+}
+
+.login-form{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+
+.login-form{
+    grid-template-columns: 200px auto;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.login-form > input{
+    grid-area: 3/1/span 1/span 2;
+    padding: 0.8rem 1rem;
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 200px;
+}
+
+.login-form > input:hover{
+    cursor: pointer;
+}
+
+.login-form > div > input{
+    padding: 0.8rem 1rem;
+    display: block;
+    width: auto;
+}

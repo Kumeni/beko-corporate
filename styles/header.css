@@ -7,7 +7,7 @@ header{
     background-color: white;
     display: block;
     z-index: 5;
-    border-bottom: 1px solid rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 .menu, .menu-bars, .logo, .menu-items, .outer-circle, .dynamic-text, .our-services{
@@ -118,6 +118,7 @@ header{
 .our-services > span{
     transition: all .5s;
     align-self: center;
+    font-weight: 600;
 }
 .our-services > span:hover{
     cursor: pointer;
@@ -142,9 +143,15 @@ header{
     background-color: white;
     background-color: #273273;
     border-radius: 0px 0px 5px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
-.our-services > div > ul a{
+.our-services > div > ul ul{
+    margin-left: 1rem;
+}
+.our-services > div > ul a, .our-services > div > ul span{
     display: block;
     padding: 0.8rem 2rem;
     border-radius: 5px;
@@ -166,7 +173,9 @@ header{
     transition: all .5s;
     color: #01426a;
 }
-
+.menu-items > a{
+    font-weight: 600;
+}
 .menu-items li:hover, .menu-items a:hover{
     cursor: pointer;
     color: gold;
@@ -211,7 +220,7 @@ header{
     margin-left: 1rem;
 }
 .hamburger-menu ul > li{
-    margin: 1rem 0rem 2rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
 }
 .hamburger-menu ul > li:hover{
     background-color: white;
@@ -219,7 +228,7 @@ header{
 .hamburger-menu a, .hamburger-menu span{
     display: block;
     padding: 0.8rem 0.2rem;
-    color: black;
+    color: #01426a;
     text-decoration: none;
     font-weight:500;
     margin-left: 1rem;
@@ -275,4 +284,5 @@ header{
     color: #01426a;
     grid-template-columns: repeat(2, auto);
     align-items: center;
+    font-weight: 500;
 }

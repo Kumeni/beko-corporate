@@ -1,5 +1,4 @@
 <?php
-
     require "./beko-corporate-admin/server/db.php";
     require "./beko-corporate-admin/server/db-operations.php";
     /**
@@ -332,7 +331,7 @@
     <header class="navigation">
         <div class="menu">
             <div class="logo">
-                <div 
+                <div
                     class="menu-bars large-screen-menu-bars" 
                     id="navigation-bars" 
                     onclick="toggleNavigation(true)" >
@@ -355,11 +354,22 @@
                                     $categoryId = $category["id"];
                                     $categoryName = $category["name"];
                                     if($categoryId == 1){
-                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                                     } else {
-                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        if(count($category["categories"]) > 0){
+                                            $innerHTML .= "<span>$categoryName</span><ul>";
+
+                                            foreach($category["categories"] as $index2 => $category){
+                                                $categoryId = $category["id"];
+                                                $categoryName = $category["name"];
+                                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                            }
+
+                                            $innerHTML .= "</ul>";
+                                        } else {
+                                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        }
                                     }
-                                    
                                 }
                                 echo $innerHTML;
                             ?>
@@ -369,10 +379,10 @@
                 <a href="./about-us.php" class="dynamic-text">About Us</a>
                 <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
             </ul>
-            <div 
+            <div
                 class="menu-bars small-screen-menu-bars" 
                 id="navigation-bars" 
-                onclick="toggleNavigation(true)" >
+                onclick="toggleNavigation(true)">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -393,7 +403,7 @@
                             $categoryName = $category["name"];
                             $innerHTML .= "<li>";
                             if($categoryId == 1){
-                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en' target='blank'>$categoryName</a></span>";
                             } else {
                                 $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
                             }
@@ -524,6 +534,32 @@
                         <section class="landing">
                             <div class="landing-image">
                                 <img class="small-screen-banner" src="./assets/homepage-images/landing-images/beko employees banner small.jpg" alt="office with huge windows by beko corporate" />
+                                <img class="large-screen-banner" src="./assets/homepage-images/landing-images/beko employees banner.jpg" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <!-- <div class="landing-image">
+                                <img src="./assets/homepage-images/landing-images/office with huge windows by beko corporate.png" alt="office with huge windows by beko corporate" />
+                            </div>
+                            <div class="blue-rectangle-container">
+                                <div class="blue-rectangle fly-in-from-right"></div>
+                            </div>
+                            <div class="beko-logo-container">
+                                <img class="beko-logo-landing fly-in-from-right" src="./assets/icons/white beko logo.png" alt="beko logo" />
+                            </div>
+                            <div class="slide-title ">
+                                <h1 class="index fly-in-from-right">03</h1>
+                                <h1 class="title fly-in-from-right">Innovative Technology,<br />Unmatched Quality</h1>
+                            </div>
+                            <div class="more-info-container">
+                                <div class="more-info fly-in-from-right">
+                                    <p class="fly-in-from-right">Beko’s in-built appliances are crafted with cutting-edge technology and rigorous quality standards. From state-of-the-art kitchen appliances to advanced laundry solutions, we provide products that deliver consistent results and stand the test of time.</p>
+                                </div>
+                            </div> -->
+                        </section>
+                    </div>
+                    <div class="swiper-slide slide-3">
+                        <section class="landing">
+                            <div class="landing-image">
+                                <img class="small-screen-banner" src="./assets/homepage-images/landing-images/Built-in-Appliances-small.jpg" alt="office with huge windows by beko corporate" />
                                 <img class="large-screen-banner" src="./assets/homepage-images/landing-images/Built-in-Appliances.jpg" alt="Built in Home Appliances" />
                             </div>
                             <!-- <div class="landing-image">
@@ -594,7 +630,7 @@
                     <div class="offer-image-container">
                         <img src="./assets/homepage-images/residential solar panels.png" alt="Solar Panels" />
                     </div>
-                    <h3>Solar Panel & Products</h3>
+                    <h3>Solar Solutions</h3>
                     <a href="./products.php?category-id=2" class="browse-button">Browse...</a>
                 </div>
                 <div class="offer ac-solutions">
@@ -609,10 +645,12 @@
                         <img src="./assets/homepage-images/Hotel Concepts.png" alt="Hotel Concept" />
                     </div>
                     <div>
-                        <h3>Hotel Room Concept - Regina</h3>
-                        <!-- <ul>
-                            <li>Regina</li>
-                        </ul> -->
+                        <h3>Regina Solutions</h3>
+                        <ul>
+                            <li>Matresses</li>
+                            <li>Beds</li>
+                            <li>Hotel Textiles</li>
+                        </ul>
                     </div>
                     <a href="./products.php?category-id=4" class="browse-button">Browse...</a>
                 </div>
@@ -621,7 +659,7 @@
                         <img src="./assets/homepage-images/Kitchen cabinets.png" alt="Kitchen Cabinets" />
                     </div>
                     <div>
-                        <h3>Culinan Range</h3>
+                        <h3>Cullinan Solutions</h3>
                         <ul>
                             <li>Kitchen Joinery</li>
                             <li>Wardrobe</li>
@@ -657,7 +695,7 @@
                     <div class="offer-image-container">
                         <img src="./assets/homepage-images/EV Chargers.png" alt="EV Charger" />
                     </div>
-                    <h3>EV Chargers</h3>
+                    <h3>EV Chargers Solutions</h3>
                     <a href="./products.php?category-id=9" class="browse-button">Browse...</a>
                 </div>
                 <div class="partner-with-bekocorporate">
@@ -763,7 +801,7 @@
             </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
-                <a href="./index.html">Home</a>
+                <a href="./index.php">Home</a>
                  <?php
                     $innerHTML = "";
                     foreach ($categorizedProducts["categories"] as $index => $category) {
@@ -771,7 +809,7 @@
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
                         if($categoryId == 1){
-                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                         } else {
                             $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
                         }
@@ -827,7 +865,7 @@
         </div>
         <div class="copyright-tag">
             <p>Copyright &copy; <span id="year">
-            </span> | Beko Corporate | Maintained by <span>
+            </span> | Beko Corporate Solutions | Maintained by <span>
                 <a href="https://www.yosambranding.art" target="_blank">Yosam Branding</a>
             </span>
             </p>

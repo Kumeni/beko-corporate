@@ -320,7 +320,7 @@
     <?php 
         echo "<script>let categorizedProducts=$categorizedProductsJSON; console.log(categorizedProducts);</script>";
     ?>
-    <title>Contact Us</title>
+    <title>Contact Us | Beko Corporate Solutions</title>
 </head>
 <body>
 <header class="navigation">
@@ -349,9 +349,21 @@
                                     $categoryId = $category["id"];
                                     $categoryName = $category["name"];
                                     if($categoryId == 1){
-                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                                     } else {
-                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        if(count($category["categories"]) > 0){
+                                            $innerHTML .= "<span>$categoryName</span><ul>";
+
+                                            foreach($category["categories"] as $index2 => $category){
+                                                $categoryId = $category["id"];
+                                                $categoryName = $category["name"];
+                                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                            }
+
+                                            $innerHTML .= "</ul>";
+                                        } else {
+                                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        }
                                     }
                                     
                                 }
@@ -387,7 +399,7 @@
                             $categoryName = $category["name"];
                             $innerHTML .= "<li>";
                             if($categoryId == 1){
-                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a></span>";
                             } else {
                                 $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
                             }
@@ -423,7 +435,7 @@
     <section class="contact-us-hero">
         <div class="hero-banner">
             <div class="hero-text-container">
-                <p>At Beko, we're committed to providing exceptional customer service and ensuring your experience with our products is nothing short of excellent. Whether you have a question, need support, or want to give feedback, our team is here to assist you. Please feel free to reach out using the options below, and we'll get back to you as soon as possible.</p>
+                <p>At Beko Corporate Solutions, we're committed to providing exceptional customer service and ensuring your experience with our products is nothing short of excellent. Whether you have a question, need support, or want to give feedback, our team is here to assist you. Please feel free to reach out using the options below, and we'll get back to you as soon as possible.</p>
             </div>
         </div>
     </section>
@@ -437,7 +449,7 @@
                     <div class="contact-information">
                         <div class="contact-information-text-container">
                             <div class="contact-info-header">
-                                <h2>Get in Touch with Beko</h2>
+                                <h2>Get in Touch with Beko Corporate Solutions</h2>
                             </div>
                             <div class="contact-info-paragraph">
                                 <p>We're here to help! Whether you prefer reaching us by phone, email, or mail, you’ll find all the details you need below. Our team is ready to assist with any questions or support you may need. Don't hesitate to contact us—we're just a message away!</p>
@@ -529,7 +541,7 @@
             </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
-                <a href="./index.html">Home</a>
+                <a href="./index.php">Home</a>
                  <?php
                     $innerHTML = "";
                     foreach ($categorizedProducts["categories"] as $index => $category) {
@@ -537,7 +549,7 @@
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
                         if($categoryId == 1){
-                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                         } else {
                             $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
                         }
@@ -593,7 +605,7 @@
         </div>
         <div class="copyright-tag">
             <p>Copyright &copy; <span id="year">
-            </span> | Beko Corporate | Maintained by <span>
+            </span> | Beko Corporate Solutions | Maintained by <span>
                 <a href="https://www.yosambranding.art" target="_blank">Yosam Branding</a>
             </span>
             </p>

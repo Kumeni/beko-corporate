@@ -319,7 +319,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>About Us</title>
+    <title>About Us | Beko Corporate Solutions</title>
 </head>
 <body>
     <header class="navigation">
@@ -348,9 +348,21 @@
                                     $categoryId = $category["id"];
                                     $categoryName = $category["name"];
                                     if($categoryId == 1){
-                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                                     } else {
-                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        if(count($category["categories"]) > 0){
+                                            $innerHTML .= "<span>$categoryName</span><ul>";
+
+                                            foreach($category["categories"] as $index2 => $category){
+                                                $categoryId = $category["id"];
+                                                $categoryName = $category["name"];
+                                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                            }
+
+                                            $innerHTML .= "</ul>";
+                                        } else {
+                                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        }
                                     }
                                     
                                 }
@@ -386,7 +398,7 @@
                             $categoryName = $category["name"];
                             $innerHTML .= "<li>";
                             if($categoryId == 1){
-                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a></span>";
                             } else {
                                 $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
                             }
@@ -467,7 +479,7 @@
             </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
-                <a href="./index.html">Home</a>
+                <a href="./index.php">Home</a>
                  <?php
                     $innerHTML = "";
                     foreach ($categorizedProducts["categories"] as $index => $category) {
@@ -475,7 +487,7 @@
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
                         if($categoryId == 1){
-                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                         } else {
                             $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
                         }
@@ -531,7 +543,7 @@
         </div>
         <div class="copyright-tag">
             <p>Copyright &copy; <span id="year">
-            </span> | Beko Corporate | Maintained by <span>
+            </span> | Beko Corporate Solutions | Maintained by <span>
                 <a href="https://www.yosambranding.art" target="_blank">Yosam Branding</a>
             </span>
             </p>

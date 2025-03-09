@@ -335,11 +335,20 @@
     <link rel="stylesheet" type="text/css" href="./styles/footer.css" />
     <link rel="stylesheet" type="text/css" href="./styles/header.css" />
     <link rel="stylesheet" type="text/css" href="./styles/products.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./styles/mosaic.css" /> -->
 
     <?php 
         echo "<script>let categorizedProducts=$categorizedProductsJSON;</script>";
     ?>
-    <title>Products</title>
+
+    <?php
+        if(isset($_GET["category-id"])){
+            $categoryId = $_GET["category-id"];
+            $category = findCategory($categorizedProducts, $categoryId, $searchBy = 'id');
+            $categoryName = $category["name"];
+        }
+    ?>
+    <title><?php echo $categoryName; ?> | Beko Corporate Solutions</title>
 </head>
 <body>
     <header class="navigation">
@@ -368,9 +377,21 @@
                                     $categoryId = $category["id"];
                                     $categoryName = $category["name"];
                                     if($categoryId == 1){
-                                        $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                                        $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                                     } else {
-                                        $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        if(count($category["categories"]) > 0){
+                                            $innerHTML .= "<span>$categoryName</span><ul>";
+
+                                            foreach($category["categories"] as $index2 => $category){
+                                                $categoryId = $category["id"];
+                                                $categoryName = $category["name"];
+                                                $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                            }
+
+                                            $innerHTML .= "</ul>";
+                                        } else {
+                                            $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
+                                        }
                                     }
                                     
                                 }
@@ -406,7 +427,7 @@
                             $categoryName = $category["name"];
                             $innerHTML .= "<li>";
                             if($categoryId == 1){
-                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en'>$categoryName</a></span>";
+                                $innerHTML .= "<span><a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a></span>";
                             } else {
                                 $innerHTML .= "<span><a href='./products.php?category-id=$categoryId'>$categoryName</a></span>";
                             }
@@ -441,7 +462,6 @@
     </header>
 
     <main>
-        
         <?php
             if(isset($_GET["category-id"])){
                 $categoryId = $_GET["category-id"];
@@ -464,10 +484,10 @@
         <section class="landing">
             <h1><?php echo $categoryName ?></h1>
             <div class="underline"></div>
-            <div class="curved-background"></div>
+            <!-- <div class="curved-background"></div> -->
         </section>
-        <p class="breadcrumbs"> <a href="/">Home</a> / <a href="/products.html">Products</a></p>
-        <section class="products">
+        <!-- <p class="breadcrumbs"> <a href="/">Home</a> / <a href="/products.html">Products</a></p> -->
+        <section class="products mosaic">
 
             <?php
                 if(isset($products)){
@@ -475,24 +495,15 @@
                         # code...
                         $productImage = getProductImage($product);
                         $productName = $product["name"];
-                        $productDescription = $product["description"];
+                        
                         $productPath = "./products/product.php?product-id=" . $product["id"];
                         $productURL = "/products/product.php?product-id=" . $product["id"];
-                        echo "<div class='product'>
-                                <div class='product-image-container'>
-                                    <img src='$productImage' alt='e-commerce image' />
-                                </div>
-                                <div class='product-info' style='visibility: hidden;'>
-                                    <div class='product-name'>
-                                        <img src='./assets/icons/product icon.png' alt='product icon' />
-                                        <p>$productName</p>
-                                        <div class='share-icon-container'>
-                                            <a href=''><img src=''./assets/icons/share icon.png' alt='share-icon' /></a>
-                                        </div>
-                                    </div>
-                                    <a href='$productPath'>More Info...</a>
-                                </div>
-                                <div class='product-info'>
+
+                        $productDescription = $product["description"];
+                        
+                        
+
+                        $productInfo = "<div class='product-info'>
                                     <div class='product-name'>
                                         <img src='./assets/icons/product icon.png' alt='product icon' />
                                         <p>$productName</p>
@@ -505,7 +516,30 @@
                                         <p>$productDescription</p>
                                     </div>
                                     <a href='$productPath'>More Info...</a>
+                                </div>";
+
+                        $hiddenContent = "<div class='product-info' style='visibility: hidden;'>
+                                <div class='product-name'>
+                                    <img src='./assets/icons/product icon.png' alt='product icon' />
+                                    <p>$productName</p>
+                                    <div class='share-icon-container'>
+                                        <a href=''><img src=''../assets/icons/share icon.png' alt='share-icon' /></a>
+                                    </div>
                                 </div>
+                                <a href='$productPath'>More Info...</a>
+                            </div>";
+                        
+                        if($category["id"] != "9" && $category["id"] != "8" && $category["id"] != "52" && $category["id"] != "53" && $category["id"] != "3" ){
+                            $productInfo = "";
+                            $hiddenContent = "";
+                        }
+                        
+                        echo "<div class='product box'>
+                                <div class='product-image-container'>
+                                    <img src='$productImage' alt='e-commerce image' />
+                                </div>
+                                $hiddenContent
+                                $productInfo
                             </div>";
                     }
                 }
@@ -563,7 +597,7 @@
             </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
-                <a href="./index.html">Home</a>
+                <a href="./index.php">Home</a>
                  <?php
                     $innerHTML = "";
                     foreach ($categorizedProducts["categories"] as $index => $category) {
@@ -571,7 +605,7 @@
                         $categoryId = $category["id"];
                         $categoryName = $category["name"];
                         if($categoryId == 1){
-                            $innerHTML .= "<a href='https://www.beko.com/ke-en'>$categoryName</a>";
+                            $innerHTML .= "<a href='https://www.beko.com/ke-en' target='_blank'>$categoryName</a>";
                         } else {
                             $innerHTML .= "<a href='./products.php?category-id=$categoryId'>$categoryName</a>";
                         }
@@ -598,7 +632,7 @@
                             <img src="./assets/icons/email-white-icon.png" />
                         </div>
                         <div class="email-link">
-                            <a href="mailto:bekocorporate@Koch.co.ke">bekocorporate@koch.co.ke</a>
+                            <a href="mailto:bekocorporate@koch.co.ke">bekocorporate@koch.co.ke</a>
                         </div>
                     </div>
                     <div class="address-details">
@@ -627,7 +661,7 @@
         </div>
         <div class="copyright-tag">
             <p>Copyright &copy; <span id="year">
-            </span> | Beko Corporate | Maintained by <span>
+            </span> | Beko Corporate Solutions | Maintained by <span>
                 <a href="https://www.yosambranding.art" target="_blank">Yosam Branding</a>
             </span>
             </p>
@@ -638,5 +672,6 @@
     <script type="text/javascript" src="./scripts/footer.js"></script>
     <script type="text/javascript" src="./scripts/current-year.js"></script>
     <script type="text/javascript" src="./scripts/share-product.js"></script>
+    <script type="text/javascript" src="./scripts/mosaic.js"></script>
 </body>
 </html>

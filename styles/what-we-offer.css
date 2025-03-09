@@ -15,7 +15,7 @@
     grid-template-columns: repeat(2, 40%);
     column-gap: 2rem;
     row-gap: 2rem;
-    justify-content: center;;
+    justify-content: center;
 }
 @media (max-width:1024px){
     .offers{
@@ -54,6 +54,7 @@
     border-radius: 20px;
     overflow: hidden;
     background-color: white;
+    margin: auto;
 }
 .home-appliances{
     padding: 0.5rem 2rem;
@@ -156,6 +157,11 @@
     width: max-content;
     text-decoration: none;
 }
+@media (max-width: 320px){
+    .browse-button{
+        padding: 1rem 1.5rem;
+    }
+}
 .offer a:hover{
     color: gold;
 }
@@ -169,8 +175,21 @@
 .hotel-concepts ul li{
     color: #01426a !important;
 }
+.hotel-concepts ul{
+    list-style: none;
+}
 .kitchen-cabinets h3{
-    color: white;
+    color: #01426a;
+}
+.kitchen-cabinets ul li{
+    color: #01426a ! important;
+}
+.hotel-concepts ul li, .kitchen-cabinets ul li{
+    font-weight: 600;
+    font-weight:1.2rem;
+}
+.kitchen-cabinets ul{
+    list-style: none;
 }
 .wardrobes h3{
     color: white;
