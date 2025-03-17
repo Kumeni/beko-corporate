@@ -1,0 +1,11 @@
+.navigation{
+    padding-top: 1rem;
+    background-color: white;
+}
+.navigation li{
+    padding: 1rem;
+}
+.navigation li a{
+    color: black;
+    text-decoration: none;
+}

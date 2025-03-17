@@ -1,7 +1,7 @@
 <?php
 
-    require "./beko-corporate-admin/server/db.php";
-    require "./beko-corporate-admin/server/db-operations.php";
+    require "./api/db.php";
+    require "./api/db-operations.php";
     /**
      * Fetch categorized products
      */
@@ -477,7 +477,7 @@
                  * Display categorized products
                  */
                 function getProductImage($product){
-                    return "./beko-corporate-admin" . $product["varieties"][0]["images"][0]["path"];
+                    return "./api" . $product["varieties"][0]["images"][0]["path"];
                 }
             }
         ?>

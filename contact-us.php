@@ -1,7 +1,7 @@
 <?php
 
-    require "./beko-corporate-admin/server/db.php";
-    require "./beko-corporate-admin/server/db-operations.php";
+    require "./api/db.php";
+    require "./api/db-operations.php";
     /**
      * Fetch categorized products
      */

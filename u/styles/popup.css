@@ -1,0 +1,29 @@
+.popup{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color: white;
+    overflow: auto;
+    display: block;
+    z-index:-10;
+    visibility:hidden;
+    transition: visibility 0.5s linear z-index 0.5 linear;
+}
+.popup > div:first-of-type{
+    margin: auto;
+    text-align: right;
+    padding:1rem 2rem;
+    
+}
+.popup > div:first-of-type span:hover{
+    cursor: pointer;
+}
+.popup-close{
+    font-size: 2rem;
+    font-weight:600;
+}
+#windDirectionMeterNeedle{
+    transform: rotate('20deg');
+}

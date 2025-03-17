@@ -1,6 +1,6 @@
 <?php
-    require "../beko-corporate-admin/server/db.php";
-    require "../beko-corporate-admin/server/db-operations.php";
+    require "../api/db.php";
+    require "../api/db-operations.php";
     /**
      * Fetch categorized products
      */
@@ -523,7 +523,7 @@
                         $innerHTML = "";
                         foreach ($activeProduct["varieties"][0]["images"] as $index => $image) {
                             # code...
-                            $imagePath = "../beko-corporate-admin" . $image["path"];
+                            $imagePath = "../api" . $image["path"];
                             $innerHTML .= "
                                 <div class='swiper-slide'>
                                     <div class='single-product-image-container'>                
@@ -557,7 +557,7 @@
                             $innerHTML = "";
                             foreach ($activeProduct["varieties"] as $index => $variety) {
                                 # code...
-                                $varietyImage = "../beko-corporate-admin/" . $variety["images"][0]["path"];
+                                $varietyImage = "../api/" . $variety["images"][0]["path"];
                                 $varietyName = $variety["name"];
 
                                 $innerHTML .= "<div>
@@ -700,7 +700,7 @@
         <section class="products">
         <?php
                 function getProductImage($product){
-                    return "../beko-corporate-admin" . $product["varieties"][0]["images"][0]["path"];
+                    return "../api" . $product["varieties"][0]["images"][0]["path"];
                 }
 
                 if(isset($relatedProducts)){

@@ -1,0 +1,122 @@
+.login-form, .login-form .get-code-container{
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+
+body{
+    background-color: #01426a;
+}
+.login-form-container{
+    max-width: 500px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem 0rem;
+    color: #01426a;
+    box-shadow: 0px 0px 10px #01426a;
+    background-color: white;
+}
+
+.login-form-container > img{
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: auto;
+}
+
+.login-form-container h1{
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.login-form{
+    grid-template-columns: 150px auto;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 1rem;
+}
+
+.login-form .get-code-container{
+    grid-template-rows: auto auto;
+    grid-area: 2/1/span 1/ span 2;
+    row-gap: 1rem;
+}
+
+.get-code-container button{
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    width: max-content;
+    margin: auto;
+    border: none;
+    color: white;
+    background-color: #007bff;
+}
+
+.get-code-container button:hover{
+    cursor: pointer;
+}
+.login-form > input{
+    grid-area: 3/1/span 1/span 2;
+    padding: 0.8rem 1rem;
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 200px;
+}
+
+.login-form > input:hover{
+    cursor: pointer;
+}
+
+.login-form > div{
+    width: 100%;
+}
+
+.login-form > div > input{
+    padding: 0.8rem 1rem;
+    display: block;
+    width:80%;
+    border-radius: 2rem;
+    border: 1px solid #01426a;
+}
+
+.login-form > div > input:focus{
+    outline: none;
+}
+
+.login-form > input[type="submit"]{
+    grid-area: 4/1/span 1/ span 2;
+    color: white;
+    background-color: #28a745;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    display: block;
+    width: max-content;
+    border: none;
+}
+
+#code-sent-successfully{
+    width: 70%;
+    margin: 1rem auto;
+    display: block;
+}
+
+#code-not-sent{
+    text-align: center !important;
+    width: 70%;
+    margin: auto;
+}
+
+.success{
+    color: #28a745;
+}
+
+.error{
+    color: #dc3545;
+    text-align: left;
+    margin-top: 1rem;
+    display: block;
+}

@@ -1,0 +1,106 @@
+<?php
+    require './page-protection.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./styles/global.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/header.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/popup.css" />
+
+    <script src="./scripts/authentication.js"></script>
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="navigation" style="padding-top: 0rem;">
+        <div class="menu">
+            <div class="logo">
+                <!-- <div
+                    class="menu-bars large-screen-menu-bars" 
+                    id="navigation-bars" 
+                    onclick="toggleNavigation(true)" >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> -->
+                <a href="./"><img class="beko-logo" src="../assets/icons/Beko Corporate Solutions Logo BLUE.png" alt="Beko logo white" /></a>
+            </div>
+            
+            <!-- <ul class="menu-items">
+                <div class="our-services">
+                    <span class="dynamic-text">Products</span>
+                    <div>
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                <a href="./about-us.php" class="dynamic-text">About Us</a>
+                <a class="dynamic-text" href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nI would like to inquire about\n')">Contact Us</a>
+            </ul>-->
+            <div>
+                <button onclick="logout()" class="logout-button" title="logout"><a href="./auth/logout.php">LOGOUT</a></button>
+            </div> 
+        </div>
+        <div class="hamburger-menu">
+            <div id="hamburger-menu-container">
+                <ul class="hamburger-menu-ul">
+                    <span title="Close" class="close-hamburger-menu" onclick="toggleNavigation(false)">&times;</span>
+                    <a href="./">Home</a>
+                    <a href="./about-us.php">About Us</a>
+                    <a href="./contact-us.php" onclick="setFormSubject('RE: General Inquiry', 'Hello, \nHow I would like to inquire about\n')">Contact Us</a>
+                    <!-- <li>
+                        <span>Built In Home Appliances</span>
+                        <div class="underline"></div>
+                        <ul>
+                            <a href="careers.html">Careers</a>
+                            <a href="environmental-and-health-safety-at-work-policy.html">EHS Policy</a>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav class="navigation">
+            <ul>
+                <li><a href="./">Dashboard</a></li>
+                <li><a href="./categories.php">Categories</a></li>
+                <li><a href="./products.php">Products</a></li>
+            </ul>
+        </nav>
+        <nav>
+        </nav>
+        <section class="content">
+            <h1>Dashboard</h1>
+        </section>
+        <section class="popup">
+            <div>
+                <div class="popup-close">
+                    <span onclick="editCategory()" title="Close">&times;</span>
+                </div>
+            </div>
+            <div>
+                <form class="category-form" onsubmit="handleCategoryUpload(event)">
+                    <h2>Create Product Category</h2>
+                    <div class="underline"></div>
+                    <div class="category-name">
+                        <label>Category Name<span class="danger">*</span></label>
+                        <div>
+                            <input id="category-input" onchange="handleCategoryChange(event)" type="text" name="categoryName" class="input" />
+                            <span id="category-error" class="danger text-danger"></span>
+                        </div>
+                        <input type="SUBMIT" class="bg-success text-white" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

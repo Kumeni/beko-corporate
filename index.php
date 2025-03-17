@@ -1,6 +1,6 @@
 <?php
-    require "./beko-corporate-admin/server/db.php";
-    require "./beko-corporate-admin/server/db-operations.php";
+    require "./api/db.php";
+    require "./api/db-operations.php";
     /**
      * Fetch categorized products
      */
@@ -334,7 +334,7 @@
                 <div
                     class="menu-bars large-screen-menu-bars" 
                     id="navigation-bars" 
-                    onclick="toggleNavigation(true)" >
+                    onclick="toggleNavigation(true)">
                     <div></div>
                     <div></div>
                     <div></div>
